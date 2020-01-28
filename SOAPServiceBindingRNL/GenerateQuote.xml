@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation id="6e9c58d4-39a9-4a45-a3d0-26fe9912bf62" isOneWay="false" action="GenerateQuote" name="GenerateQuote" bindingOperationName="GenerateQuote" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="6e9c58d4-39a9-4a45-a3d0-26fe9912bf62fileName">GenerateQuote</con:setting>
+  </con:settings>
+</con:operation>
