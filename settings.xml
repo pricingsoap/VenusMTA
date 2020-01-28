@@ -3,6 +3,7 @@
   <con:settings>
     <con:setting id="423fab5f-0b8d-4961-ba28-6c34d6edd395fileName">Venus_MTA_Project</con:setting>
   </con:settings>
+  <con:requirements/>
   <con:properties/>
   <con:wssContainer/>
   <con:databaseConnectionContainer/>
