@@ -1048,9 +1048,35 @@ def func_AddProduct(Productcode,product,Code)
          	 	strBldN.append("<prod:TaxPercentage>"+context.expand( '${RenewalE2E#Response#declare namespace tns8=\'http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_RNL_3\'; declare namespace tns6=\'http://www.theaa.com/CommonServices/Data/Product.2\'; //tns8:GenerateQuoteResponse[1]/tns8:ProductList[1]/tns6:Payment[1]/tns6:Product[tns6:ProductCode="'+Productcode+'"]/tns6:PriceList[1]/tns6:Price[1]/tns6:PriceBreakdown[1]/tns6:OfferCodeDiscountList[1]/tns6:OfferCodeDiscount[tns6:Code ="'+context.expand( '${658All#Persistent Offer}' )+'"]/tns6:TaxPercentage[1]}' )+"</prod:TaxPercentage>")
           	strBldN.append("<prod:Total>"+context.expand( '${RenewalE2E#Response#declare namespace tns8=\'http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_RNL_3\'; declare namespace tns6=\'http://www.theaa.com/CommonServices/Data/Product.2\'; //tns8:GenerateQuoteResponse[1]/tns8:ProductList[1]/tns6:Payment[1]/tns6:Product[tns6:ProductCode="'+Productcode+'"]/tns6:PriceList[1]/tns6:Price[1]/tns6:PriceBreakdown[1]/tns6:OfferCodeDiscountList[1]/tns6:OfferCodeDiscount[tns6:Code ="'+context.expand( '${658All#Persistent Offer}' )+'"]/tns6:Total[1]}' )+"</prod:Total>")
           	strBldN.append("</prod:OfferCodeDiscount>")
-          	strBldN.append("</prod:OfferCodeDiscountList>")
+          	
           	persistentOffer=""
+
+          	def RenewalOffernode = context.expand( '${RenewalE2E#Response#declare namespace tns8=\'http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_RNL_3\'; declare namespace tns6=\'http://www.theaa.com/CommonServices/Data/Product.2\'; //tns8:GenerateQuoteResponse[1]/tns8:ProductList[1]/tns6:Payment[1]/tns6:Product[tns6:ProductCode="'+Productcode+'"]/tns6:PriceList[1]/tns6:Price[1]/tns6:PriceBreakdown[1]/tns6:OfferCodeDiscountList[1]/tns6:OfferCodeDiscount[tns6:Code ="'+context.expand( '${658All#Renewal Offer}' )+'"]/tns6:Code[1]}' )
+		log.info "RenewalOffernode-->"+RenewalOffernode
+		
+		def RenewalOffer = context.expand( '${658All#Renewal Offer}' )
+		if((RenewalOffer!= "") && (RenewalOffernode!=""))
+   	  	{
+    			
+          	strBldN.append("<prod:OfferCodeDiscount>")
+          	strBldN.append("<prod:Code>"+context.expand( '${658All#Renewal Offer}' )+"</prod:Code>")
+          	strBldN.append("<prod:DiscountApplicationApproach>Product</prod:DiscountApplicationApproach>")
+			strBldN.append("<prod:NetRate>"+context.expand( '${RenewalE2E#Response#declare namespace tns8=\'http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_RNL_3\'; declare namespace tns6=\'http://www.theaa.com/CommonServices/Data/Product.2\'; //tns8:GenerateQuoteResponse[1]/tns8:ProductList[1]/tns6:Payment[1]/tns6:Product[tns6:ProductCode="'+Productcode+'"]/tns6:PriceList[1]/tns6:Price[1]/tns6:PriceBreakdown[1]/tns6:OfferCodeDiscountList[1]/tns6:OfferCodeDiscount[tns6:Code ="'+RenewalOffer+'"]/tns6:NetRate[1]}' )+"</prod:NetRate>")
+          	strBldN.append("<prod:NetRateTax>"+context.expand( '${RenewalE2E#Response#declare namespace tns8=\'http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_RNL_3\'; declare namespace tns6=\'http://www.theaa.com/CommonServices/Data/Product.2\'; //tns8:GenerateQuoteResponse[1]/tns8:ProductList[1]/tns6:Payment[1]/tns6:Product[tns6:ProductCode="'+Productcode+'"]/tns6:PriceList[1]/tns6:Price[1]/tns6:PriceBreakdown[1]/tns6:OfferCodeDiscountList[1]/tns6:OfferCodeDiscount[tns6:Code ="'+RenewalOffer+'"]/tns6:NetRateTax[1]}' )+"</prod:NetRateTax>")
+          	strBldN.append("<prod:Commission>"+context.expand( '${RenewalE2E#Response#declare namespace tns8=\'http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_RNL_3\'; declare namespace tns6=\'http://www.theaa.com/CommonServices/Data/Product.2\'; //tns8:GenerateQuoteResponse[1]/tns8:ProductList[1]/tns6:Payment[1]/tns6:Product[tns6:ProductCode="'+Productcode+'"]/tns6:PriceList[1]/tns6:Price[1]/tns6:PriceBreakdown[1]/tns6:OfferCodeDiscountList[1]/tns6:OfferCodeDiscount[tns6:Code ="'+RenewalOffer+'"]/tns6:Commission[1]}' )+"</prod:Commission>")
+         		strBldN.append("<prod:CommissionTax>"+context.expand( '${RenewalE2E#Response#declare namespace tns8=\'http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_RNL_3\'; declare namespace tns6=\'http://www.theaa.com/CommonServices/Data/Product.2\'; //tns8:GenerateQuoteResponse[1]/tns8:ProductList[1]/tns6:Payment[1]/tns6:Product[tns6:ProductCode="'+Productcode+'"]/tns6:PriceList[1]/tns6:Price[1]/tns6:PriceBreakdown[1]/tns6:OfferCodeDiscountList[1]/tns6:OfferCodeDiscount[tns6:Code ="'+RenewalOffer+'"]/tns6:CommissionTax[1]}' )+"</prod:CommissionTax>")
+          	strBldN.append("<prod:ArrangementFee>"+context.expand( '${RenewalE2E#Response#declare namespace tns8=\'http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_RNL_3\'; declare namespace tns6=\'http://www.theaa.com/CommonServices/Data/Product.2\'; //tns8:GenerateQuoteResponse[1]/tns8:ProductList[1]/tns6:Payment[1]/tns6:Product[tns6:ProductCode="'+Productcode+'"]/tns6:PriceList[1]/tns6:Price[1]/tns6:PriceBreakdown[1]/tns6:OfferCodeDiscountList[1]/tns6:OfferCodeDiscount[tns6:Code ="'+RenewalOffer+'"]/tns6:ArrangementFee[1]}' )+"</prod:ArrangementFee>")
+          	strBldN.append("<prod:ArrangementFeeTax>"+context.expand( '${RenewalE2E#Response#declare namespace tns8=\'http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_RNL_3\'; declare namespace tns6=\'http://www.theaa.com/CommonServices/Data/Product.2\'; //tns8:GenerateQuoteResponse[1]/tns8:ProductList[1]/tns6:Payment[1]/tns6:Product[tns6:ProductCode="'+Productcode+'"]/tns6:PriceList[1]/tns6:Price[1]/tns6:PriceBreakdown[1]/tns6:OfferCodeDiscountList[1]/tns6:OfferCodeDiscount[tns6:Code ="'+RenewalOffer+'"]/tns6:ArrangementFeeTax[1]}' )+"</prod:ArrangementFeeTax>")
+          	strBldN.append("<prod:InternallyFundedDiscount>"+context.expand( '${RenewalE2E#Response#declare namespace tns8=\'http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_RNL_3\'; declare namespace tns6=\'http://www.theaa.com/CommonServices/Data/Product.2\'; //tns8:GenerateQuoteResponse[1]/tns8:ProductList[1]/tns6:Payment[1]/tns6:Product[tns6:ProductCode="'+Productcode+'"]/tns6:PriceList[1]/tns6:Price[1]/tns6:PriceBreakdown[1]/tns6:OfferCodeDiscountList[1]/tns6:OfferCodeDiscount[tns6:Code ="'+RenewalOffer+'"]/tns6:InternallyFundedDiscount[1]}' )+"</prod:InternallyFundedDiscount>")
+         	 	strBldN.append("<prod:TaxPercentage>"+context.expand( '${RenewalE2E#Response#declare namespace tns8=\'http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_RNL_3\'; declare namespace tns6=\'http://www.theaa.com/CommonServices/Data/Product.2\'; //tns8:GenerateQuoteResponse[1]/tns8:ProductList[1]/tns6:Payment[1]/tns6:Product[tns6:ProductCode="'+Productcode+'"]/tns6:PriceList[1]/tns6:Price[1]/tns6:PriceBreakdown[1]/tns6:OfferCodeDiscountList[1]/tns6:OfferCodeDiscount[tns6:Code ="'+RenewalOffer+'"]/tns6:TaxPercentage[1]}' )+"</prod:TaxPercentage>")
+          	strBldN.append("<prod:Total>"+context.expand( '${RenewalE2E#Response#declare namespace tns8=\'http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_RNL_3\'; declare namespace tns6=\'http://www.theaa.com/CommonServices/Data/Product.2\'; //tns8:GenerateQuoteResponse[1]/tns8:ProductList[1]/tns6:Payment[1]/tns6:Product[tns6:ProductCode="'+Productcode+'"]/tns6:PriceList[1]/tns6:Price[1]/tns6:PriceBreakdown[1]/tns6:OfferCodeDiscountList[1]/tns6:OfferCodeDiscount[tns6:Code ="'+RenewalOffer+'"]/tns6:Total[1]}' )+"</prod:Total>")
+          	strBldN.append("</prod:OfferCodeDiscount>")
+          	
 		}
+		strBldN.append("</prod:OfferCodeDiscountList>")
+		}
+		else
+		{
 		
 		def RenewalOffernode = context.expand( '${RenewalE2E#Response#declare namespace tns8=\'http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_RNL_3\'; declare namespace tns6=\'http://www.theaa.com/CommonServices/Data/Product.2\'; //tns8:GenerateQuoteResponse[1]/tns8:ProductList[1]/tns6:Payment[1]/tns6:Product[tns6:ProductCode="'+Productcode+'"]/tns6:PriceList[1]/tns6:Price[1]/tns6:PriceBreakdown[1]/tns6:OfferCodeDiscountList[1]/tns6:OfferCodeDiscount[tns6:Code ="'+context.expand( '${658All#Renewal Offer}' )+'"]/tns6:Code[1]}' )
 		log.info "RenewalOffernode-->"+RenewalOffernode
@@ -1073,6 +1099,7 @@ def func_AddProduct(Productcode,product,Code)
           	strBldN.append("<prod:Total>"+context.expand( '${RenewalE2E#Response#declare namespace tns8=\'http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_RNL_3\'; declare namespace tns6=\'http://www.theaa.com/CommonServices/Data/Product.2\'; //tns8:GenerateQuoteResponse[1]/tns8:ProductList[1]/tns6:Payment[1]/tns6:Product[tns6:ProductCode="'+Productcode+'"]/tns6:PriceList[1]/tns6:Price[1]/tns6:PriceBreakdown[1]/tns6:OfferCodeDiscountList[1]/tns6:OfferCodeDiscount[tns6:Code ="'+RenewalOffer+'"]/tns6:Total[1]}' )+"</prod:Total>")
           	strBldN.append("</prod:OfferCodeDiscount>")
           	strBldN.append("</prod:OfferCodeDiscountList>")
+		}
 		}
 		if (context.expand( '${658All#RNL AD}')=="")
 		{
@@ -1419,115 +1446,115 @@ def func_AddProduct(Productcode,product)
         </con:settings>
         <con:encoding>UTF-8</con:encoding>
         <con:endpoint>http://rh0124v:18027/SOAPServiceBinding/BSROS_GenerateQuote_MTA/</con:endpoint>
-        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gen="http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_MTA.3" xmlns:mes="http://www.theaa.com/CommonServices/Data/Message/MessageHeader.2" xmlns:com="http://www.theaa.com/CommonServices/Data/Common" xmlns:prod="http://www.theaa.com/CommonServices/Data/Product.2">
-   <soapenv:Header/>
-   <soapenv:Body>
-      <gen:GenerateQuoteRequest xmlns="http://www.theaa.com/CommonServices/Data/Common" xmlns:ns5="http://www.theaa.com/CommonServices/Data/Common.2">
-         <mes:RequestHeader>
-            <mes:TransactionId>RO-MTA-1712-719</mes:TransactionId>
-            <mes:Version>1.0</mes:Version>
-            <mes:RequestDateTime>${#TestCase#RequestDateTime}</mes:RequestDateTime>
-            <mes:Source>
-               <mes:Domain>SALES</mes:Domain>
-               <mes:Channel>SanityTesting</mes:Channel>
-               <mes:LineOfBusiness>ROS</mes:LineOfBusiness>
-               <mes:Name>Pricing Services</mes:Name>
-               <mes:User>PS Testing</mes:User>
-            </mes:Source>
-         </mes:RequestHeader>
-         <gen:IndicativePriceFlag>true</gen:IndicativePriceFlag>
-         <prod:Currency>GBP</prod:Currency>
-         <gen:TradeUp>false</gen:TradeUp>
-         <gen:ManConYear1>false</gen:ManConYear1>
-         <gen:MTAReason>Make a Change</gen:MTAReason>
-         <gen:MTACode>ABC</gen:MTACode>
-         <gen:FreeMonths>0</gen:FreeMonths>
-         <gen:PaymentType>${658All#Payment type}</gen:PaymentType>
-         <gen:NewProductList>
-            <prod:EffectivePriceDateTime>${658All#MTA Date}T00:00:00</prod:EffectivePriceDateTime>
-            <prod:PolicyStartDateTime>${658All#POLICYSTARTDATE}T00:00:00</prod:PolicyStartDateTime>
-            <prod:PolicyEndDateTime>${658All#POLICYENDDATE}T00:00:00</prod:PolicyEndDateTime>
-            <prod:OfferCodeDetailList>
-               <prod:OfferCodeDetail>
-                  <prod:OfferCode>${658All#Persistent Offer}</prod:OfferCode>
-                  <prod:OfferCodeApplicationLevel>1</prod:OfferCodeApplicationLevel>
-                  <prod:IsPersistent>true</prod:IsPersistent>
-               </prod:OfferCodeDetail>
-                  <prod:OfferCodeDetail>
-                  <prod:OfferCode>${658All#MTA Offer}</prod:OfferCode>
-                  <prod:OfferCodeApplicationLevel>1</prod:OfferCodeApplicationLevel>
-                  <prod:IsPersistent>false</prod:IsPersistent>
-               </prod:OfferCodeDetail>
-            </prod:OfferCodeDetailList>
-            <prod:SourceCode>Natural Search</prod:SourceCode>
-            ${#TestCase#MTA1_New_ProductList_XML}
-            <gen:CoveredPersons>${#TestCase#MTA1NEWCover}</gen:CoveredPersons>
-            ${#TestCase#MTAAgentDiscount_XML}
-            <!--<prod:MultiplyingFactor>${658All#Multiplying Factor}</prod:MultiplyingFactor>-->
-         </gen:NewProductList>
-         <gen:CustomerDetails>
-            <gen:Postcode>RG21 7AS</gen:Postcode>
-            <gen:MembershipStatus>
-               <gen:IsMember>true</gen:IsMember>
-               <gen:MembershipTenure>0</gen:MembershipTenure>
-            </gen:MembershipStatus>
-         </gen:CustomerDetails>
-         ${#TestCase#MTAFeeList_XML}
-         <gen:CurrentPolicyDetails>
-            <prod:PaymentType>${658All#Payment type}</prod:PaymentType>
-            <prod:PolicyStartDateTime>${658All#POLICYSTARTDATE}T00:00:00</prod:PolicyStartDateTime>
-            <prod:PolicyEndDateTime>${658All#POLICYENDDATE}T00:00:00</prod:PolicyEndDateTime>
-            <prod:CoveredPersons>${#TestCase#Cover}</prod:CoveredPersons>
-            <prod:Currency>GBP</prod:Currency>
-            ${#TestCase#RNL_Trans_MTA1_CurrentPolicyPrice_XML}
-         </gen:CurrentPolicyDetails>
-         <gen:TransactionRecordList>
-            <gen:TransactionRecord>
-               <gen:Transaction>${#TestCase#Transaction}</gen:Transaction>
-               <gen:TransactionRequestDateTime>${658All#POLICYSTARTDATE}T00:00:00</gen:TransactionRequestDateTime>
-               <gen:TransactionStartDateTime>${658All#POLICYSTARTDATE}T00:00:00</gen:TransactionStartDateTime>
-               <gen:TransactionProductList>
-                  <prod:PaymentType>${658All#Payment type}</prod:PaymentType>
-                  <prod:CoveredPersons>${#TestCase#Cover}</prod:CoveredPersons>
-                  <prod:Currency>GBP</prod:Currency>
-                  ${#TestCase#RNL_Trans_MTA1_TransPrice_XML}
-                  <prod:SurchargeFeeList>
-                     <prod:SurchargeFee>
-                        <prod:Code>Cancellation1</prod:Code>
-                        <prod:SurchargeRequestType>A</prod:SurchargeRequestType>
-                        <prod:IsWaived>false</prod:IsWaived>
-                        <prod:TaxType>I</prod:TaxType>
-                        <prod:Fee>17.86</prod:Fee>
-                        <prod:FeeTax>2.14</prod:FeeTax>
-                        <prod:TaxPercentage>0.12</prod:TaxPercentage>
-                        <prod:Total>20.0</prod:Total>
-                     </prod:SurchargeFee>
-                     <prod:SurchargeFee>
-                        <prod:Code>Cancellation2</prod:Code>
-                        <prod:SurchargeRequestType>A</prod:SurchargeRequestType>
-                        <prod:IsWaived>false</prod:IsWaived>
-                        <prod:TaxType>I</prod:TaxType>
-                        <prod:Fee>5.36</prod:Fee>
-                        <prod:FeeTax>0.64</prod:FeeTax>
-                        <prod:TaxPercentage>0.12</prod:TaxPercentage>
-                        <prod:Total>6.0</prod:Total>
-                     </prod:SurchargeFee>
-                     <prod:SurchargeFee>
-                        <prod:Code>WillJoinCanx</prod:Code>
-                        <prod:SurchargeRequestType>A</prod:SurchargeRequestType>
-                        <prod:IsWaived>false</prod:IsWaived>
-                        <prod:TaxType>V</prod:TaxType>
-                        <prod:Fee>82.5</prod:Fee>
-                        <prod:FeeTax>16.5</prod:FeeTax>
-                        <prod:TaxPercentage>0.2</prod:TaxPercentage>
-                        <prod:Total>99.0</prod:Total>
-                     </prod:SurchargeFee>
-                  </prod:SurchargeFeeList>
-               </gen:TransactionProductList>
-            </gen:TransactionRecord>
-         </gen:TransactionRecordList>
-      </gen:GenerateQuoteRequest>
-   </soapenv:Body>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gen="http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_MTA.3" xmlns:mes="http://www.theaa.com/CommonServices/Data/Message/MessageHeader.2" xmlns:com="http://www.theaa.com/CommonServices/Data/Common" xmlns:prod="http://www.theaa.com/CommonServices/Data/Product.2">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gen:GenerateQuoteRequest xmlns="http://www.theaa.com/CommonServices/Data/Common" xmlns:ns5="http://www.theaa.com/CommonServices/Data/Common.2">\r
+         <mes:RequestHeader>\r
+            <mes:TransactionId>RO-MTA-1712-719</mes:TransactionId>\r
+            <mes:Version>1.0</mes:Version>\r
+            <mes:RequestDateTime>${#TestCase#RequestDateTime}</mes:RequestDateTime>\r
+            <mes:Source>\r
+               <mes:Domain>SALES</mes:Domain>\r
+               <mes:Channel>SanityTesting</mes:Channel>\r
+               <mes:LineOfBusiness>ROS</mes:LineOfBusiness>\r
+               <mes:Name>Pricing Services</mes:Name>\r
+               <mes:User>PS Testing</mes:User>\r
+            </mes:Source>\r
+         </mes:RequestHeader>\r
+         <gen:IndicativePriceFlag>true</gen:IndicativePriceFlag>\r
+         <prod:Currency>GBP</prod:Currency>\r
+         <gen:TradeUp>false</gen:TradeUp>\r
+         <gen:ManConYear1>false</gen:ManConYear1>\r
+         <gen:MTAReason>Make a Change</gen:MTAReason>\r
+         <gen:MTACode>ABC</gen:MTACode>\r
+         <gen:FreeMonths>0</gen:FreeMonths>\r
+         <gen:PaymentType>${658All#Payment type}</gen:PaymentType>\r
+         <gen:NewProductList>\r
+            <prod:EffectivePriceDateTime>${658All#MTA Date}T00:00:00</prod:EffectivePriceDateTime>\r
+            <prod:PolicyStartDateTime>${658All#POLICYSTARTDATE}T00:00:00</prod:PolicyStartDateTime>\r
+            <prod:PolicyEndDateTime>${658All#POLICYENDDATE}T00:00:00</prod:PolicyEndDateTime>\r
+            <prod:OfferCodeDetailList>\r
+               <prod:OfferCodeDetail>\r
+                  <prod:OfferCode>${658All#Persistent Offer}</prod:OfferCode>\r
+                  <prod:OfferCodeApplicationLevel>1</prod:OfferCodeApplicationLevel>\r
+                  <prod:IsPersistent>true</prod:IsPersistent>\r
+               </prod:OfferCodeDetail>\r
+               <prod:OfferCodeDetail>\r
+                  <prod:OfferCode>${658All#MTA Offer}</prod:OfferCode>\r
+                  <prod:OfferCodeApplicationLevel>1</prod:OfferCodeApplicationLevel>\r
+                  <prod:IsPersistent>false</prod:IsPersistent>\r
+               </prod:OfferCodeDetail>\r
+            </prod:OfferCodeDetailList>\r
+            <prod:SourceCode>Natural Search</prod:SourceCode>\r
+            ${#TestCase#MTA1_New_ProductList_XML}\r
+            <gen:CoveredPersons>${#TestCase#MTA1NEWCover}</gen:CoveredPersons>\r
+            ${#TestCase#MTAAgentDiscount_XML}\r
+            <!--<prod:MultiplyingFactor>${658All#Multiplying Factor}</prod:MultiplyingFactor>-->\r
+         </gen:NewProductList>\r
+         <gen:CustomerDetails>\r
+            <gen:Postcode>RG21 7AS</gen:Postcode>\r
+            <gen:MembershipStatus>\r
+               <gen:IsMember>true</gen:IsMember>\r
+               <gen:MembershipTenure>0</gen:MembershipTenure>\r
+            </gen:MembershipStatus>\r
+         </gen:CustomerDetails>\r
+         ${#TestCase#MTAFeeList_XML}\r
+         <gen:CurrentPolicyDetails>\r
+            <prod:PaymentType>${658All#Payment type}</prod:PaymentType>\r
+            <prod:PolicyStartDateTime>${658All#POLICYSTARTDATE}T00:00:00</prod:PolicyStartDateTime>\r
+            <prod:PolicyEndDateTime>${658All#POLICYENDDATE}T00:00:00</prod:PolicyEndDateTime>\r
+            <prod:CoveredPersons>${#TestCase#Cover}</prod:CoveredPersons>\r
+            <prod:Currency>GBP</prod:Currency>\r
+            ${#TestCase#RNL_Trans_MTA1_CurrentPolicyPrice_XML}\r
+         </gen:CurrentPolicyDetails>\r
+         <gen:TransactionRecordList>\r
+            <gen:TransactionRecord>\r
+               <gen:Transaction>${#TestCase#Transaction}</gen:Transaction>\r
+               <gen:TransactionRequestDateTime>${658All#POLICYSTARTDATE}T00:00:00</gen:TransactionRequestDateTime>\r
+               <gen:TransactionStartDateTime>${658All#POLICYSTARTDATE}T00:00:00</gen:TransactionStartDateTime>\r
+               <gen:TransactionProductList>\r
+                  <prod:PaymentType>${658All#Payment type}</prod:PaymentType>\r
+                  <prod:CoveredPersons>${#TestCase#Cover}</prod:CoveredPersons>\r
+                  <prod:Currency>GBP</prod:Currency>\r
+                  ${#TestCase#RNL_Trans_MTA1_TransPrice_XML}\r
+                  <prod:SurchargeFeeList>\r
+                     <prod:SurchargeFee>\r
+                        <prod:Code>Cancellation1</prod:Code>\r
+                        <prod:SurchargeRequestType>A</prod:SurchargeRequestType>\r
+                        <prod:IsWaived>false</prod:IsWaived>\r
+                        <prod:TaxType>I</prod:TaxType>\r
+                        <prod:Fee>17.86</prod:Fee>\r
+                        <prod:FeeTax>2.14</prod:FeeTax>\r
+                        <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
+                        <prod:Total>20.0</prod:Total>\r
+                     </prod:SurchargeFee>\r
+                     <prod:SurchargeFee>\r
+                        <prod:Code>Cancellation2</prod:Code>\r
+                        <prod:SurchargeRequestType>A</prod:SurchargeRequestType>\r
+                        <prod:IsWaived>false</prod:IsWaived>\r
+                        <prod:TaxType>I</prod:TaxType>\r
+                        <prod:Fee>5.36</prod:Fee>\r
+                        <prod:FeeTax>0.64</prod:FeeTax>\r
+                        <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
+                        <prod:Total>6.0</prod:Total>\r
+                     </prod:SurchargeFee>\r
+                     <prod:SurchargeFee>\r
+                        <prod:Code>WillJoinCanx</prod:Code>\r
+                        <prod:SurchargeRequestType>A</prod:SurchargeRequestType>\r
+                        <prod:IsWaived>false</prod:IsWaived>\r
+                        <prod:TaxType>V</prod:TaxType>\r
+                        <prod:Fee>82.5</prod:Fee>\r
+                        <prod:FeeTax>16.5</prod:FeeTax>\r
+                        <prod:TaxPercentage>0.2</prod:TaxPercentage>\r
+                        <prod:Total>99.0</prod:Total>\r
+                     </prod:SurchargeFee>\r
+                  </prod:SurchargeFeeList>\r
+               </gen:TransactionProductList>\r
+            </gen:TransactionRecord>\r
+         </gen:TransactionRecordList>\r
+      </gen:GenerateQuoteRequest>\r
+   </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
@@ -2296,7 +2323,7 @@ bw.close();</script>
     </con:property>
     <con:property>
       <con:name>RNL_Trans_MTA1_CurrentPolicyPrice_XML</con:name>
-      <con:value><![CDATA[<gen:Product><prod:ProductCode>PRD_UK_0001</prod:ProductCode><prod:ProductPriceName>Roadside</prod:ProductPriceName><gen:PriceList><prod:PolicyPrice><prod:PriceElementType/><prod:PriceBreakdown><prod:CorePrice><prod:NetRate>0.0</prod:NetRate><prod:NetRateTax>0.0</prod:NetRateTax><prod:Commission>51.87</prod:Commission><prod:CommissionTax>6.22</prod:CommissionTax><prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount><prod:TaxPercentage>0.12</prod:TaxPercentage><prod:TaxTotal>6.22</prod:TaxTotal><prod:Total>58.09</prod:Total></prod:CorePrice><prod:ArrangementFee><prod:Fee>31.18</prod:Fee><prod:FeeTax>3.74</prod:FeeTax><prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount><prod:TaxPercentage>0.12</prod:TaxPercentage><prod:Total>34.92</prod:Total></prod:ArrangementFee><prod:OfferCodeDiscountList><prod:OfferCodeDiscount><prod:Code>AAPC10</prod:Code><prod:DiscountApplicationApproach>Product</prod:DiscountApplicationApproach><prod:NetRate>0.0</prod:NetRate><prod:NetRateTax>0.0</prod:NetRateTax><prod:Commission>-8.3</prod:Commission><prod:CommissionTax>-1.0</prod:CommissionTax><prod:ArrangementFee>0.0</prod:ArrangementFee><prod:ArrangementFeeTax>0.0</prod:ArrangementFeeTax><prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount><prod:TaxPercentage>0.12</prod:TaxPercentage><prod:Total>-9.3</prod:Total></prod:OfferCodeDiscount></prod:OfferCodeDiscountList><prod:AccountingTotals><prod:CoreDiscountsTotal>-9.3</prod:CoreDiscountsTotal><prod:CoreDiscountsTaxTotal>-1.0</prod:CoreDiscountsTaxTotal><prod:CoreCommissionDiscountsTotal>-8.3</prod:CoreCommissionDiscountsTotal><prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal><prod:ArrangementFeeGrandDiscountsTotal>0.0</prod:ArrangementFeeGrandDiscountsTotal><prod:ArrangementFeeTaxDiscountsTotal>0.0</prod:ArrangementFeeTaxDiscountsTotal><prod:ArrangementFeeDiscountsTotal>0.0</prod:ArrangementFeeDiscountsTotal></prod:AccountingTotals></prod:PriceBreakdown><prod:TaxType>I</prod:TaxType><prod:TaxDate>2020-02-01T00:00:00</prod:TaxDate><prod:DateInceptedOnPolicy>2020-02-01T00:00:00</prod:DateInceptedOnPolicy><prod:RelativityPriceFactor>1.0</prod:RelativityPriceFactor><prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor><prod:ArrangementFeeTotal>34.92</prod:ArrangementFeeTotal><prod:TotalLessArrangementFeeTotal>48.79</prod:TotalLessArrangementFeeTotal><prod:TotalLessDiscounts>93.01</prod:TotalLessDiscounts><prod:Total>83.71</prod:Total></prod:PolicyPrice></gen:PriceList><prod:InsideCoolingOffFlag>false</prod:InsideCoolingOffFlag><prod:FullRefundFlag>false</prod:FullRefundFlag><prod:PaidPeriods>1</prod:PaidPeriods></gen:Product><gen:Product><prod:ProductCode>PRD_UK_0004</prod:ProductCode><prod:ProductPriceName>Relay</prod:ProductPriceName><gen:PriceList><prod:PolicyPrice><prod:PriceElementType/><prod:PriceBreakdown><prod:CorePrice><prod:NetRate>0.0</prod:NetRate><prod:NetRateTax>0.0</prod:NetRateTax><prod:Commission>43.37</prod:Commission><prod:CommissionTax>5.2</prod:CommissionTax><prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount><prod:TaxPercentage>0.12</prod:TaxPercentage><prod:TaxTotal>5.2</prod:TaxTotal><prod:Total>48.57</prod:Total></prod:CorePrice><prod:ArrangementFee><prod:Fee>8.89</prod:Fee><prod:FeeTax>1.07</prod:FeeTax><prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount><prod:TaxPercentage>0.12</prod:TaxPercentage><prod:Total>9.96</prod:Total></prod:ArrangementFee><prod:OfferCodeDiscountList><prod:OfferCodeDiscount><prod:Code>AAFRRL</prod:Code><prod:DiscountApplicationApproach>Product</prod:DiscountApplicationApproach><prod:NetRate>0.0</prod:NetRate><prod:NetRateTax>0.0</prod:NetRateTax><prod:Commission>-38.15</prod:Commission><prod:CommissionTax>-4.57</prod:CommissionTax><prod:ArrangementFee>-8.9</prod:ArrangementFee><prod:ArrangementFeeTax>-1.06</prod:ArrangementFeeTax><prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount><prod:TaxPercentage>0.12</prod:TaxPercentage><prod:Total>-52.68</prod:Total></prod:OfferCodeDiscount></prod:OfferCodeDiscountList><prod:OfferCodeDiscountList><prod:OfferCodeDiscount><prod:Code>AAPC10</prod:Code><prod:DiscountApplicationApproach>Product</prod:DiscountApplicationApproach><prod:NetRate>0.0</prod:NetRate><prod:NetRateTax>0.0</prod:NetRateTax><prod:Commission>-5.22</prod:Commission><prod:CommissionTax>-0.63</prod:CommissionTax><prod:ArrangementFee>0.0</prod:ArrangementFee><prod:ArrangementFeeTax>0.0</prod:ArrangementFeeTax><prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount><prod:TaxPercentage>0.12</prod:TaxPercentage><prod:Total>-5.85</prod:Total></prod:OfferCodeDiscount></prod:OfferCodeDiscountList><prod:AccountingTotals><prod:CoreDiscountsTotal>-48.57</prod:CoreDiscountsTotal><prod:CoreDiscountsTaxTotal>-5.2</prod:CoreDiscountsTaxTotal><prod:CoreCommissionDiscountsTotal>-43.37</prod:CoreCommissionDiscountsTotal><prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal><prod:ArrangementFeeGrandDiscountsTotal>-9.96</prod:ArrangementFeeGrandDiscountsTotal><prod:ArrangementFeeTaxDiscountsTotal>-1.06</prod:ArrangementFeeTaxDiscountsTotal><prod:ArrangementFeeDiscountsTotal>-8.9</prod:ArrangementFeeDiscountsTotal></prod:AccountingTotals></prod:PriceBreakdown><prod:TaxType>I</prod:TaxType><prod:TaxDate>2020-02-01T00:00:00</prod:TaxDate><prod:DateInceptedOnPolicy>2020-02-01T00:00:00</prod:DateInceptedOnPolicy><prod:RelativityPriceFactor>1.0</prod:RelativityPriceFactor><prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor><prod:ArrangementFeeTotal>0.0</prod:ArrangementFeeTotal><prod:TotalLessArrangementFeeTotal>0.0</prod:TotalLessArrangementFeeTotal><prod:TotalLessDiscounts>58.53</prod:TotalLessDiscounts><prod:Total>0.0</prod:Total></prod:PolicyPrice></gen:PriceList><prod:InsideCoolingOffFlag>false</prod:InsideCoolingOffFlag><prod:FullRefundFlag>false</prod:FullRefundFlag><prod:PaidPeriods>1</prod:PaidPeriods></gen:Product>]]></con:value>
+      <con:value><![CDATA[<gen:Product><prod:ProductCode>PRD_UK_0001</prod:ProductCode><prod:ProductPriceName>Roadside</prod:ProductPriceName><gen:PriceList><prod:PolicyPrice><prod:PriceElementType/><prod:PriceBreakdown><prod:CorePrice><prod:NetRate>0.0</prod:NetRate><prod:NetRateTax>0.0</prod:NetRateTax><prod:Commission>51.87</prod:Commission><prod:CommissionTax>6.22</prod:CommissionTax><prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount><prod:TaxPercentage>0.12</prod:TaxPercentage><prod:TaxTotal>6.22</prod:TaxTotal><prod:Total>58.09</prod:Total></prod:CorePrice><prod:ArrangementFee><prod:Fee>31.18</prod:Fee><prod:FeeTax>3.74</prod:FeeTax><prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount><prod:TaxPercentage>0.12</prod:TaxPercentage><prod:Total>34.92</prod:Total></prod:ArrangementFee><prod:OfferCodeDiscountList><prod:OfferCodeDiscount><prod:Code>AAPC10</prod:Code><prod:DiscountApplicationApproach>Product</prod:DiscountApplicationApproach><prod:NetRate>0.0</prod:NetRate><prod:NetRateTax>0.0</prod:NetRateTax><prod:Commission>-8.3</prod:Commission><prod:CommissionTax>-1.0</prod:CommissionTax><prod:ArrangementFee>0.0</prod:ArrangementFee><prod:ArrangementFeeTax>0.0</prod:ArrangementFeeTax><prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount><prod:TaxPercentage>0.12</prod:TaxPercentage><prod:Total>-9.3</prod:Total></prod:OfferCodeDiscount></prod:OfferCodeDiscountList><prod:AccountingTotals><prod:CoreDiscountsTotal>-9.3</prod:CoreDiscountsTotal><prod:CoreDiscountsTaxTotal>-1.0</prod:CoreDiscountsTaxTotal><prod:CoreCommissionDiscountsTotal>-8.3</prod:CoreCommissionDiscountsTotal><prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal><prod:ArrangementFeeGrandDiscountsTotal>0.0</prod:ArrangementFeeGrandDiscountsTotal><prod:ArrangementFeeTaxDiscountsTotal>0.0</prod:ArrangementFeeTaxDiscountsTotal><prod:ArrangementFeeDiscountsTotal>0.0</prod:ArrangementFeeDiscountsTotal></prod:AccountingTotals></prod:PriceBreakdown><prod:TaxType>I</prod:TaxType><prod:TaxDate>2020-02-01T00:00:00</prod:TaxDate><prod:DateInceptedOnPolicy>2020-02-01T00:00:00</prod:DateInceptedOnPolicy><prod:RelativityPriceFactor>1.0</prod:RelativityPriceFactor><prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor><prod:ArrangementFeeTotal>34.92</prod:ArrangementFeeTotal><prod:TotalLessArrangementFeeTotal>48.79</prod:TotalLessArrangementFeeTotal><prod:TotalLessDiscounts>93.01</prod:TotalLessDiscounts><prod:Total>83.71</prod:Total></prod:PolicyPrice></gen:PriceList><prod:InsideCoolingOffFlag>false</prod:InsideCoolingOffFlag><prod:FullRefundFlag>false</prod:FullRefundFlag><prod:PaidPeriods>1</prod:PaidPeriods></gen:Product><gen:Product><prod:ProductCode>PRD_UK_0004</prod:ProductCode><prod:ProductPriceName>Relay</prod:ProductPriceName><gen:PriceList><prod:PolicyPrice><prod:PriceElementType/><prod:PriceBreakdown><prod:CorePrice><prod:NetRate>0.0</prod:NetRate><prod:NetRateTax>0.0</prod:NetRateTax><prod:Commission>43.37</prod:Commission><prod:CommissionTax>5.2</prod:CommissionTax><prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount><prod:TaxPercentage>0.12</prod:TaxPercentage><prod:TaxTotal>5.2</prod:TaxTotal><prod:Total>48.57</prod:Total></prod:CorePrice><prod:ArrangementFee><prod:Fee>8.89</prod:Fee><prod:FeeTax>1.07</prod:FeeTax><prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount><prod:TaxPercentage>0.12</prod:TaxPercentage><prod:Total>9.96</prod:Total></prod:ArrangementFee><prod:OfferCodeDiscountList><prod:OfferCodeDiscount><prod:Code>AAFRRL</prod:Code><prod:DiscountApplicationApproach>Product</prod:DiscountApplicationApproach><prod:NetRate>0.0</prod:NetRate><prod:NetRateTax>0.0</prod:NetRateTax><prod:Commission>-38.15</prod:Commission><prod:CommissionTax>-4.57</prod:CommissionTax><prod:ArrangementFee>-8.9</prod:ArrangementFee><prod:ArrangementFeeTax>-1.06</prod:ArrangementFeeTax><prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount><prod:TaxPercentage>0.12</prod:TaxPercentage><prod:Total>-52.68</prod:Total></prod:OfferCodeDiscount><prod:OfferCodeDiscount><prod:Code>AAPC10</prod:Code><prod:DiscountApplicationApproach>Product</prod:DiscountApplicationApproach><prod:NetRate>0.0</prod:NetRate><prod:NetRateTax>0.0</prod:NetRateTax><prod:Commission>-5.22</prod:Commission><prod:CommissionTax>-0.63</prod:CommissionTax><prod:ArrangementFee>0.0</prod:ArrangementFee><prod:ArrangementFeeTax>0.0</prod:ArrangementFeeTax><prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount><prod:TaxPercentage>0.12</prod:TaxPercentage><prod:Total>-5.85</prod:Total></prod:OfferCodeDiscount></prod:OfferCodeDiscountList><prod:AccountingTotals><prod:CoreDiscountsTotal>-48.57</prod:CoreDiscountsTotal><prod:CoreDiscountsTaxTotal>-5.2</prod:CoreDiscountsTaxTotal><prod:CoreCommissionDiscountsTotal>-43.37</prod:CoreCommissionDiscountsTotal><prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal><prod:ArrangementFeeGrandDiscountsTotal>-9.96</prod:ArrangementFeeGrandDiscountsTotal><prod:ArrangementFeeTaxDiscountsTotal>-1.06</prod:ArrangementFeeTaxDiscountsTotal><prod:ArrangementFeeDiscountsTotal>-8.9</prod:ArrangementFeeDiscountsTotal></prod:AccountingTotals></prod:PriceBreakdown><prod:TaxType>I</prod:TaxType><prod:TaxDate>2020-02-01T00:00:00</prod:TaxDate><prod:DateInceptedOnPolicy>2020-02-01T00:00:00</prod:DateInceptedOnPolicy><prod:RelativityPriceFactor>1.0</prod:RelativityPriceFactor><prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor><prod:ArrangementFeeTotal>0.0</prod:ArrangementFeeTotal><prod:TotalLessArrangementFeeTotal>0.0</prod:TotalLessArrangementFeeTotal><prod:TotalLessDiscounts>58.53</prod:TotalLessDiscounts><prod:Total>0.0</prod:Total></prod:PolicyPrice></gen:PriceList><prod:InsideCoolingOffFlag>false</prod:InsideCoolingOffFlag><prod:FullRefundFlag>false</prod:FullRefundFlag><prod:PaidPeriods>1</prod:PaidPeriods></gen:Product>]]></con:value>
     </con:property>
     <con:property>
       <con:name>RNL_Trans_MTA1_TransPrice_XML</con:name>
@@ -2356,7 +2383,7 @@ bw.close();</script>
     </con:property>
     <con:property>
       <con:name>ResultFile</con:name>
-      <con:value>N:/Systems_development/RIO/Road MTA-CR-242/Soap UI/Test Results/RCR-658/Results20200129T153410.txt</con:value>
+      <con:value>N:/Systems_development/RIO/Road MTA-CR-242/Soap UI/Test Results/RCR-658/Results20200129T162331.txt</con:value>
     </con:property>
     <con:property>
       <con:name>Reprice</con:name>
@@ -2368,7 +2395,7 @@ bw.close();</script>
     </con:property>
     <con:property>
       <con:name>RenewalFile</con:name>
-      <con:value>N:/Systems_development/RIO/Road MTA-CR-242/Soap UI/Test Results/RCR-658/Renewal20200129T153410.txt</con:value>
+      <con:value>N:/Systems_development/RIO/Road MTA-CR-242/Soap UI/Test Results/RCR-658/Renewal20200129T162331.txt</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
