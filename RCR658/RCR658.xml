@@ -487,7 +487,7 @@ def cover = context.expand( '${658All#ExCover_type}' )
 String delimiters = "\\,|\\&amp;";
 String[] prodArr = productType.split(delimiters);
 StringBuilder Strbld = new StringBuilder()
-def payment = context.expand('${#TestCase#payment}')
+def payment = context.expand('${658All#Payment type}')
 def id = context.expand( '${658#ID}' )
 if(prodArr.length > 0)
 {	
@@ -2354,7 +2354,7 @@ bw.close();</script>
     </con:property>
     <con:property>
       <con:name>ResultFile</con:name>
-      <con:value>N:/Systems_development/RIO/Road MTA-CR-242/Soap UI/Test Results/RCR-658/Results20200129T092728.txt</con:value>
+      <con:value>N:/Systems_development/RIO/Road MTA-CR-242/Soap UI/Test Results/RCR-658/Results20200129T102140.txt</con:value>
     </con:property>
     <con:property>
       <con:name>Reprice</con:name>
@@ -2366,7 +2366,7 @@ bw.close();</script>
     </con:property>
     <con:property>
       <con:name>RenewalFile</con:name>
-      <con:value>N:/Systems_development/RIO/Road MTA-CR-242/Soap UI/Test Results/RCR-658/Renewal20200129T092728.txt</con:value>
+      <con:value>N:/Systems_development/RIO/Road MTA-CR-242/Soap UI/Test Results/RCR-658/Renewal20200129T102140.txt</con:value>
     </con:property>
   </con:properties>
   <con:reportParameters/>
