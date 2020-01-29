@@ -1,0 +1,1573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:WsdlInterface" id="4af15774-4b07-4423-b82a-833777da487b" wsaVersion="NONE" name="SOAPServiceBinding" type="wsdl" bindingName="{http://www.theaa.com/CommonServices/BS/Road/GenerateQuote_RNL_2-concrete}SOAPServiceBinding" soapVersion="1_1" anonymous="optional" definition="../../../../../file:/N:/Systems_development/RIO/Road MTA-CR-242/SOAP UI/WSDL/BSROS_GenerateQuote_RNL-concrete.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="0556be32-ecc6-4a4b-ae69-6e779e5590effileName">SOAPServiceBinding</con:setting>
+    <con:setting id="70f07348-1c98-4538-9e54-7d80cb5729a9fileName">SOAPServiceBinding</con:setting>
+    <con:setting id="4af15774-4b07-4423-b82a-833777da487bfileName">SOAPServiceBinding</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart="file:/N:/Systems_development/RIO/Road MTA-CR-242/SOAP UI/WSDL/BSROS_GenerateQuote_RNL-concrete.wsdl">
+    <con:part>
+      <con:url>file:/N:/Systems_development/RIO/Road MTA-CR-242/SOAP UI/WSDL/BSROS_GenerateQuote_RNL-concrete.wsdl</con:url>
+      <con:content><![CDATA[<wsdl:definitions name="GenerateQuote_RNL" targetNamespace="http://www.theaa.com/CommonServices/BS/Road/GenerateQuote_RNL_2-concrete" xmlns:ns="http://www.theaa.com/CommonServices/BS/Road/GenerateQuote_RNL_2-concrete" xmlns:ns0="http://www.theaa.com/CommonServices/Data/Address" xmlns:ns01="http://www.theaa.com/CommonServices/Data/Message/MessageHeader.2" xmlns:ns012="http://www.theaa.com/CommonServices/Data/Message/Fault.2" xmlns:ns0123="http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_RNL_2" xmlns:ns01234="http://www.theaa.com/CommonServices/Data/Membership.2" xmlns:ns012345="http://www.theaa.com/CommonServices/Data/Common" xmlns:ns0123456="http://www.theaa.com/CommonServices/Data/Common.2" xmlns:ns01234567="http://www.theaa.com/CommonServices/Data/General/Vehicle" xmlns:ns012345678="http://www.theaa.com/CommonServices/Data/Product.2" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.theaa.com/CommonServices/Data/Address" xmlns:tns="http://www.theaa.com/CommonServices/Data/Address">
+      <xsd:element name="HouseName" type="xsd:string"/>
+      <xsd:element name="StreetNumber" type="xsd:string"/>
+      <xsd:element name="Street" type="xsd:string"/>
+      <xsd:element name="Street2" type="xsd:string"/>
+      <xsd:element name="PostTown" type="xsd:string"/>
+      <xsd:element name="County" type="xsd:string"/>
+      <xsd:element name="Postcode" type="xsd:string"/>
+      <xsd:element name="AddressStartDate" type="xsd:date"/>
+      <xsd:element name="AddressEndDate" type="xsd:date"/>
+      <xsd:complexType name="AddressType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:HouseName"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:StreetNumber"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Street"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:Street2"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:PostTown"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Postcode"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:County"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:AddressStartDate"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:AddressEndDate"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.theaa.com/CommonServices/Data/Message/MessageHeader.2" xmlns:com="http://www.theaa.com/CommonServices/Data/Common" xmlns:head="http://www.theaa.com/CommonServices/Data/Message/MessageHeader.2">
+      <xsd:import namespace="http://www.theaa.com/CommonServices/Data/Common"/>
+      <xsd:element name="ApplicationVersion" type="xsd:string"/>
+      <xsd:element name="AuthenticationHeader" type="head:AuthenticationHeaderType"/>
+      <xsd:element name="Channel" type="xsd:string"/>
+      <xsd:element name="Address" type="xsd:string"/>
+      <xsd:element name="Name" type="xsd:string"/>
+      <xsd:element name="Domain" type="xsd:string"/>
+      <xsd:element name="InstanceId" type="xsd:string"/>
+      <xsd:element name="LineOfBusiness" type="head:LineOfBusinessType"/>
+      <xsd:element name="RequestDateTime" type="xsd:dateTime"/>
+      <xsd:element name="RequestHeader" type="head:RequestHeaderType"/>
+      <xsd:element name="ResponseCode" type="xsd:string"/>
+      <xsd:element name="ResponseHeader" type="head:ResponseHeaderType"/>
+      <xsd:element name="ResponseDateTime" type="xsd:dateTime"/>
+      <xsd:element name="Source" type="head:SourceType"/>
+      <xsd:element name="TransactionId" type="xsd:string"/>
+      <xsd:element name="Version" type="xsd:string"/>
+      <xsd:element name="MIContext" type="xsd:string"/>
+      <xsd:element name="User" type="xsd:string"/>
+      <xsd:complexType name="RequestHeaderType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="com:CorrelationId"/>
+          <xsd:element minOccurs="1" ref="head:TransactionId"/>
+          <xsd:element minOccurs="1" ref="head:Version"/>
+          <xsd:element minOccurs="1" ref="head:RequestDateTime"/>
+          <xsd:element minOccurs="1" ref="head:Source"/>
+          <xsd:element minOccurs="0" ref="head:MIContext"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ResponseHeaderType">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" ref="com:CorrelationId"/>
+          <xsd:element minOccurs="1" ref="head:TransactionId"/>
+          <xsd:element minOccurs="1" ref="head:Version"/>
+          <xsd:element minOccurs="1" ref="head:ResponseDateTime"/>
+          <xsd:element minOccurs="1" ref="head:Source"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SourceType">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" ref="head:Domain"/>
+          <xsd:element minOccurs="1" ref="head:Channel"/>
+          <xsd:element minOccurs="1" ref="head:LineOfBusiness"/>
+          <xsd:element minOccurs="1" ref="head:Name"/>
+          <xsd:element minOccurs="0" ref="head:Address"/>
+          <xsd:element minOccurs="0" ref="head:InstanceId"/>
+          <xsd:element minOccurs="0" ref="head:ApplicationVersion"/>
+          <xsd:element minOccurs="0" ref="head:User"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AuthenticationHeaderType">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" name="Username" type="xsd:string"/>
+          <xsd:element minOccurs="1" name="Password" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="PasswordType" type="head:PasswordTypeType"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="MIContextType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="MIContextPair" type="head:MIContextPairType"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="MIContextPairType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Name" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="Value" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="LineOfBusinessType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="EBC"/>
+          <xsd:enumeration value="GEN"/>
+          <xsd:enumeration value="HOM"/>
+          <xsd:enumeration value="HOS"/>
+          <xsd:enumeration value="MOT"/>
+          <xsd:enumeration value="ROS"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="PasswordTypeType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Plain Text"/>
+          <xsd:enumeration value="Encrypted"/>
+          <xsd:enumeration value="X509 Certificate"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.theaa.com/CommonServices/Data/Message/Fault.2" xmlns:head="http://www.theaa.com/CommonServices/Data/Message/MessageHeader.2" xmlns:tns="http://www.theaa.com/CommonServices/Data/Message/Fault.2">
+      <xsd:import namespace="http://www.theaa.com/CommonServices/Data/Message/MessageHeader.2"/>
+      <xsd:element name="Application" type="xsd:string"/>
+      <xsd:element name="ExceptionCode" type="xsd:string"/>
+      <xsd:element name="ExceptionDescription" type="xsd:string"/>
+      <xsd:element name="ExceptionDetails" type="xsd:string"/>
+      <xsd:element name="ExceptionId" type="xsd:string"/>
+      <xsd:element name="ExceptionName" type="xsd:string"/>
+      <xsd:element name="ExceptionTimestamp" type="xsd:dateTime"/>
+      <xsd:element name="Fault" type="tns:FaultType"/>
+      <xsd:element name="FaultContext" type="tns:FaultContextType"/>
+      <xsd:element name="FaultHeader" type="head:ResponseHeaderType"/>
+      <xsd:element name="Hostname" type="xsd:string"/>
+      <xsd:element name="Instance" type="xsd:string"/>
+      <xsd:element name="RootException" type="tns:RootExceptionType"/>
+      <xsd:element name="Severity" type="xsd:string"/>
+      <xsd:element name="BusinessFault" type="tns:BusinessFaultType"/>
+      <xsd:element name="ValidationFault" type="tns:FaultType"/>
+      <xsd:element name="BackEndFault" type="tns:FaultType"/>
+      <xsd:element name="TimeoutFault" type="tns:FaultType"/>
+      <xsd:element name="AuthenticationFault" type="tns:FaultType"/>
+      <xsd:complexType name="FaultType">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" ref="tns:FaultHeader"/>
+          <xsd:element minOccurs="0" ref="tns:Severity"/>
+          <xsd:element minOccurs="1" ref="tns:ExceptionId"/>
+          <xsd:element ref="tns:ExceptionTimestamp"/>
+          <xsd:element minOccurs="0" ref="tns:ExceptionName"/>
+          <xsd:element minOccurs="0" ref="tns:ExceptionDescription"/>
+          <xsd:element minOccurs="0" ref="tns:ExceptionDetails"/>
+          <xsd:element minOccurs="1" ref="tns:RootException"/>
+          <xsd:element minOccurs="0" ref="tns:FaultContext"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BusinessFaultType">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" ref="tns:FaultHeader"/>
+          <xsd:element minOccurs="0" ref="tns:Severity"/>
+          <xsd:element minOccurs="1" ref="tns:ExceptionId"/>
+          <xsd:element ref="tns:ExceptionTimestamp"/>
+          <xsd:element minOccurs="0" ref="tns:ExceptionName"/>
+          <xsd:element ref="tns:ExceptionCode"/>
+          <xsd:element minOccurs="0" ref="tns:ExceptionDescription"/>
+          <xsd:element minOccurs="0" ref="tns:ExceptionDetails"/>
+          <xsd:element minOccurs="1" ref="tns:RootException"/>
+          <xsd:element minOccurs="0" ref="tns:FaultContext"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RootExceptionType">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" ref="tns:ExceptionId"/>
+          <xsd:element minOccurs="0" ref="tns:ExceptionName"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="FaultContextType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:Hostname"/>
+          <xsd:element minOccurs="0" ref="tns:Application"/>
+          <xsd:element minOccurs="0" ref="tns:Instance"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_RNL_2" xmlns:com="http://www.theaa.com/CommonServices/Data/Common.2" xmlns:head="http://www.theaa.com/CommonServices/Data/Message/MessageHeader.2" xmlns:mem="http://www.theaa.com/CommonServices/Data/Membership.2" xmlns:ns1="http://www.theaa.com/CommonServices/Data/General/Vehicle" xmlns:prod="http://www.theaa.com/CommonServices/Data/Product.2" xmlns:tns="http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_RNL_2">
+      <xsd:import namespace="http://www.theaa.com/CommonServices/Data/Message/MessageHeader.2"/>
+      <xsd:import namespace="http://www.theaa.com/CommonServices/Data/Common.2"/>
+      <xsd:import namespace="http://www.theaa.com/CommonServices/Data/Product.2"/>
+      <xsd:import namespace="http://www.theaa.com/CommonServices/Data/General/Vehicle"/>
+      <xsd:import namespace="http://www.theaa.com/CommonServices/Data/Membership.2"/>
+      <xsd:element name="GenerateQuoteRequest" type="tns:GenerateRenewalQuoteRequestType"/>
+      <xsd:element name="GenerateQuoteResponse" type="tns:GenerateRenewalQuoteResponseType"/>
+      <xsd:element name="CoveredPersons" type="xsd:int"/>
+      <xsd:element name="CustomerDetails" type="tns:CustomerDetailsType"/>
+      <xsd:element name="CustomerQuoteReference" type="xsd:string"/>
+      <xsd:element name="ManConYear1" type="xsd:boolean"/>
+      <xsd:element name="PaymentType" type="tns:PaymentTypeType"/>
+      <xsd:element name="Postcode" type="xsd:string"/>
+      <xsd:element name="MembershipTenure" type="xsd:int"/>
+      <xsd:element name="VehicleAge" type="xsd:int"/>
+      <xsd:element name="VehicleAgeList" type="tns:VehicleAgeListType"/>
+      <xsd:element name="VehicleDetails" type="tns:VehicleDetailsType"/>
+      <xsd:element name="VehicleDetailsList" type="tns:VehicleDetailsListType"/>
+      <xsd:element name="RenewalRiskData" type="tns:RenewalRiskData"/>
+      <xsd:element name="MembershipNo" type="xsd:string"/>
+      <xsd:element name="MTAFlag" type="xsd:boolean"/>
+      <xsd:element name="MotorInsuranceFlag" type="xsd:boolean"/>
+      <xsd:element name="InScopeFlexFlag" type="xsd:boolean"/>
+      <xsd:element name="InsuranceHistory" type="xsd:string"/>
+      <xsd:element name="ProductCount" type="xsd:int"/>
+      <xsd:element name="CurrentFlexDetails" type="tns:CurrentFlexDetailsType"/>
+      <xsd:element name="RenewalFlexDetails" type="tns:RenewalFlexDetailsType"/>
+      <xsd:element name="CommunityOrRiskIndicator" type="tns:CommunityOrRiskIndicatorType"/>
+      <xsd:element name="OriginalPrice" type="xsd:decimal"/>
+      <xsd:element name="OriginalPriceUpheld" type="xsd:boolean"/>
+      <xsd:element name="RepriceDetails" type="tns:RepriceDetailsType"/>
+      <xsd:element name="RepriceDetailsResponse" type="tns:RepriceResponseDetailsType"/>
+      <xsd:element name="RepriceThreshold" type="xsd:decimal"/>
+      <xsd:element name="RepriceAction" type="tns:RepriceActionType"/>
+      <xsd:element name="CurrentPolicyDetails" type="tns:CurrentPolicyDetailsType"/>
+      <xsd:element name="PartyList" type="tns:PartyListType"/>
+      <xsd:element name="Party" type="tns:PartyType"/>
+      <xsd:element name="PartyId" type="xsd:string"/>
+      <xsd:element name="NumberOfFreeAssociates" type="xsd:int"/>
+      <xsd:element name="RecordedPaymentType" type="xsd:string"/>
+      <xsd:element name="RecordedPaymentMeans" type="xsd:string"/>
+      <xsd:element name="OptInOfferFlag" type="xsd:boolean"/>
+      <xsd:element name="RenewalFlexDetailsResponse" type="tns:RenewalFlexDetailsResponseType"/>
+      <xsd:element name="LastTransactionRecord" type="tns:LastTransactionRecordType"/>
+      <xsd:element name="TransactionRecord" type="tns:TransactionRecordType"/>
+      <xsd:element name="TransactionType" type="xsd:string"/>
+      <xsd:element name="IndicativePriceFlag" type="xsd:boolean"/>
+      <xsd:complexType name="GenerateRenewalQuoteRequestType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="head:RequestHeader"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:IndicativePriceFlag"/>
+          <xsd:element ref="tns:CurrentFlexDetails"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:RenewalFlexDetails"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:RepriceDetails"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:PaymentType"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="ProductList" type="tns:RequestProductListType"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:CustomerDetails"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SurchargeFee" type="xsd:string"/>
+          <xsd:element minOccurs="0" ref="tns:RenewalRiskData"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:LastTransactionRecord"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RequestProductListType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="prod:EffectivePriceDateTime"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="prod:PolicyStartDateTime"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="prod:PolicyEndDateTime"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="prod:OfferCodeDetailList"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="prod:SourceGroup"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="prod:SourceCode"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="prod:Currency"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:MembershipTenure"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:ManConYear1"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="prod:AssociatesList"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" name="Product" type="prod:RequestProductType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:VehicleAgeList"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:CoveredPersons"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="prod:RequestSurchargeAndFeeList"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="prod:AgentDiscountRequestedList"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CustomerDetailsType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Postcode"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="mem:MembershipNumber"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="VehicleAgeListType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="tns:VehicleAge"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="GenerateRenewalQuoteResponseType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="head:ResponseHeader"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:CustomerQuoteReference"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="RenewalFlexDetails" type="tns:RenewalFlexDetailsResponseType"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:CommunityOrRiskIndicator"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="ProductList" type="prod:ResponseProductListType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="com:QuoteExpiryDate"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:RepriceDetailsResponse"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RenewalRiskData">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:CurrentPolicyDetails"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:InScopeFlexFlag"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:OptInOfferFlag"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CurrentFlexDetailsType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="prod:FlexFactorOnCurrentPolicy"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RenewalFlexDetailsType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="prod:FlexFactor"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="prod:FlexFactorCalculatedFlag"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RenewalFlexDetailsResponseType">
+        <xsd:complexContent>
+          <xsd:extension base="tns:RenewalFlexDetailsType">
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="0" ref="prod:FlexFactorGenerationDetails"/>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="VehicleDetailsListType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="tns:VehicleDetails"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="PartialFreeMembershipFlag" type="xsd:boolean"/>
+      <xsd:complexType name="CurrentPolicyDetailsType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" name="Product" type="prod:RequestProductType"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:PartialFreeMembershipFlag"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:RecordedPaymentType"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:RecordedPaymentMeans"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:PartyList"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:VehicleDetailsList"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PartyListType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="tns:Party"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PartyType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:PartyId"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="MainPolicyHolderFlag" type="xsd:boolean"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="DateOfBirth" type="xsd:date"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="VehicleDetailsType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="ns1:ABIBrokerNetCode"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="ns1:Fuel"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="ns1:DoorPlan"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="ns1:EngineCapacity"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="ns1:YearOfManufacture"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:VehicleAge"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RepriceDetailsType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:RepriceAction"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:OriginalPrice"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="prod:RelatedAdjustmentCode"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:RepriceThreshold"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RepriceResponseDetailsType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:OriginalPriceUpheld"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LastTransactionRecordType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TransactionRecord"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TransactionRecordType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TransactionType"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="TransactionStartDateTime" type="xsd:dateTime"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="ProductList" type="tns:ProductListType"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ProductListType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="prod:PaymentType"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="prod:Currency"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" name="Product" type="tns:ProductType"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="prod:SurchargeFeeList"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ProductType">
+        <xsd:complexContent>
+          <xsd:extension base="prod:ResponseProductType">
+            <xsd:sequence>
+              <xsd:element maxOccurs="1" minOccurs="1" name="ActionDateTime" type="xsd:dateTime"/>
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:simpleType name="PaymentTypeType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="SAP"/>
+          <xsd:enumeration value="RAP"/>
+          <xsd:enumeration value="CMM"/>
+          <xsd:enumeration value="CQM"/>
+          <xsd:enumeration value="M24"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="CommunityOrRiskIndicatorType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Community"/>
+          <xsd:enumeration value="Risk"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="RepriceActionType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="ThresholdReprice"/>
+          <xsd:enumeration value="IPTRecalculation"/>
+          <xsd:enumeration value="MaintainOriginalPrice"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.theaa.com/CommonServices/Data/Membership.2" xmlns:add="http://www.theaa.com/CommonServices/Data/Address" xmlns:common="http://www.theaa.com/CommonServices/Data/Common.2" xmlns:ns="http://www.theaa.com/CommonServices/Data/Membership.2">
+      <xsd:import namespace="http://www.theaa.com/CommonServices/Data/Address"/>
+      <xsd:import namespace="http://www.theaa.com/CommonServices/Data/Common.2"/>
+      <xsd:element name="Membership" type="ns:MembershipType"/>
+      <xsd:element name="MembershipDetails" type="ns:MembershipDetailsType"/>
+      <xsd:element name="PolicyNumber" type="xsd:string"/>
+      <xsd:element name="CustomerId" type="xsd:string"/>
+      <xsd:element name="MemberRegisteredAddress" type="add:AddressType"/>
+      <xsd:element name="MembershipNumber" type="xsd:string"/>
+      <xsd:element name="MembershipCategory" type="xsd:string"/>
+      <xsd:element name="MembershipClass" type="xsd:int"/>
+      <xsd:element name="GoneAwayIndicator" type="common:OptionalBooleanType"/>
+      <xsd:element name="FirstYearOfMembership" type="xsd:int"/>
+      <xsd:element name="CalloutFrequency" type="xsd:int"/>
+      <xsd:element name="CalloutFrequencyIsDefaulted" type="xsd:boolean"/>
+      <xsd:element name="SuspensionCode" type="xsd:string"/>
+      <xsd:element name="MemberHomeAddress" type="add:AddressType"/>
+      <xsd:element name="AAMembership" type="ns:AAMembershipType"/>
+      <xsd:element name="ProductHoldingsIndicator" type="xsd:int"/>
+      <xsd:element name="ProductHoldings" type="ns:ProductHoldingsType"/>
+      <xsd:element name="ProductHolding" type="ns:ProductHoldingType"/>
+      <xsd:element name="ProductName" type="xsd:string"/>
+      <xsd:element name="CoverLevelIndicator" type="xsd:int"/>
+      <xsd:element name="CoverLevel" type="xsd:string"/>
+      <xsd:element name="ProductHoldingIndicator" type="xsd:int"/>
+      <xsd:element name="CardType" type="xsd:string"/>
+      <xsd:element name="EntitlementBenefitId" type="xsd:string"/>
+      <xsd:element name="CoverTypeIndicator" type="xsd:int"/>
+      <xsd:element name="CoverType" type="xsd:string"/>
+      <xsd:complexType name="MembershipType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="ns:MembershipNumber"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="ns:MembershipDetails"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="MembershipDetailsType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="ns:PolicyNumber"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="ns:CustomerId"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="ns:MemberHomeAddress"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="ns:MembershipCategory"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="ns:MembershipClass"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="ns:GoneAwayIndicator"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="ns:FirstYearOfMembership"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="ns:CalloutFrequency"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="ns:SuspensionCode"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AAMembershipType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="ns:MembershipNumber"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="ns:CoverTypeIndicator"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="ns:CoverType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="ns:ProductHoldingsIndicator"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="ns:ProductHoldings"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="ns:FirstYearOfMembership"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="ns:CalloutFrequency"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="ns:CalloutFrequencyIsDefaulted"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="ns:CardType"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ProductHoldingsType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="ns:ProductHolding"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ProductHoldingType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="ns:ProductName"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="ns:EntitlementBenefitId"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="HoldingIndicatorList" type="ns:HoldingIndicatorListType"/>
+      <xsd:element name="HoldingLookup" type="ns:HoldingLookupType"/>
+      <xsd:element name="HoldingLookupList" type="ns:HoldingLookupListType"/>
+      <xsd:complexType name="HoldingIndicatorListType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="ProductHoldingIndicator" type="xsd:integer"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="HoldingLookupType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="ns:HoldingIndicatorList"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="ns:ProductName"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="ns:EntitlementBenefitId"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="HoldingLookupListType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ns:HoldingLookup"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ProductLookupList" type="ns:ProductLookupListType"/>
+      <xsd:element name="ProductLookup" type="ns:ProductLookupType"/>
+      <xsd:element name="ProductNameList" type="ns:ProductNameListType"/>
+      <xsd:complexType name="ProductLookupListType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="ns:ProductLookup"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ProductLookupType">
+        <xsd:sequence>
+          <xsd:element name="ProductIndicator" type="xsd:integer"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="ns:ProductNameList"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ProductNameListType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="ns:ProductName"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.theaa.com/CommonServices/Data/Common" xmlns:tns="http://www.theaa.com/CommonServices/Data/Common">
+      <xsd:element name="AADelphiScore" type="xsd:int"/>
+      <xsd:element name="ABICode" type="tns:ABICodeType"/>
+      <xsd:element name="BuildingScore" type="xsd:int"/>
+      <xsd:element name="ContentsScore" type="xsd:int"/>
+      <xsd:element name="CorrelationId" type="xsd:string"/>
+      <xsd:element name="CustomerQuoteReference" type="xsd:string"/>
+      <xsd:element name="Delphi" type="tns:DelphiType"/>
+      <xsd:element name="DelphiCacheKey" type="xsd:string"/>
+      <xsd:element name="DelphiScore" type="xsd:int"/>
+      <xsd:element name="DelphiVerificationLevel" type="xsd:string"/>
+      <xsd:element name="Domain" type="xsd:string"/>
+      <xsd:element name="Payload" type="tns:PayloadType"/>
+      <xsd:element name="PayloadText" type="tns:PayloadTextType"/>
+      <xsd:element name="WhereDidYouHearAboutUs" type="xsd:string"/>
+      <xsd:element name="XmlString" type="xsd:string"/>
+      <xsd:complexType name="DelphiType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:DelphiScore"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:AADelphiScore"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:DelphiVerificationLevel"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:DelphiCacheKey"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:BuildingScore"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:ContentsScore"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="MonetaryType">
+        <xsd:sequence>
+          <xsd:element name="Amount" type="xsd:decimal"/>
+          <xsd:element name="Currency" type="tns:CurrencyType"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ABICodeType">
+        <xsd:simpleContent>
+          <xsd:extension base="xsd:string">
+            <xsd:attribute form="unqualified" name="IsAACode" type="xsd:boolean" use="optional"/>
+          </xsd:extension>
+        </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:simpleType name="ProductType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Motor"/>
+          <xsd:enumeration value="Home"/>
+          <xsd:enumeration value="Road"/>
+          <xsd:enumeration value="Travel"/>
+          <xsd:enumeration value="HER"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="OptionalBooleanType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="false"/>
+          <xsd:enumeration value="true"/>
+          <xsd:enumeration value="unknown"/>
+          <xsd:enumeration value="notGiven"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="CurrencyType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="GBP"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="CountryType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="UK"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="PayloadType">
+        <xsd:sequence>
+          <xsd:any minOccurs="0" namespace="##any" processContents="skip"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PayloadTextType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:XmlString"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.theaa.com/CommonServices/Data/Common.2" xmlns:tns="http://www.theaa.com/CommonServices/Data/Common.2">
+      <xsd:element name="Delphi" type="tns:MotorDelphiType"/>
+      <xsd:element name="DelphiScore" type="xsd:int"/>
+      <xsd:element name="AADelphiScore" type="xsd:int"/>
+      <xsd:element name="BuildingsDelphiScore" type="xsd:int"/>
+      <xsd:element name="ContentsDelphiScore" type="xsd:int"/>
+      <xsd:element name="DelphiCacheKey" type="xsd:string"/>
+      <xsd:element name="WhereDidYouHearAboutUs" type="xsd:string"/>
+      <xsd:element name="CustomerQuoteReference" type="xsd:string"/>
+      <xsd:element name="CorrelationId" type="xsd:string"/>
+      <xsd:element name="Domain" type="xsd:string"/>
+      <xsd:element name="ABICode" type="tns:ABICodeType"/>
+      <xsd:element name="DelphiVerificationLevel" type="xsd:string"/>
+      <xsd:element name="Payload" type="tns:PayloadType"/>
+      <xsd:element name="XmlString" type="xsd:string"/>
+      <xsd:element name="QuoteExpiryDate" type="xsd:date"/>
+      <xsd:complexType name="HomeDelphiType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:DelphiScore"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:AADelphiScore"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:BuildingsDelphiScore"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:ContentsDelphiScore"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:DelphiVerificationLevel"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:DelphiCacheKey"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="MotorDelphiType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:DelphiScore"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:AADelphiScore"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:DelphiVerificationLevel"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:DelphiCacheKey"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="MonetaryType">
+        <xsd:sequence>
+          <xsd:element name="Amount" type="xsd:decimal"/>
+          <xsd:element name="Currency" type="tns:CurrencyType"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ABICodeType">
+        <xsd:simpleContent>
+          <xsd:extension base="xsd:string">
+            <xsd:attribute form="unqualified" name="IsAACode" type="xsd:boolean" use="optional"/>
+          </xsd:extension>
+        </xsd:simpleContent>
+      </xsd:complexType>
+      <xsd:simpleType name="ProductType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Motor"/>
+          <xsd:enumeration value="Home"/>
+          <xsd:enumeration value="Road"/>
+          <xsd:enumeration value="Travel"/>
+          <xsd:enumeration value="HER"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="OptionalBooleanType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="false"/>
+          <xsd:enumeration value="true"/>
+          <xsd:enumeration value="unknown"/>
+          <xsd:enumeration value="notGiven"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="CurrencyType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="GBP"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="CountryType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="UK"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="PayloadType">
+        <xsd:sequence>
+          <xsd:any minOccurs="0" namespace="##any" processContents="skip"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PayloadTextType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:XmlString"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="NameValuePairType">
+        <xsd:sequence maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="NameValuePair">
+            <xsd:complexType>
+              <xsd:sequence maxOccurs="1" minOccurs="1">
+                <xsd:element maxOccurs="1" minOccurs="1" name="Name" type="xsd:string"/>
+                <xsd:element maxOccurs="1" minOccurs="1" name="Value" type="xsd:string"/>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.theaa.com/CommonServices/Data/General/Vehicle" xmlns:com="http://www.theaa.com/CommonServices/Data/Common" xmlns:tns="http://www.theaa.com/CommonServices/Data/General/Vehicle">
+      <xsd:import namespace="http://www.theaa.com/CommonServices/Data/Common"/>
+      <xsd:element name="VehicleRegistrationMark" type="xsd:string"/>
+      <xsd:element name="VINSerialNumber" type="xsd:string"/>
+      <xsd:element name="VehicleFoundFlag" type="xsd:boolean"/>
+      <xsd:element name="VehicleRegistrationDetails" type="tns:VehicleRegistrationDetailsType"/>
+      <xsd:element name="VehicleWeightAndDimensionDetails" type="tns:VehicleWeightAndDimensionDetailsType"/>
+      <xsd:element name="VehicleCategory" type="xsd:string"/>
+      <xsd:element name="DateOfTransaction" type="xsd:date"/>
+      <xsd:element name="YearOfManufacture" type="xsd:string"/>
+      <xsd:element name="DoorPlan" type="tns:CodeAndDescriptionType"/>
+      <xsd:element name="DateFirstRegistered" type="xsd:date"/>
+      <xsd:element name="UKDateFirstRegistered" type="xsd:date"/>
+      <xsd:element name="UsedBeforeFirstReg" type="xsd:boolean"/>
+      <xsd:element name="VINConfirmationFlag" type="xsd:string"/>
+      <xsd:element name="NoOfSeats" type="xsd:int"/>
+      <xsd:element name="SeatingCapacity" type="xsd:int"/>
+      <xsd:element name="MakeAndModelDetails" type="tns:MakeAndModelDetailsType"/>
+      <xsd:element name="Transmission" type="tns:CodeAndDescriptionType"/>
+      <xsd:element name="Fuel" type="tns:CodeAndDescriptionType"/>
+      <xsd:element name="Gears" type="xsd:int"/>
+      <xsd:element name="DVLAWheelPlan" type="tns:CodeAndDescriptionType"/>
+      <xsd:element name="EngineDetails" type="tns:EngineDetailsType"/>
+      <xsd:element name="ABIBrokerNetCode" type="com:ABICodeType"/>
+      <xsd:element name="Scrapped" type="xsd:string"/>
+      <xsd:element name="DateScrapped" type="xsd:date"/>
+      <xsd:element name="Exported" type="xsd:string"/>
+      <xsd:element name="DateExported" type="xsd:date"/>
+      <xsd:element name="Imported" type="xsd:string"/>
+      <xsd:element name="ImportedNonEU" type="xsd:string"/>
+      <xsd:element name="NIVRM" type="xsd:string"/>
+      <xsd:element name="GBVRM" type="xsd:string"/>
+      <xsd:element name="CO2Emissions" type="xsd:string"/>
+      <xsd:element name="GrossWeight" type="tns:WeightType"/>
+      <xsd:element name="MaxPermissibleMass" type="tns:WeightType"/>
+      <xsd:element name="BodyShape" type="xsd:string"/>
+      <xsd:element name="GrossCombinedWeight" type="tns:WeightType"/>
+      <xsd:element name="GrossTrainWeight" type="tns:WeightType"/>
+      <xsd:element name="GrossVehicleWeight" type="tns:WeightType"/>
+      <xsd:element name="Height" type="xsd:string"/>
+      <xsd:element name="KerbWeight" type="tns:WeightType"/>
+      <xsd:element name="CarLength" type="xsd:string"/>
+      <xsd:element name="LoadLength" type="xsd:string"/>
+      <xsd:element name="NoOfAxles" type="xsd:int"/>
+      <xsd:element name="PayloadVolume" type="xsd:string"/>
+      <xsd:element name="PayloadWeight" type="tns:WeightType"/>
+      <xsd:element name="RigidArtic" type="xsd:string"/>
+      <xsd:element name="UnladenWeight" type="tns:WeightType"/>
+      <xsd:element name="WheelBase" type="xsd:string"/>
+      <xsd:element name="Width" type="xsd:string"/>
+      <xsd:element name="Make" type="tns:CodeAndDescriptionType"/>
+      <xsd:element name="Model" type="xsd:string"/>
+      <xsd:element name="MakeModel" type="xsd:string"/>
+      <xsd:element name="Colour" type="xsd:string"/>
+      <xsd:element name="MVRISMakeCode" type="xsd:string"/>
+      <xsd:element name="MVRISModelCode" type="xsd:string"/>
+      <xsd:element name="DTPMakeCode" type="xsd:string"/>
+      <xsd:element name="DTPModelCode" type="xsd:string"/>
+      <xsd:element name="EngineCapacity" type="xsd:int"/>
+      <xsd:element name="EngineNumber" type="xsd:string"/>
+      <xsd:complexType name="VehicleRegistrationDetailsType">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" ref="tns:VehicleRegistrationMark"/>
+          <xsd:element minOccurs="0" ref="tns:VehicleCategory"/>
+          <xsd:element minOccurs="0" ref="tns:DateOfTransaction"/>
+          <xsd:element minOccurs="0" ref="tns:YearOfManufacture"/>
+          <xsd:element minOccurs="0" ref="tns:DateFirstRegistered"/>
+          <xsd:element minOccurs="0" ref="tns:UKDateFirstRegistered"/>
+          <xsd:element minOccurs="0" ref="tns:UsedBeforeFirstReg"/>
+          <xsd:element minOccurs="0" ref="tns:VINConfirmationFlag"/>
+          <xsd:element minOccurs="0" ref="tns:VINSerialNumber"/>
+          <xsd:element minOccurs="0" ref="tns:MakeAndModelDetails"/>
+          <xsd:element minOccurs="0" ref="tns:EngineDetails"/>
+          <xsd:element minOccurs="0" ref="tns:ABIBrokerNetCode"/>
+          <xsd:element minOccurs="0" ref="tns:Scrapped"/>
+          <xsd:element minOccurs="0" ref="tns:DateScrapped"/>
+          <xsd:element minOccurs="0" ref="tns:Exported"/>
+          <xsd:element minOccurs="0" ref="tns:DateExported"/>
+          <xsd:element minOccurs="0" ref="tns:Imported"/>
+          <xsd:element minOccurs="0" ref="tns:ImportedNonEU"/>
+          <xsd:element minOccurs="0" ref="tns:NIVRM"/>
+          <xsd:element minOccurs="0" ref="tns:GBVRM"/>
+          <xsd:element minOccurs="0" ref="tns:GrossWeight"/>
+          <xsd:element minOccurs="0" ref="tns:MaxPermissibleMass"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="VehicleWeightAndDimensionDetailsType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:BodyShape"/>
+          <xsd:element minOccurs="0" ref="tns:GrossCombinedWeight"/>
+          <xsd:element minOccurs="0" ref="tns:GrossTrainWeight"/>
+          <xsd:element minOccurs="0" ref="tns:GrossVehicleWeight"/>
+          <xsd:element minOccurs="0" ref="tns:Height"/>
+          <xsd:element minOccurs="0" ref="tns:KerbWeight"/>
+          <xsd:element minOccurs="0" ref="tns:CarLength"/>
+          <xsd:element minOccurs="0" ref="tns:LoadLength"/>
+          <xsd:element minOccurs="0" ref="tns:NoOfAxles"/>
+          <xsd:element minOccurs="0" ref="tns:NoOfSeats"/>
+          <xsd:element minOccurs="0" ref="tns:PayloadVolume"/>
+          <xsd:element minOccurs="0" ref="tns:PayloadWeight"/>
+          <xsd:element minOccurs="0" ref="tns:RigidArtic"/>
+          <xsd:element minOccurs="0" ref="tns:UnladenWeight"/>
+          <xsd:element minOccurs="0" ref="tns:WheelBase"/>
+          <xsd:element minOccurs="0" ref="tns:Width"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CodeAndDescriptionType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="Code" type="xsd:string"/>
+          <xsd:element minOccurs="0" name="Description" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="MakeAndModelDetailsType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:Make"/>
+          <xsd:element minOccurs="0" ref="tns:Model"/>
+          <xsd:element minOccurs="0" ref="tns:MakeModel"/>
+          <xsd:element minOccurs="0" ref="tns:Colour"/>
+          <xsd:element minOccurs="0" ref="tns:SeatingCapacity"/>
+          <xsd:element minOccurs="0" ref="tns:DoorPlan"/>
+          <xsd:element minOccurs="0" ref="tns:DVLAWheelPlan"/>
+          <xsd:element minOccurs="0" ref="tns:MVRISMakeCode"/>
+          <xsd:element minOccurs="0" ref="tns:MVRISModelCode"/>
+          <xsd:element minOccurs="0" ref="tns:DTPMakeCode"/>
+          <xsd:element minOccurs="0" ref="tns:DTPModelCode"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="EngineDetailsType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:Transmission"/>
+          <xsd:element minOccurs="0" ref="tns:Fuel"/>
+          <xsd:element minOccurs="0" ref="tns:Gears"/>
+          <xsd:element minOccurs="0" ref="tns:EngineCapacity"/>
+          <xsd:element minOccurs="0" ref="tns:EngineNumber"/>
+          <xsd:element minOccurs="0" ref="tns:CO2Emissions"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="WeightType">
+        <xsd:restriction base="xsd:int"/>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.theaa.com/CommonServices/Data/Product.2" xmlns:com="http://www.theaa.com/CommonServices/Data/Common" xmlns:tns="http://www.theaa.com/CommonServices/Data/Product.2">
+      <xsd:import namespace="http://www.theaa.com/CommonServices/Data/Common"/>
+      <xsd:element name="AdditionalData" type="tns:AdditionalDataType"/>
+      <xsd:element name="AgentDiscount" type="tns:AgentDiscountPriceType"/>
+      <xsd:element name="AgentDiscountCode" type="xsd:string"/>
+      <xsd:element name="AgentDiscountList" type="tns:AgentDiscountListType"/>
+      <xsd:element name="AgentDiscountRequested" type="tns:AgentDiscountRequestedType"/>
+      <xsd:element name="AgentDiscountRequestedList" type="tns:AgentDiscountRequestedListType"/>
+      <xsd:element name="AgentDiscountType" type="xsd:string"/>
+      <xsd:element name="AgentDiscountValue" type="xsd:decimal"/>
+      <xsd:element name="APRPercentage" type="xsd:decimal"/>
+      <xsd:element name="ArrangementFee" type="xsd:decimal"/>
+      <xsd:element name="ArrangementFeeTax" type="xsd:decimal"/>
+      <xsd:element name="Associate" type="tns:AssociateType"/>
+      <xsd:element name="AssociatesList" type="tns:AssociatesListType"/>
+      <xsd:element name="AssociateType" type="xsd:string"/>
+      <xsd:element name="AmountDeltaOnRenewalPrice" type="xsd:decimal"/>
+      <xsd:element name="AverageQuotedRenewalDetails" type="tns:AverageQuotedRenewalDetailsType"/>
+      <xsd:element name="BestPrice" type="xsd:decimal"/>
+      <xsd:element name="BreakdownCalloutCount" type="xsd:int"/>
+      <xsd:element name="BuildingsInsuranceNumberOfAddons" type="xsd:int"/>
+      <xsd:element name="BuildingsInsuranceNumberOfPolicies" type="xsd:int"/>
+      <xsd:element name="BuildingsInsuranceTenure" type="xsd:int"/>
+      <xsd:element name="BuildingsInsuranceType" type="tns:InsuranceType"/>
+      <xsd:element name="CalculatedDeposit" type="xsd:decimal"/>
+      <xsd:element name="CalculatedFinalInstalmentPremium" type="xsd:decimal"/>
+      <xsd:element name="CalculatedOneOffInstalmentPremium" type="xsd:decimal"/>
+      <xsd:element name="CalculatedRegularInstalmentPremium" type="xsd:decimal"/>
+      <xsd:element name="CalculatedTotalAPR" type="xsd:decimal"/>
+      <xsd:element name="CardFees" type="tns:CardFees"/>
+      <xsd:element name="ChampionChallengerIndicator" type="xsd:string"/>
+      <xsd:element name="Code" type="xsd:string"/>
+      <xsd:element name="Commission" type="xsd:decimal"/>
+      <xsd:element name="CommissionTax" type="xsd:decimal"/>
+      <xsd:element name="CommunityOrRiskIndicator" type="tns:CommunityOrRiskIndicatorType"/>
+      <xsd:element name="ContentsInsuranceNumberOfAddons" type="xsd:int"/>
+      <xsd:element name="ContentsInsuranceNumberOfPolicies" type="xsd:int"/>
+      <xsd:element name="ContentsInsuranceTenure" type="xsd:int"/>
+      <xsd:element name="ContentsInsuranceType" type="tns:InsuranceType"/>
+      <xsd:element name="CorePrice" type="tns:CorePriceType"/>
+      <xsd:element name="Coverage" type="tns:CoverageType"/>
+      <xsd:element name="CoverageCode" type="xsd:string"/>
+      <xsd:element name="CoverageList" type="tns:CoverageListType"/>
+      <xsd:element name="CoveredPersons" type="xsd:int"/>
+      <xsd:element name="Currency" type="xsd:string"/>
+      <xsd:element name="DateInceptedOnPolicy" type="xsd:dateTime"/>
+      <xsd:element name="DiscountApplicationApproach" type="tns:DiscountApplicationApproachType"/>
+      <xsd:element name="DiscountCode" type="xsd:string"/>
+      <xsd:element name="DiscountCategory" type="tns:DiscountCategoryType"/>
+      <xsd:element name="DiscountSubCategory" type="tns:DiscountSubCategoryType"/>
+      <xsd:element name="EffectivePriceDateTime" type="xsd:dateTime"/>
+      <xsd:element name="ExtrapolationFactor" type="xsd:decimal"/>
+      <xsd:element name="Fee" type="xsd:decimal"/>
+      <xsd:element name="FeeTax" type="xsd:decimal"/>
+      <xsd:element name="FlexFactor" type="xsd:decimal"/>
+      <xsd:element name="FlexFactorCalculatedFlag" type="xsd:boolean"/>
+      <xsd:element name="FlexFactorOnCurrentPolicy" type="xsd:decimal"/>
+      <xsd:element name="FlexFactorGenerationDetails" type="tns:FlexFactorGenerationDetailsType"/>
+      <xsd:element name="FlexStrategy" type="xsd:string"/>
+      <xsd:element name="HomeMembershipCentralHeatingNumberOfPolicies" type="xsd:int"/>
+      <xsd:element name="HomeMembershipCentralHeatingTenure" type="xsd:int"/>
+      <xsd:element name="HomeMembershipCentralHeatingType" type="tns:HomeType"/>
+      <xsd:element name="HomeMembershipHomeNumberOfPolicies" type="xsd:int"/>
+      <xsd:element name="HomeMembershipHomeTenure" type="xsd:int"/>
+      <xsd:element name="HomeMembershipHomeType" type="tns:HomeType"/>
+      <xsd:element name="InternallyFundedDiscount" type="xsd:decimal"/>
+      <xsd:element name="InternallyFundedDiscountTax" type="xsd:decimal"/>
+      <xsd:element name="IsIntegrated" type="xsd:boolean"/>
+      <xsd:element name="IsWaived" type="xsd:boolean"/>
+      <xsd:element name="Limit" type="tns:LimitType"/>
+      <xsd:element name="LimitList" type="tns:LimitListType"/>
+      <xsd:element name="MotorInsuranceNumberOfAddons" type="xsd:int"/>
+      <xsd:element name="MotorInsuranceNumberOfPolicies" type="xsd:int"/>
+      <xsd:element name="MotorInsuranceTenure" type="xsd:int"/>
+      <xsd:element name="MotorInsuranceType" type="tns:MotorInsuranceTypeType"/>
+      <xsd:element name="MultiProductDiscount" type="tns:MultiProductDiscountType"/>
+      <xsd:element name="NetRate" type="xsd:decimal"/>
+      <xsd:element name="NetRateTax" type="xsd:decimal"/>
+      <xsd:element name="NumberOfFreeAssociates" type="xsd:int"/>
+      <xsd:element name="OfferCode" type="xsd:string"/>
+      <xsd:element name="OfferCodeApplicationLevel" type="xsd:int"/>
+      <xsd:element name="OfferCodeDiscount" type="tns:OfferCodeDiscountPriceType"/>
+      <xsd:element name="OfferCodeDiscountList" type="tns:OfferCodeDiscountListType"/>
+      <xsd:element name="OfferCodeDetail" type="tns:OfferCodeDetailType"/>
+      <xsd:element name="OfferCodeDetailList" type="tns:OfferCodeDetailListType"/>
+      <xsd:element name="PaymentType" type="xsd:string"/>
+      <xsd:element name="PolicyEndDateTime" type="xsd:dateTime"/>
+      <xsd:element name="PolicyPrice" type="tns:PolicyPriceType"/>
+      <xsd:element name="PolicyStartDateTime" type="xsd:dateTime"/>
+      <xsd:element name="PreCalculatedOfferCodeDetail" type="tns:PreCalculatedOfferCodeDetailType"/>
+      <xsd:element name="PreCalculatedOfferCodeDetailList" type="tns:PreCalculatedOfferCodeDetailListType"/>
+      <xsd:element name="Price" type="tns:PriceType"/>
+      <xsd:element name="PriceBreakdown" type="tns:PriceTypeType"/>
+      <xsd:element name="PriceElementType" type="xsd:string"/>
+      <xsd:element name="PriceList" type="tns:PriceListType"/>
+      <xsd:element name="PriceTypeList" type="tns:PriceTypeListType"/>
+      <xsd:element name="ProductCode" type="xsd:string"/>
+      <xsd:element name="RateVersion" type="xsd:decimal"/>
+      <xsd:element name="RelatedAdjustmentCode" type="xsd:string"/>
+      <xsd:element name="RelatedOfferCode" type="xsd:string"/>
+      <xsd:element name="RequestSurchargeAndFeeList" type="tns:RequestSurchargeAndFeeListType"/>
+      <xsd:element name="RequestSurchargesAndFees" type="tns:RequestSurchargeAndFeeListType"/>
+      <xsd:element name="RoadMembershipClass" type="tns:RoadMembershipClassType"/>
+      <xsd:element name="RoadMembershipNumberOfPolicies" type="xsd:int"/>
+      <xsd:element name="RoadMembershipProvenanceGroup" type="xsd:string"/>
+      <xsd:element name="RoadMembershipTenure" type="xsd:int"/>
+      <xsd:element name="RoadMembershipType" type="tns:RoadMembershipTypeType"/>
+      <xsd:element name="RenewalPrice" type="xsd:decimal"/>
+      <xsd:element name="RenewalStartDate" type="xsd:dateTime"/>
+      <xsd:element name="RenewalEndDate" type="xsd:dateTime"/>
+      <xsd:element name="SourceCode" type="xsd:string"/>
+      <xsd:element name="SourceGroup" type="xsd:string"/>
+      <xsd:element name="SurchargeFee" type="tns:SurchargeFeePriceType"/>
+      <xsd:element name="SurchargeFeeList" type="tns:SurchargeFeeListType"/>
+      <xsd:element name="SurchargeOrFee" type="tns:RequestSurchargesAndFeesType"/>
+      <xsd:element name="SurchargeOrFeeCode" type="xsd:string"/>
+      <xsd:element name="SurchargeRequestType" type="xsd:string"/>
+      <xsd:element name="SystemDiscount" type="tns:SystemDiscountPriceType"/>
+      <xsd:element name="SystemDiscountList" type="tns:SystemDiscountListType"/>
+      <xsd:element name="TaxPercentage" type="xsd:decimal"/>
+      <xsd:element name="TaxType" type="xsd:string"/>
+      <xsd:element name="Total" type="xsd:decimal"/>
+      <xsd:element name="TotalIPT" type="xsd:decimal"/>
+      <xsd:element name="TotalNumberofAACrossholdings" type="xsd:int"/>
+      <xsd:element name="TotalPriceBreakdown" type="tns:TotalPriceBreakdownType"/>
+      <xsd:element name="PolicyTotalPriceBreakdown" type="tns:TotalPriceBreakdownType"/>
+      <xsd:element name="TotalVAT" type="xsd:decimal"/>
+      <xsd:element name="Type" type="xsd:string"/>
+      <xsd:element name="Value" type="xsd:string"/>
+      <xsd:element name="WaivedReason" type="xsd:string"/>
+      <xsd:element name="TotalNumberOfInstalments" type="xsd:int"/>
+      <xsd:element name="InsideCoolingOffFlag" type="xsd:boolean"/>
+      <xsd:element name="FullRefundFlag" type="xsd:boolean"/>
+      <xsd:element name="ProductPriceName" type="xsd:string"/>
+      <xsd:element name="ProductElement" type="xsd:string"/>
+      <xsd:element name="ProductParentName" type="xsd:string"/>
+      <xsd:element name="TaxDate" type="xsd:dateTime"/>
+      <xsd:element name="RelativityPriceFactor" type="xsd:decimal"/>
+      <xsd:element name="VehicleAgeList" type="tns:VehicleAgeListType"/>
+      <xsd:element name="VehicleAge" type="xsd:integer"/>
+      <xsd:element name="TotalExcludingDiscounts" type="xsd:decimal"/>
+      <xsd:element name="DiscountTotal" type="xsd:decimal"/>
+      <xsd:element name="BaseCoverTotal" type="xsd:decimal"/>
+      <xsd:element name="TotalArrangementFee" type="xsd:decimal"/>
+      <xsd:element name="TaxTotal" type="xsd:decimal"/>
+      <xsd:element name="AccountingTotals" type="tns:AccountingTotalsType"/>
+      <xsd:element name="CoreDiscountsTotal" type="xsd:decimal"/>
+      <xsd:element name="CoreDiscountsTaxTotal" type="xsd:decimal"/>
+      <xsd:element name="CoreCommissionDiscountsTotal" type="xsd:decimal"/>
+      <xsd:element name="CoreNetRateDiscountsTotal" type="xsd:decimal"/>
+      <xsd:element name="ArrangementFeeDiscountsTotal" type="xsd:decimal"/>
+      <xsd:element name="ArrangementFeeTaxDiscountsTotal" type="xsd:decimal"/>
+      <xsd:element name="ArrangementFeeGrandDiscountsTotal" type="xsd:decimal"/>
+      <xsd:element name="ProductType" type="xsd:string"/>
+      <xsd:element name="SurchargeFeeTotal" type="xsd:decimal"/>
+      <xsd:element name="TotalLessTotalAAFAndTotalAddons" type="xsd:decimal"/>
+      <xsd:element name="TotalLessArrangementFeeTotal" type="xsd:decimal"/>
+      <xsd:element name="TotalLessDiscounts" type="xsd:decimal"/>
+      <xsd:element name="TotalLessSurchargeFees" type="xsd:decimal"/>
+      <xsd:element name="TotalLessArrangementFees" type="xsd:decimal"/>
+      <xsd:element name="BaseCoverTotalLessDiscounts" type="xsd:decimal"/>
+      <xsd:element name="BaseCoverArrangementFeeTotal" type="xsd:decimal"/>
+      <xsd:element name="ArrangementFeeTotal" type="xsd:decimal"/>
+      <xsd:complexType name="RequestProductType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ProductCode"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:CoverageList"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CoverageListType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="tns:Coverage"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CoverageType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:CoverageCode"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:LimitList"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:AdditionalData"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LimitListType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="tns:Limit"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LimitType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Type"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Value"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RequestSurchargeAndFeeListType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="tns:SurchargeOrFee"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RequestSurchargesAndFeesType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:SurchargeRequestType"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:IsWaived"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:WaivedReason"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:SurchargeOrFeeCode"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ResponseProductListType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" name="Payment" type="tns:PaymentType"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PaymentType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:PaymentType"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Currency"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" name="Product" type="tns:ResponseProductType"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="tns:SurchargeFeeList"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TotalPriceBreakdown"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:PolicyTotalPriceBreakdown"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:BestPrice"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:CalculatedDeposit"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:CalculatedTotalAPR"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:CalculatedRegularInstalmentPremium"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:CalculatedOneOffInstalmentPremium"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ResponseProductType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ProductCode"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ProductPriceName"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="PriceList" type="tns:ResponsePriceListType"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PriceListType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="tns:Price"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ResponsePriceListType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="tns:Price"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="tns:PolicyPrice"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PriceType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:PriceElementType"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:PriceBreakdown"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TaxType"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TaxDate"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:DateInceptedOnPolicy"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:RelativityPriceFactor"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ExtrapolationFactor"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrangementFeeTotal"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TotalLessArrangementFeeTotal"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TotalLessDiscounts"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Total"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PolicyPriceType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:PriceElementType"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:PriceBreakdown"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TaxType"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TaxDate"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:DateInceptedOnPolicy"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:RelativityPriceFactor"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ExtrapolationFactor"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrangementFeeTotal"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TotalLessArrangementFeeTotal"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TotalLessDiscounts"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Total"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PriceTypeListType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" name="PriceType" type="tns:PriceTypeType"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PriceTypeType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:CorePrice"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="ArrangementFee" type="tns:ArrangementFeePriceType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:OfferCodeDiscountList"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:AgentDiscountList"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:SystemDiscountList"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:AccountingTotals"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AccountingTotalsType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:CoreDiscountsTotal"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:CoreDiscountsTaxTotal"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:CoreCommissionDiscountsTotal"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:CoreNetRateDiscountsTotal"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrangementFeeGrandDiscountsTotal"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrangementFeeTaxDiscountsTotal"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrangementFeeDiscountsTotal"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OfferCodeDiscountListType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" name="OfferCodeDiscount" type="tns:OfferCodeDiscountPriceType"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DiscountListType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" name="Discount" type="tns:DiscountType"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DiscountType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:DiscountCategory"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:DiscountSubCategory"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:DiscountCode"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:NetRate"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:NetRateTax"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Commission"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:CommissionTax"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Fee"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:FeeTax"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:InternallyFundedDiscount"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TaxPercentage"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Total"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CorePriceType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:NetRate"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:NetRateTax"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Commission"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:CommissionTax"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:InternallyFundedDiscount"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TaxPercentage"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TaxTotal"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Total"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrangementFeePriceType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Fee"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:FeeTax"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:InternallyFundedDiscount"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:TaxPercentage"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Total"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OfferCodeDiscountPriceType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Code" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:DiscountApplicationApproach"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:NetRate"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:NetRateTax"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Commission"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:CommissionTax"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrangementFee"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrangementFeeTax"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:InternallyFundedDiscount"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TaxPercentage"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Total"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SurchargeFeePriceType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:Code"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:SurchargeRequestType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:IsWaived"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:TaxType"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Fee"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:FeeTax"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TaxPercentage"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Total"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TotalPriceBreakdownType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Total"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TotalExcludingDiscounts"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:DiscountTotal"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:BaseCoverTotal"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:BaseCoverTotalLessDiscounts"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:BaseCoverArrangementFeeTotal"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TotalArrangementFee"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:SurchargeFeeTotal"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TotalLessTotalAAFAndTotalAddons"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TotalLessSurchargeFees"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TotalLessArrangementFees"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TotalVAT"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TotalIPT"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AgentDiscountPriceType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Code" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:DiscountApplicationApproach"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:NetRate"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:NetRateTax"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Commission"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:CommissionTax"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrangementFee"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrangementFeeTax"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:InternallyFundedDiscount"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TaxPercentage"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Total"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AgentDiscountListType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="tns:AgentDiscount"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SystemDiscountPriceType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Code" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="SystemDiscountCategory" type="tns:SystemDiscountCategoryType"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:DiscountApplicationApproach"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:NetRate"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:NetRateTax"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Commission"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:CommissionTax"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrangementFee"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ArrangementFeeTax"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:InternallyFundedDiscount"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:TaxPercentage"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Total"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SystemDiscountListType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="tns:SystemDiscount"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="SurchargeFeeListType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="tns:SurchargeFee"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AdditionalDataType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Type"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Value"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CardFees">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:Code"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="Value" type="xsd:decimal"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AgentDiscountRequestedListType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="tns:AgentDiscountRequested"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AgentDiscountRequestedType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:AgentDiscountCode"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:AgentDiscountType"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:AgentDiscountValue"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="MultiProductDiscountType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:TotalNumberofAACrossholdings"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:MotorInsuranceNumberOfPolicies"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:MotorInsuranceNumberOfAddons"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:MotorInsuranceType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:MotorInsuranceTenure"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:BuildingsInsuranceNumberOfPolicies"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:BuildingsInsuranceNumberOfAddons"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:BuildingsInsuranceType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:BuildingsInsuranceTenure"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:ContentsInsuranceNumberOfPolicies"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:ContentsInsuranceNumberOfAddons"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:ContentsInsuranceType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:ContentsInsuranceTenure"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:RoadMembershipNumberOfPolicies"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:RoadMembershipType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:RoadMembershipClass"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:RoadMembershipProvenanceGroup"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:RoadMembershipTenure"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:HomeMembershipCentralHeatingNumberOfPolicies"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:HomeMembershipCentralHeatingType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:HomeMembershipCentralHeatingTenure"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:HomeMembershipHomeNumberOfPolicies"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:HomeMembershipHomeType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" ref="tns:HomeMembershipHomeTenure"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AssociatesListType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="tns:Associate"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AssociateType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:AssociateType"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:NumberOfFreeAssociates"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:RelatedOfferCode"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="FlexFactorGenerationDetailsType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:RateVersion"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ChampionChallengerIndicator"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:FlexStrategy"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OfferCodeDetailListType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="tns:OfferCodeDetail"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="OfferCodeDetailType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:OfferCode"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:OfferCodeApplicationLevel"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PreCalculatedOfferCodeDetailListType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="tns:PreCalculatedOfferCodeDetail"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PreCalculatedOfferCodeDetailType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:PaymentType"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:ProductCode"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="OfferType" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="1" name="OfferValue" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AverageQuotedRenewalDetailsType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:PaymentType"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:RenewalStartDate"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:RenewalEndDate"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:RenewalPrice"/>
+          <xsd:element maxOccurs="1" minOccurs="1" ref="tns:AmountDeltaOnRenewalPrice"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="VehicleAgeListType">
+        <xsd:annotation/>
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="1" ref="tns:VehicleAge"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="HomeType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Emergency"/>
+          <xsd:enumeration value="Plus"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="InsuranceType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Standard"/>
+          <xsd:enumeration value="Plus"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="MotorInsuranceTypeType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Fully Comp"/>
+          <xsd:enumeration value="TPFT"/>
+          <xsd:enumeration value="TPO"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="RoadMembershipClassType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="RD"/>
+          <xsd:enumeration value="RD+HS"/>
+          <xsd:enumeration value="RD+RL"/>
+          <xsd:enumeration value="RD+SM"/>
+          <xsd:enumeration value="RD+HS+RL"/>
+          <xsd:enumeration value="RD+HS+SM"/>
+          <xsd:enumeration value="RD+RL+SM"/>
+          <xsd:enumeration value="RD+HS+RL+SM"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="RoadMembershipTypeType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Vehicle"/>
+          <xsd:enumeration value="Single"/>
+          <xsd:enumeration value="Joint"/>
+          <xsd:enumeration value="Family1"/>
+          <xsd:enumeration value="Family2"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="CommunityOrRiskIndicatorType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Community"/>
+          <xsd:enumeration value="Risk"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="DiscountCategoryType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Offer"/>
+          <xsd:enumeration value="Agent"/>
+          <xsd:enumeration value="System"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="DiscountSubCategoryType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Adjustment"/>
+          <xsd:enumeration value="Suppression"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="SystemDiscountCategoryType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Adjustment"/>
+          <xsd:enumeration value="Suppression"/>
+          <xsd:enumeration value="PersistentSuppression"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="DiscountApplicationApproachType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Product"/>
+          <xsd:enumeration value="Policy"/>
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GenerateQuoteRequest">
+    <wsdl:part element="ns0123:GenerateQuoteRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="GenerateQuoteResponse">
+    <wsdl:part element="ns0123:GenerateQuoteResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ValidationFault">
+    <wsdl:part element="ns012:ValidationFault" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="AuthenticationFault">
+    <wsdl:part element="ns012:AuthenticationFault" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="TimeoutFault">
+    <wsdl:part element="ns012:TimeoutFault" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="Fault">
+    <wsdl:part element="ns012:Fault" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="BackEndFault">
+    <wsdl:part element="ns012:BackEndFault" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="GenerateQuote_RNL">
+    <wsdl:operation name="GenerateQuote">
+      <wsdl:input message="ns:GenerateQuoteRequest" name="GenerateQuoteInput"/>
+      <wsdl:output message="ns:GenerateQuoteResponse" name="GenerateQuoteOutput"/>
+      <wsdl:fault message="ns:ValidationFault" name="ValidationFault"/>
+      <wsdl:fault message="ns:AuthenticationFault" name="AuthenticationFault"/>
+      <wsdl:fault message="ns:TimeoutFault" name="TimeoutFault"/>
+      <wsdl:fault message="ns:Fault" name="Fault"/>
+      <wsdl:fault message="ns:BackEndFault" name="BackEndFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPServiceBinding" type="ns:GenerateQuote_RNL">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GenerateQuote">
+      <soap:operation soapAction="GenerateQuote" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ValidationFault">
+        <soap:fault name="ValidationFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="TimeoutFault">
+        <soap:fault name="TimeoutFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="BackEndFault">
+        <soap:fault name="BackEndFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="AuthenticationFault">
+        <soap:fault name="AuthenticationFault" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="Fault">
+        <soap:fault name="Fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GenerateQuote_RNL">
+    <wsdl:port binding="ns:SOAPServiceBinding" name="GenerateQuote_RNLSOAP">
+      <soap:address location="http://0.0.0.0:18047/SOAPServiceBinding/BSROS_GenerateQuote_RNL/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content>
+      <con:type>http://schemas.xmlsoap.org/wsdl/</con:type>
+    </con:part>
+  </con:definitionCache>
+  <con:endpoints>
+    <con:endpoint>http://0.0.0.0:18047/SOAPServiceBinding/BSROS_GenerateQuote_RNL/</con:endpoint>
+    <con:endpoint>http://0.0.0.0:18147/SOAPServiceBinding/BSROS_GenerateQuote_RNL/</con:endpoint>
+    <con:endpoint>http://esbcssit01:18047/SOAPServiceBinding/BSROS_GenerateQuote_RNL/</con:endpoint>
+  </con:endpoints>
+</con:interface>
