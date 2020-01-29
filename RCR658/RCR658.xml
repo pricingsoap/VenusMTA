@@ -1596,10 +1596,13 @@ log.info id
 // Check what Products to validate for transaction price
 def ExproductType = context.expand( '${658All#EXPRODUCT}' )
 def NewproductType = context.expand( '${658All#NEWPRODUCT}' )
-def newString = ExproductType + ","+NewproductType
+//def newString = ExproductType + ","+NewproductType
+
 def productType = context.expand( '${658All#NEWPRODUCT}' )
+
 String delimiters = "\\,|\\&amp;";
-String[] prodArr = newString.split(delimiters);
+//String[] prodArr = newString.split(delimiters);
+String[] prodArr = productType.split(delimiters);
 StringBuilder strBld = new StringBuilder();
 def roadcount = 1
 def hscount = 1
@@ -1974,6 +1977,8 @@ def func_Check(productType,product,name,payment,id)
 	}
 
 	 //Policy price
+	 log.info "current Product -->"+ product
+	 
 	def P_CoreNet = context.expand( '${658Request#Response#declare namespace tns3=\'http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_MTA.3\'; declare namespace tns1=\'http://www.theaa.com/CommonServices/Data/Product.2\'; //tns3:GenerateQuoteResponse[1]/tns3:ProductList[1]/tns1:Payment[1]/tns1:Product[tns1:ProductPriceName ="'+product+'"]/tns1:PriceList[1]/tns1:PolicyPrice[1]/tns1:PriceBreakdown[1]/tns1:CorePrice[1]/tns1:NetRate[1]}' )
 	def P_CoreNetTax = context.expand( '${658Request#Response#declare namespace tns3=\'http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_MTA.3\'; declare namespace tns1=\'http://www.theaa.com/CommonServices/Data/Product.2\'; //tns3:GenerateQuoteResponse[1]/tns3:ProductList[1]/tns1:Payment[1]/tns1:Product[tns1:ProductPriceName ="'+product+'"]/tns1:PriceList[1]/tns1:PolicyPrice[1]/tns1:PriceBreakdown[1]/tns1:CorePrice[1]/tns1:NetRateTax[1]}' )
 	def P_CoreComm = context.expand( '${658Request#Response#declare namespace tns3=\'http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_MTA.3\'; declare namespace tns1=\'http://www.theaa.com/CommonServices/Data/Product.2\'; //tns3:GenerateQuoteResponse[1]/tns3:ProductList[1]/tns1:Payment[1]/tns1:Product[tns1:ProductPriceName ="'+product+'"]/tns1:PriceList[1]/tns1:PolicyPrice[1]/tns1:PriceBreakdown[1]/tns1:CorePrice[1]/tns1:Commission[1]}' )
@@ -2331,11 +2336,11 @@ bw.close();</script>
     </con:property>
     <con:property>
       <con:name>TotalOfValuesChecked</con:name>
-      <con:value>26458</con:value>
+      <con:value>26898</con:value>
     </con:property>
     <con:property>
       <con:name>NumOfIterations</con:name>
-      <con:value>91</con:value>
+      <con:value>97</con:value>
     </con:property>
     <con:property>
       <con:name>RequestDateTime</con:name>
