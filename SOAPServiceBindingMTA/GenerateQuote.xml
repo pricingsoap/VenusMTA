@@ -8,7 +8,7 @@
       <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
     </con:settings>
     <con:encoding>UTF-8</con:encoding>
-    <con:endpoint>http://rh0124v:18027/SOAPServiceBinding/BSROS_GenerateQuote_MTA/</con:endpoint>
+    <con:endpoint>http://rh0123v:18027/SOAPServiceBinding/BSROS_GenerateQuote_MTA/</con:endpoint>
     <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gen="http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_MTA.3" xmlns:mes="http://www.theaa.com/CommonServices/Data/Message/MessageHeader.2" xmlns:com="http://www.theaa.com/CommonServices/Data/Common" xmlns:prod="http://www.theaa.com/CommonServices/Data/Product.2">
 	<soapenv:Header/>
 	<soapenv:Body>
@@ -26,8 +26,6 @@
 				</mes:Source>
 			</mes:RequestHeader>
 			<gen:IndicativePriceFlag>true</gen:IndicativePriceFlag>
-			 <prod:FlexFactorOnCurrentPolicy>0.91</prod:FlexFactorOnCurrentPolicy>
-
 			<prod:Currency>GBP</prod:Currency>
 			<gen:TradeUp>false</gen:TradeUp>
 			<gen:ManConYear1>false</gen:ManConYear1>
@@ -1764,6 +1762,7 @@
    </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request>
     <con:credentials>
+      <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
       <con:authType>No Authorization</con:authType>
     </con:credentials>
     <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
