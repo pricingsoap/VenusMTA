@@ -1344,415 +1344,445 @@
     <con:wsrmConfig version="1.2"/>
   </con:call>
   <con:call id="ecb316a5-1a03-4d90-a435-0477626221ee" name="Request 4">
-    <con:settings/>
+    <con:settings>
+      <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+    </con:settings>
     <con:encoding>UTF-8</con:encoding>
-    <con:endpoint>http://0.0.0.0:18027/SOAPServiceBinding/BSROS_GenerateQuote_MTA/</con:endpoint>
-    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gen="http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_MTA.3" xmlns:mes="http://www.theaa.com/CommonServices/Data/Message/MessageHeader.2" xmlns:com="http://www.theaa.com/CommonServices/Data/Common" xmlns:prod="http://www.theaa.com/CommonServices/Data/Product.2">\r
+    <con:endpoint>http://esbpreprod:18027/SOAPServiceBinding/BSROS_GenerateQuote_MTA/</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gen="http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_MTA.2" xmlns:mes="http://www.theaa.com/CommonServices/Data/Message/MessageHeader.2" xmlns:com="http://www.theaa.com/CommonServices/Data/Common" xmlns:prod="http://www.theaa.com/CommonServices/Data/Product.2">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
-      <gen:GenerateQuoteRequest>\r
+      <gen:GenerateQuoteRequest xmlns="http://www.theaa.com/CommonServices/Data/Common" xmlns:ns5="http://www.theaa.com/CommonServices/Data/Common.2">\r
          <mes:RequestHeader>\r
-            <!--Optional:-->\r
-            <com:CorrelationId>?</com:CorrelationId>\r
-            <mes:TransactionId>?</mes:TransactionId>\r
-            <mes:Version>?</mes:Version>\r
-            <mes:RequestDateTime>?</mes:RequestDateTime>\r
+            <mes:TransactionId>RO-MTA-1712-719</mes:TransactionId>\r
+            <mes:Version>1.0</mes:Version>\r
+            <mes:RequestDateTime>2020-02-08T00:00:00</mes:RequestDateTime>\r
             <mes:Source>\r
-               <mes:Domain>?</mes:Domain>\r
-               <mes:Channel>?</mes:Channel>\r
-               <mes:LineOfBusiness>?</mes:LineOfBusiness>\r
-               <mes:Name>?</mes:Name>\r
-               <!--Optional:-->\r
-               <mes:Address>?</mes:Address>\r
-               <!--Optional:-->\r
-               <mes:InstanceId>?</mes:InstanceId>\r
-               <!--Optional:-->\r
-               <mes:ApplicationVersion>?</mes:ApplicationVersion>\r
-               <!--Optional:-->\r
-               <mes:User>?</mes:User>\r
+               <mes:Domain>SALES</mes:Domain>\r
+               <mes:Channel>SanityTesting</mes:Channel>\r
+               <mes:LineOfBusiness>ROS</mes:LineOfBusiness>\r
+               <mes:Name>Pricing Services</mes:Name>\r
+               <mes:User>PS Testing</mes:User>\r
             </mes:Source>\r
-            <!--Optional:-->\r
-            <mes:MIContext>?</mes:MIContext>\r
          </mes:RequestHeader>\r
-         <!--Optional:-->\r
-         <gen:IndicativePriceFlag>?</gen:IndicativePriceFlag>\r
-         <!--Optional:-->\r
-         <prod:FlexFactorOnCurrentPolicy>?</prod:FlexFactorOnCurrentPolicy>\r
-         <!--Optional:-->\r
-         <prod:CommunityOrRiskIndicator>?</prod:CommunityOrRiskIndicator>\r
-         <prod:Currency>?</prod:Currency>\r
-         <gen:TradeUp>?</gen:TradeUp>\r
-         <!--Optional:-->\r
-         <gen:ManConYear1>?</gen:ManConYear1>\r
-         <!--Optional:-->\r
-         <gen:Tenure>?</gen:Tenure>\r
-         <gen:MTAReason>?</gen:MTAReason>\r
-         <gen:MTACode>?</gen:MTACode>\r
-         <gen:FreeMonths>?</gen:FreeMonths>\r
-         <gen:PaymentType>?</gen:PaymentType>\r
-         <!--Optional:-->\r
-         <gen:PolicyCancellationDateTime>?</gen:PolicyCancellationDateTime>\r
-         <!--Optional:-->\r
+         <gen:IndicativePriceFlag>true</gen:IndicativePriceFlag>\r
+         <prod:FlexFactorOnCurrentPolicy>1</prod:FlexFactorOnCurrentPolicy>\r
+         <prod:CommunityOrRiskIndicator>Community</prod:CommunityOrRiskIndicator>\r
+         <prod:Currency>GBP</prod:Currency>\r
+         <gen:TradeUp>false</gen:TradeUp>\r
+         <gen:ManConYear1>false</gen:ManConYear1>\r
+         <gen:MTAReason>Make a Change</gen:MTAReason>\r
+         <gen:MTACode>ABC</gen:MTACode>\r
+         <gen:FreeMonths>0</gen:FreeMonths>\r
+         <gen:PaymentType>SAP</gen:PaymentType>\r
          <gen:NewProductList>\r
-            <prod:EffectivePriceDateTime>?</prod:EffectivePriceDateTime>\r
-            <prod:PolicyStartDateTime>?</prod:PolicyStartDateTime>\r
-            <prod:PolicyEndDateTime>?</prod:PolicyEndDateTime>\r
-            <!--Optional:-->\r
+            <prod:EffectivePriceDateTime>2020-03-30T00:00:00</prod:EffectivePriceDateTime>\r
+            <prod:PolicyStartDateTime>2020-02-01T00:00:00</prod:PolicyStartDateTime>\r
+            <prod:PolicyEndDateTime>2021-01-31T00:00:00</prod:PolicyEndDateTime>\r
             <prod:OfferCodeDetailList>\r
-               <!--1 or more repetitions:-->\r
                <prod:OfferCodeDetail>\r
-                  <prod:OfferCode>?</prod:OfferCode>\r
-                  <prod:OfferCodeApplicationLevel>?</prod:OfferCodeApplicationLevel>\r
-                  <!--Optional:-->\r
-                  <prod:IsPersistent>?</prod:IsPersistent>\r
+                  <prod:OfferCode>AAFRHS</prod:OfferCode>\r
+                  <prod:OfferCodeApplicationLevel>1</prod:OfferCodeApplicationLevel>\r
+                  <!--<prod:IsPersistent>true</prod:IsPersistent>-->\r
                </prod:OfferCodeDetail>\r
             </prod:OfferCodeDetailList>\r
-            <!--Optional:-->\r
-            <prod:SourceGroup>?</prod:SourceGroup>\r
-            <prod:SourceCode>?</prod:SourceCode>\r
-            <!--1 or more repetitions:-->\r
+            <prod:SourceCode>Natural Search</prod:SourceCode>\r
             <gen:Product>\r
-               <prod:ProductCode>?</prod:ProductCode>\r
-               <!--Optional:-->\r
-               <prod:CoverageList>\r
-                  <!--1 or more repetitions:-->\r
-                  <prod:Coverage>\r
-                     <prod:CoverageCode>?</prod:CoverageCode>\r
-                     <!--Optional:-->\r
-                     <prod:LimitList>\r
-                        <!--1 or more repetitions:-->\r
-                        <prod:Limit>\r
-                           <prod:Type>?</prod:Type>\r
-                           <prod:Value>?</prod:Value>\r
-                        </prod:Limit>\r
-                     </prod:LimitList>\r
-                     <!--Optional:-->\r
-                     <prod:AdditionalData>\r
-                        <prod:Type>?</prod:Type>\r
-                        <prod:Value>?</prod:Value>\r
-                     </prod:AdditionalData>\r
-                  </prod:Coverage>\r
-               </prod:CoverageList>\r
+               <prod:ProductCode>PRD_UK_0011</prod:ProductCode>\r
             </gen:Product>\r
-            <!--Optional:-->\r
-            <prod:VehicleAgeList>\r
-               <!--1 or more repetitions:-->\r
-               <prod:VehicleAge>?</prod:VehicleAge>\r
-            </prod:VehicleAgeList>\r
-            <gen:CoveredPersons>?</gen:CoveredPersons>\r
-            <!--Optional:-->\r
-            <prod:AssociatesList>\r
-               <!--1 or more repetitions:-->\r
-               <prod:Associate>\r
-                  <prod:AssociateType>?</prod:AssociateType>\r
-                  <prod:NumberOfFreeAssociates>?</prod:NumberOfFreeAssociates>\r
-                  <prod:RelatedOfferCode>?</prod:RelatedOfferCode>\r
-               </prod:Associate>\r
-            </prod:AssociatesList>\r
-            <!--Optional:-->\r
+            <gen:Product>\r
+               <prod:ProductCode>PRD_UK_0003</prod:ProductCode>\r
+            </gen:Product>\r
+            <gen:Product>\r
+               <prod:ProductCode>PRD_UK_0004</prod:ProductCode>\r
+            </gen:Product>\r
+            <gen:Product>\r
+               <prod:ProductCode>PRD_UK_0005</prod:ProductCode>\r
+            </gen:Product>\r
+            <gen:CoveredPersons>2</gen:CoveredPersons>\r
             <prod:AgentDiscountRequestedList>\r
-               <!--1 or more repetitions:-->\r
                <prod:AgentDiscountRequested>\r
-                  <prod:AgentDiscountCode>?</prod:AgentDiscountCode>\r
-                  <prod:AgentDiscountType>?</prod:AgentDiscountType>\r
-                  <prod:AgentDiscountValue>?</prod:AgentDiscountValue>\r
+                  <prod:AgentDiscountCode>MTA1c</prod:AgentDiscountCode>\r
+                  <prod:AgentDiscountType>M</prod:AgentDiscountType>\r
+                  <prod:AgentDiscountValue>15</prod:AgentDiscountValue>\r
+               </prod:AgentDiscountRequested>\r
+               <prod:AgentDiscountRequested>\r
+                  <prod:AgentDiscountCode>MTA2c</prod:AgentDiscountCode>\r
+                  <prod:AgentDiscountType>M</prod:AgentDiscountType>\r
+                  <prod:AgentDiscountValue>10</prod:AgentDiscountValue>\r
                </prod:AgentDiscountRequested>\r
             </prod:AgentDiscountRequestedList>\r
-            <!--Optional:-->\r
-            <prod:MultiplyingFactor>?</prod:MultiplyingFactor>\r
+            <!--<prod:MultiplyingFactor>1</prod:MultiplyingFactor>-->\r
          </gen:NewProductList>\r
          <gen:CustomerDetails>\r
-            <!--Optional:-->\r
-            <gen:Postcode>?</gen:Postcode>\r
+            <gen:Postcode>RG21 7AS</gen:Postcode>\r
             <gen:MembershipStatus>\r
-               <gen:IsMember>?</gen:IsMember>\r
-               <gen:MembershipTenure>?</gen:MembershipTenure>\r
+               <gen:IsMember>true</gen:IsMember>\r
+               <gen:MembershipTenure>0</gen:MembershipTenure>\r
             </gen:MembershipStatus>\r
          </gen:CustomerDetails>\r
-         <!--Optional:-->\r
-         <prod:RequestSurchargeAndFeeList>\r
-            <!--1 or more repetitions:-->\r
-            <prod:SurchargeOrFee>\r
-               <prod:SurchargeRequestType>?</prod:SurchargeRequestType>\r
-               <prod:IsWaived>?</prod:IsWaived>\r
-               <prod:WaivedReason>?</prod:WaivedReason>\r
-               <prod:SurchargeOrFeeCode>?</prod:SurchargeOrFeeCode>\r
-            </prod:SurchargeOrFee>\r
-         </prod:RequestSurchargeAndFeeList>\r
          <gen:CurrentPolicyDetails>\r
-            <prod:PaymentType>?</prod:PaymentType>\r
-            <prod:PolicyStartDateTime>?</prod:PolicyStartDateTime>\r
-            <prod:PolicyEndDateTime>?</prod:PolicyEndDateTime>\r
-            <prod:CoveredPersons>?</prod:CoveredPersons>\r
-            <!--Optional:-->\r
-            <prod:AssociatesList>\r
-               <!--1 or more repetitions:-->\r
-               <prod:Associate>\r
-                  <prod:AssociateType>?</prod:AssociateType>\r
-                  <prod:NumberOfFreeAssociates>?</prod:NumberOfFreeAssociates>\r
-                  <prod:RelatedOfferCode>?</prod:RelatedOfferCode>\r
-               </prod:Associate>\r
-            </prod:AssociatesList>\r
-            <prod:Currency>?</prod:Currency>\r
-            <!--1 or more repetitions:-->\r
+            <prod:PaymentType>SAP</prod:PaymentType>\r
+            <prod:PolicyStartDateTime>2020-02-01T00:00:00</prod:PolicyStartDateTime>\r
+            <prod:PolicyEndDateTime>2021-01-31T00:00:00</prod:PolicyEndDateTime>\r
+            <prod:CoveredPersons>2</prod:CoveredPersons>\r
+            <prod:Currency>GBP</prod:Currency>\r
             <gen:Product>\r
-               <prod:ProductCode>?</prod:ProductCode>\r
-               <prod:ProductPriceName>?</prod:ProductPriceName>\r
+               <prod:ProductCode>PRD_UK_0001</prod:ProductCode>\r
+               <prod:ProductPriceName>Roadside</prod:ProductPriceName>\r
                <gen:PriceList>\r
-                  <!--1 or more repetitions:-->\r
                   <prod:PolicyPrice>\r
-                     <prod:PriceElementType>?</prod:PriceElementType>\r
+                     <prod:PriceElementType/>\r
                      <prod:PriceBreakdown>\r
                         <prod:CorePrice>\r
-                           <prod:NetRate>?</prod:NetRate>\r
-                           <prod:NetRateTax>?</prod:NetRateTax>\r
-                           <prod:Commission>?</prod:Commission>\r
-                           <prod:CommissionTax>?</prod:CommissionTax>\r
-                           <prod:InternallyFundedDiscount>?</prod:InternallyFundedDiscount>\r
-                           <prod:TaxPercentage>?</prod:TaxPercentage>\r
-                           <prod:TaxTotal>?</prod:TaxTotal>\r
-                           <prod:Total>?</prod:Total>\r
+                           <prod:NetRate>0.0</prod:NetRate>\r
+                           <prod:NetRateTax>0.0</prod:NetRateTax>\r
+                           <prod:Commission>79.54</prod:Commission>\r
+                           <prod:CommissionTax>9.55</prod:CommissionTax>\r
+                           <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
+                           <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
+                           <prod:TaxTotal>9.55</prod:TaxTotal>\r
+                           <prod:Total>89.09</prod:Total>\r
                         </prod:CorePrice>\r
                         <prod:ArrangementFee>\r
-                           <prod:Fee>?</prod:Fee>\r
-                           <prod:FeeTax>?</prod:FeeTax>\r
-                           <!--Optional:-->\r
-                           <prod:InternallyFundedDiscount>?</prod:InternallyFundedDiscount>\r
-                           <!--Optional:-->\r
-                           <prod:TaxPercentage>?</prod:TaxPercentage>\r
-                           <prod:Total>?</prod:Total>\r
+                           <prod:Fee>31.18</prod:Fee>\r
+                           <prod:FeeTax>3.74</prod:FeeTax>\r
+                           <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
+                           <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
+                           <prod:Total>34.92</prod:Total>\r
                         </prod:ArrangementFee>\r
-                        <!--Optional:-->\r
-                        <prod:OfferCodeDiscountList>\r
-                           <!--1 or more repetitions:-->\r
-                           <prod:OfferCodeDiscount>\r
-                              <prod:Code>?</prod:Code>\r
-                              <!--Optional:-->\r
-                              <prod:IsPersistent>?</prod:IsPersistent>\r
-                              <prod:DiscountApplicationApproach>?</prod:DiscountApplicationApproach>\r
-                              <prod:NetRate>?</prod:NetRate>\r
-                              <prod:NetRateTax>?</prod:NetRateTax>\r
-                              <prod:Commission>?</prod:Commission>\r
-                              <prod:CommissionTax>?</prod:CommissionTax>\r
-                              <prod:ArrangementFee>?</prod:ArrangementFee>\r
-                              <prod:ArrangementFeeTax>?</prod:ArrangementFeeTax>\r
-                              <prod:InternallyFundedDiscount>?</prod:InternallyFundedDiscount>\r
-                              <prod:TaxPercentage>?</prod:TaxPercentage>\r
-                              <prod:Total>?</prod:Total>\r
-                           </prod:OfferCodeDiscount>\r
-                        </prod:OfferCodeDiscountList>\r
-                        <!--Optional:-->\r
-                        <prod:AgentDiscountList>\r
-                           <!--1 or more repetitions:-->\r
-                           <prod:AgentDiscount>\r
-                              <prod:Code>?</prod:Code>\r
-                              <prod:DiscountApplicationApproach>?</prod:DiscountApplicationApproach>\r
-                              <prod:NetRate>?</prod:NetRate>\r
-                              <prod:NetRateTax>?</prod:NetRateTax>\r
-                              <prod:Commission>?</prod:Commission>\r
-                              <prod:CommissionTax>?</prod:CommissionTax>\r
-                              <prod:ArrangementFee>?</prod:ArrangementFee>\r
-                              <prod:ArrangementFeeTax>?</prod:ArrangementFeeTax>\r
-                              <prod:InternallyFundedDiscount>?</prod:InternallyFundedDiscount>\r
-                              <prod:TaxPercentage>?</prod:TaxPercentage>\r
-                              <prod:Total>?</prod:Total>\r
-                           </prod:AgentDiscount>\r
-                        </prod:AgentDiscountList>\r
-                        <!--Optional:-->\r
-                        <prod:SystemDiscountList>\r
-                           <!--1 or more repetitions:-->\r
-                           <prod:SystemDiscount>\r
-                              <prod:Code>?</prod:Code>\r
-                              <prod:SystemDiscountCategory>?</prod:SystemDiscountCategory>\r
-                              <!--Optional:-->\r
-                              <prod:DiscountGroup>?</prod:DiscountGroup>\r
-                              <prod:DiscountApplicationApproach>?</prod:DiscountApplicationApproach>\r
-                              <prod:NetRate>?</prod:NetRate>\r
-                              <prod:NetRateTax>?</prod:NetRateTax>\r
-                              <prod:Commission>?</prod:Commission>\r
-                              <prod:CommissionTax>?</prod:CommissionTax>\r
-                              <prod:ArrangementFee>?</prod:ArrangementFee>\r
-                              <prod:ArrangementFeeTax>?</prod:ArrangementFeeTax>\r
-                              <prod:InternallyFundedDiscount>?</prod:InternallyFundedDiscount>\r
-                              <prod:TaxPercentage>?</prod:TaxPercentage>\r
-                              <prod:Total>?</prod:Total>\r
-                           </prod:SystemDiscount>\r
-                        </prod:SystemDiscountList>\r
-                        <!--Optional:-->\r
                         <prod:AccountingTotals>\r
-                           <prod:CoreDiscountsTotal>?</prod:CoreDiscountsTotal>\r
-                           <prod:CoreDiscountsTaxTotal>?</prod:CoreDiscountsTaxTotal>\r
-                           <prod:CoreCommissionDiscountsTotal>?</prod:CoreCommissionDiscountsTotal>\r
-                           <prod:CoreNetRateDiscountsTotal>?</prod:CoreNetRateDiscountsTotal>\r
-                           <prod:ArrangementFeeGrandDiscountsTotal>?</prod:ArrangementFeeGrandDiscountsTotal>\r
-                           <prod:ArrangementFeeTaxDiscountsTotal>?</prod:ArrangementFeeTaxDiscountsTotal>\r
-                           <prod:ArrangementFeeDiscountsTotal>?</prod:ArrangementFeeDiscountsTotal>\r
+                           <prod:CoreDiscountsTotal>0.0</prod:CoreDiscountsTotal>\r
+                           <prod:CoreDiscountsTaxTotal>0.0</prod:CoreDiscountsTaxTotal>\r
+                           <prod:CoreCommissionDiscountsTotal>0.0</prod:CoreCommissionDiscountsTotal>\r
+                           <prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal>\r
+                           <prod:ArrangementFeeGrandDiscountsTotal>0.0</prod:ArrangementFeeGrandDiscountsTotal>\r
+                           <prod:ArrangementFeeTaxDiscountsTotal>0.0</prod:ArrangementFeeTaxDiscountsTotal>\r
+                           <prod:ArrangementFeeDiscountsTotal>0.0</prod:ArrangementFeeDiscountsTotal>\r
                         </prod:AccountingTotals>\r
                      </prod:PriceBreakdown>\r
-                     <prod:TaxType>?</prod:TaxType>\r
-                     <prod:TaxDate>?</prod:TaxDate>\r
-                     <prod:DateInceptedOnPolicy>?</prod:DateInceptedOnPolicy>\r
-                     <prod:RelativityPriceFactor>?</prod:RelativityPriceFactor>\r
-                     <prod:ExtrapolationFactor>?</prod:ExtrapolationFactor>\r
-                     <prod:ArrangementFeeTotal>?</prod:ArrangementFeeTotal>\r
-                     <prod:TotalLessArrangementFeeTotal>?</prod:TotalLessArrangementFeeTotal>\r
-                     <prod:TotalLessDiscounts>?</prod:TotalLessDiscounts>\r
-                     <prod:Total>?</prod:Total>\r
+                     <prod:TaxType>I</prod:TaxType>\r
+                     <prod:TaxDate>2020-02-01T00:00:00</prod:TaxDate>\r
+                     <prod:DateInceptedOnPolicy>2020-02-01T00:00:00</prod:DateInceptedOnPolicy>\r
+                     <prod:RelativityPriceFactor>1.0</prod:RelativityPriceFactor>\r
+                     <prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor>\r
+                     <prod:ArrangementFeeTotal>34.92</prod:ArrangementFeeTotal>\r
+                     <prod:TotalLessArrangementFeeTotal>89.09</prod:TotalLessArrangementFeeTotal>\r
+                     <prod:TotalLessDiscounts>124.01</prod:TotalLessDiscounts>\r
+                     <prod:Total>124.01</prod:Total>\r
                   </prod:PolicyPrice>\r
                </gen:PriceList>\r
-               <prod:InsideCoolingOffFlag>?</prod:InsideCoolingOffFlag>\r
-               <!--Optional:-->\r
-               <prod:FullRefundFlag>?</prod:FullRefundFlag>\r
-               <!--Optional:-->\r
-               <prod:PaidPeriods>?</prod:PaidPeriods>\r
+               <prod:InsideCoolingOffFlag>false</prod:InsideCoolingOffFlag>\r
+               <prod:FullRefundFlag>false</prod:FullRefundFlag>\r
+               <prod:PaidPeriods>1</prod:PaidPeriods>\r
             </gen:Product>\r
-            <!--Optional:-->\r
-            <prod:VehicleAgeList>\r
-               <!--1 or more repetitions:-->\r
-               <prod:VehicleAge>?</prod:VehicleAge>\r
-            </prod:VehicleAgeList>\r
+            <gen:Product>\r
+               <prod:ProductCode>PRD_UK_0003</prod:ProductCode>\r
+               <prod:ProductPriceName>HomeStart</prod:ProductPriceName>\r
+               <gen:PriceList>\r
+                  <prod:PolicyPrice>\r
+                     <prod:PriceElementType/>\r
+                     <prod:PriceBreakdown>\r
+                        <prod:CorePrice>\r
+                           <prod:NetRate>0.0</prod:NetRate>\r
+                           <prod:NetRateTax>0.0</prod:NetRateTax>\r
+                           <prod:Commission>62.45</prod:Commission>\r
+                           <prod:CommissionTax>7.49</prod:CommissionTax>\r
+                           <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
+                           <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
+                           <prod:TaxTotal>7.49</prod:TaxTotal>\r
+                           <prod:Total>69.94</prod:Total>\r
+                        </prod:CorePrice>\r
+                        <prod:ArrangementFee>\r
+                           <prod:Fee>8.89</prod:Fee>\r
+                           <prod:FeeTax>1.07</prod:FeeTax>\r
+                           <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
+                           <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
+                           <prod:Total>9.96</prod:Total>\r
+                        </prod:ArrangementFee>\r
+                        <prod:OfferCodeDiscountList>\r
+                           <prod:OfferCodeDiscount>\r
+                              <prod:Code>AAFRHS</prod:Code>\r
+                              <!--<prod:IsPersistent>true</prod:IsPersistent>-->\r
+                              <prod:DiscountApplicationApproach>Product</prod:DiscountApplicationApproach>\r
+                              <prod:NetRate>0.0</prod:NetRate>\r
+                              <prod:NetRateTax>0.0</prod:NetRateTax>\r
+                              <prod:Commission>-62.45</prod:Commission>\r
+                              <prod:CommissionTax>-7.49</prod:CommissionTax>\r
+                              <prod:ArrangementFee>-8.89</prod:ArrangementFee>\r
+                              <prod:ArrangementFeeTax>-1.07</prod:ArrangementFeeTax>\r
+                              <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
+                              <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
+                              <prod:Total>-79.9</prod:Total>\r
+                           </prod:OfferCodeDiscount>\r
+                        </prod:OfferCodeDiscountList>\r
+                        <prod:AccountingTotals>\r
+                           <prod:CoreDiscountsTotal>-69.94</prod:CoreDiscountsTotal>\r
+                           <prod:CoreDiscountsTaxTotal>-7.49</prod:CoreDiscountsTaxTotal>\r
+                           <prod:CoreCommissionDiscountsTotal>-62.45</prod:CoreCommissionDiscountsTotal>\r
+                           <prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal>\r
+                           <prod:ArrangementFeeGrandDiscountsTotal>-9.96</prod:ArrangementFeeGrandDiscountsTotal>\r
+                           <prod:ArrangementFeeTaxDiscountsTotal>-1.07</prod:ArrangementFeeTaxDiscountsTotal>\r
+                           <prod:ArrangementFeeDiscountsTotal>-8.89</prod:ArrangementFeeDiscountsTotal>\r
+                        </prod:AccountingTotals>\r
+                     </prod:PriceBreakdown>\r
+                     <prod:TaxType>I</prod:TaxType>\r
+                     <prod:TaxDate>2020-02-01T00:00:00</prod:TaxDate>\r
+                     <prod:DateInceptedOnPolicy>2020-02-01T00:00:00</prod:DateInceptedOnPolicy>\r
+                     <prod:RelativityPriceFactor>0.7352</prod:RelativityPriceFactor>\r
+                     <prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor>\r
+                     <prod:ArrangementFeeTotal>0.0</prod:ArrangementFeeTotal>\r
+                     <prod:TotalLessArrangementFeeTotal>0.0</prod:TotalLessArrangementFeeTotal>\r
+                     <prod:TotalLessDiscounts>79.9</prod:TotalLessDiscounts>\r
+                     <prod:Total>0.0</prod:Total>\r
+                  </prod:PolicyPrice>\r
+               </gen:PriceList>\r
+               <prod:InsideCoolingOffFlag>false</prod:InsideCoolingOffFlag>\r
+               <prod:FullRefundFlag>false</prod:FullRefundFlag>\r
+               <prod:PaidPeriods>1</prod:PaidPeriods>\r
+            </gen:Product>\r
+            <gen:Product>\r
+               <prod:ProductCode>PRD_UK_0004</prod:ProductCode>\r
+               <prod:ProductPriceName>Relay</prod:ProductPriceName>\r
+               <gen:PriceList>\r
+                  <prod:PolicyPrice>\r
+                     <prod:PriceElementType/>\r
+                     <prod:PriceBreakdown>\r
+                        <prod:CorePrice>\r
+                           <prod:NetRate>0.0</prod:NetRate>\r
+                           <prod:NetRateTax>0.0</prod:NetRateTax>\r
+                           <prod:Commission>60.79</prod:Commission>\r
+                           <prod:CommissionTax>7.29</prod:CommissionTax>\r
+                           <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
+                           <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
+                           <prod:TaxTotal>7.29</prod:TaxTotal>\r
+                           <prod:Total>68.08</prod:Total>\r
+                        </prod:CorePrice>\r
+                        <prod:ArrangementFee>\r
+                           <prod:Fee>8.89</prod:Fee>\r
+                           <prod:FeeTax>1.07</prod:FeeTax>\r
+                           <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
+                           <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
+                           <prod:Total>9.96</prod:Total>\r
+                        </prod:ArrangementFee>\r
+                        <prod:AccountingTotals>\r
+                           <prod:CoreDiscountsTotal>0.0</prod:CoreDiscountsTotal>\r
+                           <prod:CoreDiscountsTaxTotal>0.0</prod:CoreDiscountsTaxTotal>\r
+                           <prod:CoreCommissionDiscountsTotal>0.0</prod:CoreCommissionDiscountsTotal>\r
+                           <prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal>\r
+                           <prod:ArrangementFeeGrandDiscountsTotal>0.0</prod:ArrangementFeeGrandDiscountsTotal>\r
+                           <prod:ArrangementFeeTaxDiscountsTotal>0.0</prod:ArrangementFeeTaxDiscountsTotal>\r
+                           <prod:ArrangementFeeDiscountsTotal>0.0</prod:ArrangementFeeDiscountsTotal>\r
+                        </prod:AccountingTotals>\r
+                     </prod:PriceBreakdown>\r
+                     <prod:TaxType>I</prod:TaxType>\r
+                     <prod:TaxDate>2020-02-01T00:00:00</prod:TaxDate>\r
+                     <prod:DateInceptedOnPolicy>2020-02-01T00:00:00</prod:DateInceptedOnPolicy>\r
+                     <prod:RelativityPriceFactor>1.0</prod:RelativityPriceFactor>\r
+                     <prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor>\r
+                     <prod:ArrangementFeeTotal>9.96</prod:ArrangementFeeTotal>\r
+                     <prod:TotalLessArrangementFeeTotal>68.08</prod:TotalLessArrangementFeeTotal>\r
+                     <prod:TotalLessDiscounts>78.04</prod:TotalLessDiscounts>\r
+                     <prod:Total>78.04</prod:Total>\r
+                  </prod:PolicyPrice>\r
+               </gen:PriceList>\r
+               <prod:InsideCoolingOffFlag>false</prod:InsideCoolingOffFlag>\r
+               <prod:FullRefundFlag>false</prod:FullRefundFlag>\r
+               <prod:PaidPeriods>1</prod:PaidPeriods>\r
+            </gen:Product>\r
          </gen:CurrentPolicyDetails>\r
-         <!--Optional:-->\r
          <gen:TransactionRecordList>\r
-            <!--1 or more repetitions:-->\r
             <gen:TransactionRecord>\r
-               <gen:Transaction>?</gen:Transaction>\r
-               <!--Optional:-->\r
-               <gen:TransactionSubType>?</gen:TransactionSubType>\r
-               <gen:TransactionRequestDateTime>?</gen:TransactionRequestDateTime>\r
-               <gen:TransactionStartDateTime>?</gen:TransactionStartDateTime>\r
+               <gen:Transaction>Renewal</gen:Transaction>\r
+               <gen:TransactionRequestDateTime>2020-02-01T00:00:00</gen:TransactionRequestDateTime>\r
+               <gen:TransactionStartDateTime>2020-02-01T00:00:00</gen:TransactionStartDateTime>\r
                <gen:TransactionProductList>\r
-                  <prod:PaymentType>?</prod:PaymentType>\r
-                  <prod:CoveredPersons>?</prod:CoveredPersons>\r
-                  <prod:Currency>?</prod:Currency>\r
-                  <!--1 or more repetitions:-->\r
+                  <prod:PaymentType>SAP</prod:PaymentType>\r
+                  <prod:CoveredPersons>2</prod:CoveredPersons>\r
+                  <prod:Currency>GBP</prod:Currency>\r
                   <gen:TransactionProduct>\r
-                     <prod:ProductCode>?</prod:ProductCode>\r
-                     <prod:ProductPriceName>?</prod:ProductPriceName>\r
+                     <prod:ProductCode>PRD_UK_0001</prod:ProductCode>\r
+                     <prod:ProductPriceName>Roadside</prod:ProductPriceName>\r
                      <gen:TransactionPriceList>\r
-                        <!--1 or more repetitions:-->\r
                         <prod:Price>\r
-                           <prod:PriceElementType>?</prod:PriceElementType>\r
+                           <prod:PriceElementType/>\r
                            <prod:PriceBreakdown>\r
                               <prod:CorePrice>\r
-                                 <prod:NetRate>?</prod:NetRate>\r
-                                 <prod:NetRateTax>?</prod:NetRateTax>\r
-                                 <prod:Commission>?</prod:Commission>\r
-                                 <prod:CommissionTax>?</prod:CommissionTax>\r
-                                 <prod:InternallyFundedDiscount>?</prod:InternallyFundedDiscount>\r
-                                 <prod:TaxPercentage>?</prod:TaxPercentage>\r
-                                 <prod:TaxTotal>?</prod:TaxTotal>\r
-                                 <prod:Total>?</prod:Total>\r
+                                 <prod:NetRate>0.0</prod:NetRate>\r
+                                 <prod:NetRateTax>0.0</prod:NetRateTax>\r
+                                 <prod:Commission>79.54</prod:Commission>\r
+                                 <prod:CommissionTax>9.55</prod:CommissionTax>\r
+                                 <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
+                                 <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
+                                 <prod:TaxTotal>9.55</prod:TaxTotal>\r
+                                 <prod:Total>89.09</prod:Total>\r
                               </prod:CorePrice>\r
                               <prod:ArrangementFee>\r
-                                 <prod:Fee>?</prod:Fee>\r
-                                 <prod:FeeTax>?</prod:FeeTax>\r
-                                 <!--Optional:-->\r
-                                 <prod:InternallyFundedDiscount>?</prod:InternallyFundedDiscount>\r
-                                 <!--Optional:-->\r
-                                 <prod:TaxPercentage>?</prod:TaxPercentage>\r
-                                 <prod:Total>?</prod:Total>\r
+                                 <prod:Fee>31.18</prod:Fee>\r
+                                 <prod:FeeTax>3.74</prod:FeeTax>\r
+                                 <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
+                                 <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
+                                 <prod:Total>34.92</prod:Total>\r
                               </prod:ArrangementFee>\r
-                              <!--Optional:-->\r
-                              <prod:OfferCodeDiscountList>\r
-                                 <!--1 or more repetitions:-->\r
-                                 <prod:OfferCodeDiscount>\r
-                                    <prod:Code>?</prod:Code>\r
-                                    <!--Optional:-->\r
-                                    <prod:IsPersistent>?</prod:IsPersistent>\r
-                                    <prod:DiscountApplicationApproach>?</prod:DiscountApplicationApproach>\r
-                                    <prod:NetRate>?</prod:NetRate>\r
-                                    <prod:NetRateTax>?</prod:NetRateTax>\r
-                                    <prod:Commission>?</prod:Commission>\r
-                                    <prod:CommissionTax>?</prod:CommissionTax>\r
-                                    <prod:ArrangementFee>?</prod:ArrangementFee>\r
-                                    <prod:ArrangementFeeTax>?</prod:ArrangementFeeTax>\r
-                                    <prod:InternallyFundedDiscount>?</prod:InternallyFundedDiscount>\r
-                                    <prod:TaxPercentage>?</prod:TaxPercentage>\r
-                                    <prod:Total>?</prod:Total>\r
-                                 </prod:OfferCodeDiscount>\r
-                              </prod:OfferCodeDiscountList>\r
-                              <!--Optional:-->\r
-                              <prod:AgentDiscountList>\r
-                                 <!--1 or more repetitions:-->\r
-                                 <prod:AgentDiscount>\r
-                                    <prod:Code>?</prod:Code>\r
-                                    <prod:DiscountApplicationApproach>?</prod:DiscountApplicationApproach>\r
-                                    <prod:NetRate>?</prod:NetRate>\r
-                                    <prod:NetRateTax>?</prod:NetRateTax>\r
-                                    <prod:Commission>?</prod:Commission>\r
-                                    <prod:CommissionTax>?</prod:CommissionTax>\r
-                                    <prod:ArrangementFee>?</prod:ArrangementFee>\r
-                                    <prod:ArrangementFeeTax>?</prod:ArrangementFeeTax>\r
-                                    <prod:InternallyFundedDiscount>?</prod:InternallyFundedDiscount>\r
-                                    <prod:TaxPercentage>?</prod:TaxPercentage>\r
-                                    <prod:Total>?</prod:Total>\r
-                                 </prod:AgentDiscount>\r
-                              </prod:AgentDiscountList>\r
-                              <!--Optional:-->\r
-                              <prod:SystemDiscountList>\r
-                                 <!--1 or more repetitions:-->\r
-                                 <prod:SystemDiscount>\r
-                                    <prod:Code>?</prod:Code>\r
-                                    <prod:SystemDiscountCategory>?</prod:SystemDiscountCategory>\r
-                                    <!--Optional:-->\r
-                                    <prod:DiscountGroup>?</prod:DiscountGroup>\r
-                                    <prod:DiscountApplicationApproach>?</prod:DiscountApplicationApproach>\r
-                                    <prod:NetRate>?</prod:NetRate>\r
-                                    <prod:NetRateTax>?</prod:NetRateTax>\r
-                                    <prod:Commission>?</prod:Commission>\r
-                                    <prod:CommissionTax>?</prod:CommissionTax>\r
-                                    <prod:ArrangementFee>?</prod:ArrangementFee>\r
-                                    <prod:ArrangementFeeTax>?</prod:ArrangementFeeTax>\r
-                                    <prod:InternallyFundedDiscount>?</prod:InternallyFundedDiscount>\r
-                                    <prod:TaxPercentage>?</prod:TaxPercentage>\r
-                                    <prod:Total>?</prod:Total>\r
-                                 </prod:SystemDiscount>\r
-                              </prod:SystemDiscountList>\r
-                              <!--Optional:-->\r
                               <prod:AccountingTotals>\r
-                                 <prod:CoreDiscountsTotal>?</prod:CoreDiscountsTotal>\r
-                                 <prod:CoreDiscountsTaxTotal>?</prod:CoreDiscountsTaxTotal>\r
-                                 <prod:CoreCommissionDiscountsTotal>?</prod:CoreCommissionDiscountsTotal>\r
-                                 <prod:CoreNetRateDiscountsTotal>?</prod:CoreNetRateDiscountsTotal>\r
-                                 <prod:ArrangementFeeGrandDiscountsTotal>?</prod:ArrangementFeeGrandDiscountsTotal>\r
-                                 <prod:ArrangementFeeTaxDiscountsTotal>?</prod:ArrangementFeeTaxDiscountsTotal>\r
-                                 <prod:ArrangementFeeDiscountsTotal>?</prod:ArrangementFeeDiscountsTotal>\r
+                                 <prod:CoreDiscountsTotal>0.0</prod:CoreDiscountsTotal>\r
+                                 <prod:CoreDiscountsTaxTotal>0.0</prod:CoreDiscountsTaxTotal>\r
+                                 <prod:CoreCommissionDiscountsTotal>0.0</prod:CoreCommissionDiscountsTotal>\r
+                                 <prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal>\r
+                                 <prod:ArrangementFeeGrandDiscountsTotal>0.0</prod:ArrangementFeeGrandDiscountsTotal>\r
+                                 <prod:ArrangementFeeTaxDiscountsTotal>0.0</prod:ArrangementFeeTaxDiscountsTotal>\r
+                                 <prod:ArrangementFeeDiscountsTotal>0.0</prod:ArrangementFeeDiscountsTotal>\r
                               </prod:AccountingTotals>\r
                            </prod:PriceBreakdown>\r
-                           <prod:TaxType>?</prod:TaxType>\r
-                           <prod:TaxDate>?</prod:TaxDate>\r
-                           <prod:DateInceptedOnPolicy>?</prod:DateInceptedOnPolicy>\r
-                           <prod:RelativityPriceFactor>?</prod:RelativityPriceFactor>\r
-                           <prod:ExtrapolationFactor>?</prod:ExtrapolationFactor>\r
-                           <prod:ArrangementFeeTotal>?</prod:ArrangementFeeTotal>\r
-                           <prod:TotalLessArrangementFeeTotal>?</prod:TotalLessArrangementFeeTotal>\r
-                           <prod:TotalLessDiscounts>?</prod:TotalLessDiscounts>\r
-                           <prod:Total>?</prod:Total>\r
+                           <prod:TaxType>I</prod:TaxType>\r
+                           <prod:TaxDate>2020-02-01T00:00:00</prod:TaxDate>\r
+                           <prod:DateInceptedOnPolicy>2020-02-01T00:00:00</prod:DateInceptedOnPolicy>\r
+                           <prod:RelativityPriceFactor>1.0</prod:RelativityPriceFactor>\r
+                           <prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor>\r
+                           <prod:ArrangementFeeTotal>34.92</prod:ArrangementFeeTotal>\r
+                           <prod:TotalLessArrangementFeeTotal>89.09</prod:TotalLessArrangementFeeTotal>\r
+                           <prod:TotalLessDiscounts>124.01</prod:TotalLessDiscounts>\r
+                           <prod:Total>124.01</prod:Total>\r
                         </prod:Price>\r
                      </gen:TransactionPriceList>\r
-                     <!--Optional:-->\r
-                     <prod:VehicleAgeList>\r
-                        <!--1 or more repetitions:-->\r
-                        <prod:VehicleAge>?</prod:VehicleAge>\r
-                     </prod:VehicleAgeList>\r
                   </gen:TransactionProduct>\r
-                  <!--Optional:-->\r
+                  <gen:TransactionProduct>\r
+                     <prod:ProductCode>PRD_UK_0003</prod:ProductCode>\r
+                     <prod:ProductPriceName>HomeStart</prod:ProductPriceName>\r
+                     <gen:TransactionPriceList>\r
+                        <prod:Price>\r
+                           <prod:PriceElementType/>\r
+                           <prod:PriceBreakdown>\r
+                              <prod:CorePrice>\r
+                                 <prod:NetRate>0.0</prod:NetRate>\r
+                                 <prod:NetRateTax>0.0</prod:NetRateTax>\r
+                                 <prod:Commission>62.45</prod:Commission>\r
+                                 <prod:CommissionTax>7.49</prod:CommissionTax>\r
+                                 <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
+                                 <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
+                                 <prod:TaxTotal>7.49</prod:TaxTotal>\r
+                                 <prod:Total>69.94</prod:Total>\r
+                              </prod:CorePrice>\r
+                              <prod:ArrangementFee>\r
+                                 <prod:Fee>8.89</prod:Fee>\r
+                                 <prod:FeeTax>1.07</prod:FeeTax>\r
+                                 <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
+                                 <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
+                                 <prod:Total>9.96</prod:Total>\r
+                              </prod:ArrangementFee>\r
+                              <prod:OfferCodeDiscountList>\r
+                                 <prod:OfferCodeDiscount>\r
+                                    <prod:Code>AAFRHS</prod:Code>\r
+                                    <prod:DiscountApplicationApproach>Product</prod:DiscountApplicationApproach>\r
+                                    <prod:NetRate>0.0</prod:NetRate>\r
+                                    <prod:NetRateTax>0.0</prod:NetRateTax>\r
+                                    <prod:Commission>-62.45</prod:Commission>\r
+                                    <prod:CommissionTax>-7.49</prod:CommissionTax>\r
+                                    <prod:ArrangementFee>-8.89</prod:ArrangementFee>\r
+                                    <prod:ArrangementFeeTax>-1.07</prod:ArrangementFeeTax>\r
+                                    <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
+                                    <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
+                                    <prod:Total>-79.9</prod:Total>\r
+                                 </prod:OfferCodeDiscount>\r
+                              </prod:OfferCodeDiscountList>\r
+                              <prod:AccountingTotals>\r
+                                 <prod:CoreDiscountsTotal>-69.94</prod:CoreDiscountsTotal>\r
+                                 <prod:CoreDiscountsTaxTotal>-7.49</prod:CoreDiscountsTaxTotal>\r
+                                 <prod:CoreCommissionDiscountsTotal>-62.45</prod:CoreCommissionDiscountsTotal>\r
+                                 <prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal>\r
+                                 <prod:ArrangementFeeGrandDiscountsTotal>-9.96</prod:ArrangementFeeGrandDiscountsTotal>\r
+                                 <prod:ArrangementFeeTaxDiscountsTotal>-1.07</prod:ArrangementFeeTaxDiscountsTotal>\r
+                                 <prod:ArrangementFeeDiscountsTotal>-8.89</prod:ArrangementFeeDiscountsTotal>\r
+                              </prod:AccountingTotals>\r
+                           </prod:PriceBreakdown>\r
+                           <prod:TaxType>I</prod:TaxType>\r
+                           <prod:TaxDate>2020-02-01T00:00:00</prod:TaxDate>\r
+                           <prod:DateInceptedOnPolicy>2020-02-01T00:00:00</prod:DateInceptedOnPolicy>\r
+                           <prod:RelativityPriceFactor>0.7352</prod:RelativityPriceFactor>\r
+                           <prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor>\r
+                           <prod:ArrangementFeeTotal>0.0</prod:ArrangementFeeTotal>\r
+                           <prod:TotalLessArrangementFeeTotal>0.0</prod:TotalLessArrangementFeeTotal>\r
+                           <prod:TotalLessDiscounts>79.9</prod:TotalLessDiscounts>\r
+                           <prod:Total>0.0</prod:Total>\r
+                        </prod:Price>\r
+                     </gen:TransactionPriceList>\r
+                  </gen:TransactionProduct>\r
+                  <gen:TransactionProduct>\r
+                     <prod:ProductCode>PRD_UK_0004</prod:ProductCode>\r
+                     <prod:ProductPriceName>Relay</prod:ProductPriceName>\r
+                     <gen:TransactionPriceList>\r
+                        <prod:Price>\r
+                           <prod:PriceElementType/>\r
+                           <prod:PriceBreakdown>\r
+                              <prod:CorePrice>\r
+                                 <prod:NetRate>0.0</prod:NetRate>\r
+                                 <prod:NetRateTax>0.0</prod:NetRateTax>\r
+                                 <prod:Commission>60.79</prod:Commission>\r
+                                 <prod:CommissionTax>7.29</prod:CommissionTax>\r
+                                 <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
+                                 <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
+                                 <prod:TaxTotal>7.29</prod:TaxTotal>\r
+                                 <prod:Total>68.08</prod:Total>\r
+                              </prod:CorePrice>\r
+                              <prod:ArrangementFee>\r
+                                 <prod:Fee>8.89</prod:Fee>\r
+                                 <prod:FeeTax>1.07</prod:FeeTax>\r
+                                 <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
+                                 <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
+                                 <prod:Total>9.96</prod:Total>\r
+                              </prod:ArrangementFee>\r
+                              <prod:AccountingTotals>\r
+                                 <prod:CoreDiscountsTotal>0.0</prod:CoreDiscountsTotal>\r
+                                 <prod:CoreDiscountsTaxTotal>0.0</prod:CoreDiscountsTaxTotal>\r
+                                 <prod:CoreCommissionDiscountsTotal>0.0</prod:CoreCommissionDiscountsTotal>\r
+                                 <prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal>\r
+                                 <prod:ArrangementFeeGrandDiscountsTotal>0.0</prod:ArrangementFeeGrandDiscountsTotal>\r
+                                 <prod:ArrangementFeeTaxDiscountsTotal>0.0</prod:ArrangementFeeTaxDiscountsTotal>\r
+                                 <prod:ArrangementFeeDiscountsTotal>0.0</prod:ArrangementFeeDiscountsTotal>\r
+                              </prod:AccountingTotals>\r
+                           </prod:PriceBreakdown>\r
+                           <prod:TaxType>I</prod:TaxType>\r
+                           <prod:TaxDate>2020-02-01T00:00:00</prod:TaxDate>\r
+                           <prod:DateInceptedOnPolicy>2020-02-01T00:00:00</prod:DateInceptedOnPolicy>\r
+                           <prod:RelativityPriceFactor>1.0</prod:RelativityPriceFactor>\r
+                           <prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor>\r
+                           <prod:ArrangementFeeTotal>9.96</prod:ArrangementFeeTotal>\r
+                           <prod:TotalLessArrangementFeeTotal>68.08</prod:TotalLessArrangementFeeTotal>\r
+                           <prod:TotalLessDiscounts>78.04</prod:TotalLessDiscounts>\r
+                           <prod:Total>78.04</prod:Total>\r
+                        </prod:Price>\r
+                     </gen:TransactionPriceList>\r
+                  </gen:TransactionProduct>\r
                   <prod:SurchargeFeeList>\r
-                     <!--1 or more repetitions:-->\r
                      <prod:SurchargeFee>\r
-                        <!--Optional:-->\r
-                        <prod:Code>?</prod:Code>\r
-                        <!--Optional:-->\r
-                        <prod:SurchargeRequestType>?</prod:SurchargeRequestType>\r
-                        <!--Optional:-->\r
-                        <prod:IsWaived>?</prod:IsWaived>\r
-                        <!--Optional:-->\r
-                        <prod:TaxType>?</prod:TaxType>\r
-                        <prod:Fee>?</prod:Fee>\r
-                        <prod:FeeTax>?</prod:FeeTax>\r
-                        <prod:TaxPercentage>?</prod:TaxPercentage>\r
-                        <prod:Total>?</prod:Total>\r
+                        <prod:Code>Cancellation1</prod:Code>\r
+                        <prod:SurchargeRequestType>A</prod:SurchargeRequestType>\r
+                        <prod:IsWaived>false</prod:IsWaived>\r
+                        <prod:TaxType>I</prod:TaxType>\r
+                        <prod:Fee>17.86</prod:Fee>\r
+                        <prod:FeeTax>2.14</prod:FeeTax>\r
+                        <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
+                        <prod:Total>20.0</prod:Total>\r
+                     </prod:SurchargeFee>\r
+                     <prod:SurchargeFee>\r
+                        <prod:Code>Cancellation2</prod:Code>\r
+                        <prod:SurchargeRequestType>A</prod:SurchargeRequestType>\r
+                        <prod:IsWaived>false</prod:IsWaived>\r
+                        <prod:TaxType>I</prod:TaxType>\r
+                        <prod:Fee>5.36</prod:Fee>\r
+                        <prod:FeeTax>0.64</prod:FeeTax>\r
+                        <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
+                        <prod:Total>6.0</prod:Total>\r
+                     </prod:SurchargeFee>\r
+                     <prod:SurchargeFee>\r
+                        <prod:Code>WillJoinCanx</prod:Code>\r
+                        <prod:SurchargeRequestType>A</prod:SurchargeRequestType>\r
+                        <prod:IsWaived>false</prod:IsWaived>\r
+                        <prod:TaxType>V</prod:TaxType>\r
+                        <prod:Fee>82.5</prod:Fee>\r
+                        <prod:FeeTax>16.5</prod:FeeTax>\r
+                        <prod:TaxPercentage>0.2</prod:TaxPercentage>\r
+                        <prod:Total>99.0</prod:Total>\r
                      </prod:SurchargeFee>\r
                   </prod:SurchargeFeeList>\r
                </gen:TransactionProductList>\r
