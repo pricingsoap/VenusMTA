@@ -909,26 +909,33 @@
             </mes:Source>\r
          </mes:RequestHeader>\r
          <gen:IndicativePriceFlag>true</gen:IndicativePriceFlag>\r
+         <prod:FlexFactorOnCurrentPolicy>0.96</prod:FlexFactorOnCurrentPolicy>\r
+         <prod:CommunityOrRiskIndicator>Community</prod:CommunityOrRiskIndicator>\r
          <prod:Currency>GBP</prod:Currency>\r
          <gen:TradeUp>false</gen:TradeUp>\r
          <gen:ManConYear1>false</gen:ManConYear1>\r
          <gen:MTAReason>Make a Change</gen:MTAReason>\r
          <gen:MTACode>ABC</gen:MTACode>\r
          <gen:FreeMonths>0</gen:FreeMonths>\r
-         <gen:PaymentType>RAP</gen:PaymentType>\r
+         <gen:PaymentType>CMM</gen:PaymentType>\r
          <gen:NewProductList>\r
-            <prod:EffectivePriceDateTime>2020-03-20T00:00:00</prod:EffectivePriceDateTime>\r
-            <prod:PolicyStartDateTime>2020-02-01T00:00:00</prod:PolicyStartDateTime>\r
-            <prod:PolicyEndDateTime>2021-01-31T00:00:00</prod:PolicyEndDateTime>\r
+            <prod:EffectivePriceDateTime>2020-06-07T00:00:00</prod:EffectivePriceDateTime>\r
+            <prod:PolicyStartDateTime>2020-03-01T00:00:00</prod:PolicyStartDateTime>\r
+            <prod:PolicyEndDateTime>2021-03-02T00:00:00</prod:PolicyEndDateTime>\r
             <prod:OfferCodeDetailList>\r
                <prod:OfferCodeDetail>\r
-                  <prod:OfferCode>AAFRSM</prod:OfferCode>\r
+                  <prod:OfferCode/>\r
                   <prod:OfferCodeApplicationLevel>1</prod:OfferCodeApplicationLevel>\r
                   <prod:IsPersistent>true</prod:IsPersistent>\r
                </prod:OfferCodeDetail>\r
                <prod:OfferCodeDetail>\r
                   <prod:OfferCode/>\r
-                  <prod:OfferCodeApplicationLevel>1</prod:OfferCodeApplicationLevel>\r
+                  <prod:OfferCodeApplicationLevel>2</prod:OfferCodeApplicationLevel>\r
+                  <prod:IsPersistent>false</prod:IsPersistent>\r
+               </prod:OfferCodeDetail>\r
+               <prod:OfferCodeDetail>\r
+                  <prod:OfferCode>AAFRJA</prod:OfferCode>\r
+                  <prod:OfferCodeApplicationLevel>3</prod:OfferCodeApplicationLevel>\r
                   <prod:IsPersistent>false</prod:IsPersistent>\r
                </prod:OfferCodeDetail>\r
             </prod:OfferCodeDetailList>\r
@@ -937,43 +944,40 @@
                <prod:ProductCode>PRD_UK_0011</prod:ProductCode>\r
             </gen:Product>\r
             <gen:Product>\r
-               <prod:ProductCode>PRD_UK_0003</prod:ProductCode>\r
-            </gen:Product>\r
-            <gen:Product>\r
                <prod:ProductCode>PRD_UK_0005</prod:ProductCode>\r
             </gen:Product>\r
-            <gen:Product>\r
-               <prod:ProductCode>PRD_UK_0018</prod:ProductCode>\r
-            </gen:Product>\r
-            <prod:VehicleAgeList>\r
-               <prod:VehicleAge>0</prod:VehicleAge>\r
-               <prod:VehicleAge>10</prod:VehicleAge>\r
-            </prod:VehicleAgeList>\r
-            <gen:CoveredPersons>1</gen:CoveredPersons>\r
-            <prod:AgentDiscountRequestedList>\r
-               <prod:AgentDiscountRequested>\r
-                  <prod:AgentDiscountCode>MTA1c</prod:AgentDiscountCode>\r
-                  <prod:AgentDiscountType>T</prod:AgentDiscountType>\r
-                  <prod:AgentDiscountValue>100</prod:AgentDiscountValue>\r
-               </prod:AgentDiscountRequested>\r
-            </prod:AgentDiscountRequestedList>\r
+            <gen:CoveredPersons>4</gen:CoveredPersons>\r
+            <prod:AssociatesList>\r
+               <prod:Associate>\r
+                  <prod:AssociateType>U17</prod:AssociateType>\r
+                  <prod:NumberOfFreeAssociates>3</prod:NumberOfFreeAssociates>\r
+                  <prod:RelatedOfferCode>AAFRJA</prod:RelatedOfferCode>\r
+               </prod:Associate>\r
+            </prod:AssociatesList>\r
             <!--<prod:MultiplyingFactor>1</prod:MultiplyingFactor>-->\r
          </gen:NewProductList>\r
          <gen:CustomerDetails>\r
-            <gen:Postcode>RG21 7AS</gen:Postcode>\r
+            <gen:Postcode>IM99 3EP</gen:Postcode>\r
             <gen:MembershipStatus>\r
                <gen:IsMember>true</gen:IsMember>\r
                <gen:MembershipTenure>0</gen:MembershipTenure>\r
             </gen:MembershipStatus>\r
          </gen:CustomerDetails>\r
          <gen:CurrentPolicyDetails>\r
-            <prod:PaymentType>RAP</prod:PaymentType>\r
-            <prod:PolicyStartDateTime>2020-02-01T00:00:00</prod:PolicyStartDateTime>\r
-            <prod:PolicyEndDateTime>2021-01-31T00:00:00</prod:PolicyEndDateTime>\r
-            <prod:CoveredPersons>1</prod:CoveredPersons>\r
+            <prod:PaymentType>CMM</prod:PaymentType>\r
+            <prod:PolicyStartDateTime>2020-03-01T00:00:00</prod:PolicyStartDateTime>\r
+            <prod:PolicyEndDateTime>2021-03-02T00:00:00</prod:PolicyEndDateTime>\r
+            <prod:CoveredPersons>4</prod:CoveredPersons>\r
+            <prod:AssociatesList>\r
+               <prod:Associate>\r
+                  <prod:AssociateType>U17</prod:AssociateType>\r
+                  <prod:NumberOfFreeAssociates>3</prod:NumberOfFreeAssociates>\r
+                  <prod:RelatedOfferCode>AAFRJA</prod:RelatedOfferCode>\r
+               </prod:Associate>\r
+            </prod:AssociatesList>\r
             <prod:Currency>GBP</prod:Currency>\r
             <gen:Product>\r
-               <prod:ProductCode>PRD_UK_0001</prod:ProductCode>\r
+               <prod:ProductCode>PRD_UK_0011</prod:ProductCode>\r
                <prod:ProductPriceName>Roadside</prod:ProductPriceName>\r
                <gen:PriceList>\r
                   <prod:PolicyPrice>\r
@@ -982,152 +986,55 @@
                         <prod:CorePrice>\r
                            <prod:NetRate>0.0</prod:NetRate>\r
                            <prod:NetRateTax>0.0</prod:NetRateTax>\r
-                           <prod:Commission>43.95</prod:Commission>\r
-                           <prod:CommissionTax>5.27</prod:CommissionTax>\r
+                           <prod:Commission>14.06</prod:Commission>\r
+                           <prod:CommissionTax>1.69</prod:CommissionTax>\r
                            <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                            <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                           <prod:TaxTotal>5.27</prod:TaxTotal>\r
-                           <prod:Total>49.22</prod:Total>\r
+                           <prod:TaxTotal>1.69</prod:TaxTotal>\r
+                           <prod:Total>15.75</prod:Total>\r
                         </prod:CorePrice>\r
                         <prod:ArrangementFee>\r
-                           <prod:Fee>24.96</prod:Fee>\r
-                           <prod:FeeTax>0.0</prod:FeeTax>\r
+                           <prod:Fee>3.34</prod:Fee>\r
+                           <prod:FeeTax>0.4</prod:FeeTax>\r
                            <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                            <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                           <prod:Total>24.96</prod:Total>\r
+                           <prod:Total>3.74</prod:Total>\r
                         </prod:ArrangementFee>\r
-                        <prod:AccountingTotals>\r
-                           <prod:CoreDiscountsTotal>0.0</prod:CoreDiscountsTotal>\r
-                           <prod:CoreDiscountsTaxTotal>0.0</prod:CoreDiscountsTaxTotal>\r
-                           <prod:CoreCommissionDiscountsTotal>0.0</prod:CoreCommissionDiscountsTotal>\r
-                           <prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal>\r
-                           <prod:ArrangementFeeGrandDiscountsTotal>0.0</prod:ArrangementFeeGrandDiscountsTotal>\r
-                           <prod:ArrangementFeeTaxDiscountsTotal>0.0</prod:ArrangementFeeTaxDiscountsTotal>\r
-                           <prod:ArrangementFeeDiscountsTotal>0.0</prod:ArrangementFeeDiscountsTotal>\r
-                        </prod:AccountingTotals>\r
-                     </prod:PriceBreakdown>\r
-                     <prod:TaxType>I</prod:TaxType>\r
-                     <prod:TaxDate>2020-02-01T00:00:00</prod:TaxDate>\r
-                     <prod:DateInceptedOnPolicy>2020-02-01T00:00:00</prod:DateInceptedOnPolicy>\r
-                     <prod:RelativityPriceFactor>1.0</prod:RelativityPriceFactor>\r
-                     <prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor>\r
-                     <prod:ArrangementFeeTotal>24.96</prod:ArrangementFeeTotal>\r
-                     <prod:TotalLessArrangementFeeTotal>49.22</prod:TotalLessArrangementFeeTotal>\r
-                     <prod:TotalLessDiscounts>74.18</prod:TotalLessDiscounts>\r
-                     <prod:Total>74.18</prod:Total>\r
-                  </prod:PolicyPrice>\r
-               </gen:PriceList>\r
-               <prod:InsideCoolingOffFlag>false</prod:InsideCoolingOffFlag>\r
-               <prod:FullRefundFlag>false</prod:FullRefundFlag>\r
-               <prod:PaidPeriods>1</prod:PaidPeriods>\r
-            </gen:Product>\r
-            <gen:Product>\r
-               <prod:ProductCode>PRD_UK_0003</prod:ProductCode>\r
-               <prod:ProductPriceName>HomeStart</prod:ProductPriceName>\r
-               <gen:PriceList>\r
-                  <prod:PolicyPrice>\r
-                     <prod:PriceElementType/>\r
-                     <prod:PriceBreakdown>\r
-                        <prod:CorePrice>\r
-                           <prod:NetRate>0.0</prod:NetRate>\r
-                           <prod:NetRateTax>0.0</prod:NetRateTax>\r
-                           <prod:Commission>71.04</prod:Commission>\r
-                           <prod:CommissionTax>8.52</prod:CommissionTax>\r
-                           <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
-                           <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                           <prod:TaxTotal>8.52</prod:TaxTotal>\r
-                           <prod:Total>79.56</prod:Total>\r
-                        </prod:CorePrice>\r
-                        <prod:ArrangementFee>\r
-                           <prod:Fee>9.96</prod:Fee>\r
-                           <prod:FeeTax>0.0</prod:FeeTax>\r
-                           <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
-                           <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                           <prod:Total>9.96</prod:Total>\r
-                        </prod:ArrangementFee>\r
-                        <prod:AccountingTotals>\r
-                           <prod:CoreDiscountsTotal>0.0</prod:CoreDiscountsTotal>\r
-                           <prod:CoreDiscountsTaxTotal>0.0</prod:CoreDiscountsTaxTotal>\r
-                           <prod:CoreCommissionDiscountsTotal>0.0</prod:CoreCommissionDiscountsTotal>\r
-                           <prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal>\r
-                           <prod:ArrangementFeeGrandDiscountsTotal>0.0</prod:ArrangementFeeGrandDiscountsTotal>\r
-                           <prod:ArrangementFeeTaxDiscountsTotal>0.0</prod:ArrangementFeeTaxDiscountsTotal>\r
-                           <prod:ArrangementFeeDiscountsTotal>0.0</prod:ArrangementFeeDiscountsTotal>\r
-                        </prod:AccountingTotals>\r
-                     </prod:PriceBreakdown>\r
-                     <prod:TaxType>I</prod:TaxType>\r
-                     <prod:TaxDate>2020-02-01T00:00:00</prod:TaxDate>\r
-                     <prod:DateInceptedOnPolicy>2020-02-01T00:00:00</prod:DateInceptedOnPolicy>\r
-                     <prod:RelativityPriceFactor>1.0</prod:RelativityPriceFactor>\r
-                     <prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor>\r
-                     <prod:ArrangementFeeTotal>9.96</prod:ArrangementFeeTotal>\r
-                     <prod:TotalLessArrangementFeeTotal>79.56</prod:TotalLessArrangementFeeTotal>\r
-                     <prod:TotalLessDiscounts>89.52</prod:TotalLessDiscounts>\r
-                     <prod:Total>89.52</prod:Total>\r
-                  </prod:PolicyPrice>\r
-               </gen:PriceList>\r
-               <prod:InsideCoolingOffFlag>false</prod:InsideCoolingOffFlag>\r
-               <prod:FullRefundFlag>false</prod:FullRefundFlag>\r
-               <prod:PaidPeriods>1</prod:PaidPeriods>\r
-            </gen:Product>\r
-            <gen:Product>\r
-               <prod:ProductCode>PRD_UK_0005</prod:ProductCode>\r
-               <prod:ProductPriceName>StayMobile</prod:ProductPriceName>\r
-               <gen:PriceList>\r
-                  <prod:PolicyPrice>\r
-                     <prod:PriceElementType/>\r
-                     <prod:PriceBreakdown>\r
-                        <prod:CorePrice>\r
-                           <prod:NetRate>7.07</prod:NetRate>\r
-                           <prod:NetRateTax>0.85</prod:NetRateTax>\r
-                           <prod:Commission>31.59</prod:Commission>\r
-                           <prod:CommissionTax>3.79</prod:CommissionTax>\r
-                           <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
-                           <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                           <prod:TaxTotal>4.64</prod:TaxTotal>\r
-                           <prod:Total>43.3</prod:Total>\r
-                        </prod:CorePrice>\r
-                        <prod:ArrangementFee>\r
-                           <prod:Fee>9.96</prod:Fee>\r
-                           <prod:FeeTax>0.0</prod:FeeTax>\r
-                           <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
-                           <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                           <prod:Total>9.96</prod:Total>\r
-                        </prod:ArrangementFee>\r
-                        <prod:OfferCodeDiscountList>\r
-                           <prod:OfferCodeDiscount>\r
-                              <prod:Code>AAFRSM</prod:Code>\r
+                        <prod:SystemDiscountList>\r
+                           <prod:SystemDiscount>\r
+                              <prod:Code>AAFRJA</prod:Code>\r
+                              <prod:SystemDiscountCategory>Adjustment</prod:SystemDiscountCategory>\r
                               <prod:DiscountApplicationApproach>Product</prod:DiscountApplicationApproach>\r
                               <prod:NetRate>0.0</prod:NetRate>\r
                               <prod:NetRateTax>0.0</prod:NetRateTax>\r
-                              <prod:Commission>-31.59</prod:Commission>\r
-                              <prod:CommissionTax>-3.79</prod:CommissionTax>\r
-                              <prod:ArrangementFee>-9.96</prod:ArrangementFee>\r
+                              <prod:Commission>-10.32</prod:Commission>\r
+                              <prod:CommissionTax>-1.24</prod:CommissionTax>\r
+                              <prod:ArrangementFee>0.0</prod:ArrangementFee>\r
                               <prod:ArrangementFeeTax>0.0</prod:ArrangementFeeTax>\r
-                              <prod:InternallyFundedDiscount>-7.92</prod:InternallyFundedDiscount>\r
+                              <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                               <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                              <prod:Total>-53.26</prod:Total>\r
-                           </prod:OfferCodeDiscount>\r
-                        </prod:OfferCodeDiscountList>\r
+                              <prod:Total>-11.56</prod:Total>\r
+                           </prod:SystemDiscount>\r
+                        </prod:SystemDiscountList>\r
                         <prod:AccountingTotals>\r
-                           <prod:CoreDiscountsTotal>-43.3</prod:CoreDiscountsTotal>\r
-                           <prod:CoreDiscountsTaxTotal>-3.79</prod:CoreDiscountsTaxTotal>\r
-                           <prod:CoreCommissionDiscountsTotal>-39.51</prod:CoreCommissionDiscountsTotal>\r
+                           <prod:CoreDiscountsTotal>-11.56</prod:CoreDiscountsTotal>\r
+                           <prod:CoreDiscountsTaxTotal>-1.24</prod:CoreDiscountsTaxTotal>\r
+                           <prod:CoreCommissionDiscountsTotal>-10.32</prod:CoreCommissionDiscountsTotal>\r
                            <prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal>\r
-                           <prod:ArrangementFeeGrandDiscountsTotal>-9.96</prod:ArrangementFeeGrandDiscountsTotal>\r
+                           <prod:ArrangementFeeGrandDiscountsTotal>0.0</prod:ArrangementFeeGrandDiscountsTotal>\r
                            <prod:ArrangementFeeTaxDiscountsTotal>0.0</prod:ArrangementFeeTaxDiscountsTotal>\r
-                           <prod:ArrangementFeeDiscountsTotal>-9.96</prod:ArrangementFeeDiscountsTotal>\r
+                           <prod:ArrangementFeeDiscountsTotal>0.0</prod:ArrangementFeeDiscountsTotal>\r
                         </prod:AccountingTotals>\r
                      </prod:PriceBreakdown>\r
                      <prod:TaxType>I</prod:TaxType>\r
-                     <prod:TaxDate>2020-02-01T00:00:00</prod:TaxDate>\r
-                     <prod:DateInceptedOnPolicy>2020-02-01T00:00:00</prod:DateInceptedOnPolicy>\r
+                     <prod:TaxDate>2020-03-01T00:00:00</prod:TaxDate>\r
+                     <prod:DateInceptedOnPolicy>2020-03-01T00:00:00</prod:DateInceptedOnPolicy>\r
                      <prod:RelativityPriceFactor>1.0</prod:RelativityPriceFactor>\r
                      <prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor>\r
-                     <prod:ArrangementFeeTotal>0.0</prod:ArrangementFeeTotal>\r
-                     <prod:TotalLessArrangementFeeTotal>0.0</prod:TotalLessArrangementFeeTotal>\r
-                     <prod:TotalLessDiscounts>53.26</prod:TotalLessDiscounts>\r
-                     <prod:Total>0.0</prod:Total>\r
+                     <prod:ArrangementFeeTotal>3.74</prod:ArrangementFeeTotal>\r
+                     <prod:TotalLessArrangementFeeTotal>4.19</prod:TotalLessArrangementFeeTotal>\r
+                     <prod:TotalLessDiscounts>19.49</prod:TotalLessDiscounts>\r
+                     <prod:Total>7.93</prod:Total>\r
                   </prod:PolicyPrice>\r
                </gen:PriceList>\r
                <prod:InsideCoolingOffFlag>false</prod:InsideCoolingOffFlag>\r
@@ -1138,14 +1045,14 @@
          <gen:TransactionRecordList>\r
             <gen:TransactionRecord>\r
                <gen:Transaction>Renewal</gen:Transaction>\r
-               <gen:TransactionRequestDateTime>2020-02-01T00:00:00</gen:TransactionRequestDateTime>\r
-               <gen:TransactionStartDateTime>2020-02-01T00:00:00</gen:TransactionStartDateTime>\r
+               <gen:TransactionRequestDateTime>2020-03-01T00:00:00</gen:TransactionRequestDateTime>\r
+               <gen:TransactionStartDateTime>2020-03-01T00:00:00</gen:TransactionStartDateTime>\r
                <gen:TransactionProductList>\r
-                  <prod:PaymentType>RAP</prod:PaymentType>\r
-                  <prod:CoveredPersons>1</prod:CoveredPersons>\r
+                  <prod:PaymentType>CMM</prod:PaymentType>\r
+                  <prod:CoveredPersons>4</prod:CoveredPersons>\r
                   <prod:Currency>GBP</prod:Currency>\r
                   <gen:TransactionProduct>\r
-                     <prod:ProductCode>PRD_UK_0001</prod:ProductCode>\r
+                     <prod:ProductCode>PRD_UK_0011</prod:ProductCode>\r
                      <prod:ProductPriceName>Roadside</prod:ProductPriceName>\r
                      <gen:TransactionPriceList>\r
                         <prod:Price>\r
@@ -1154,146 +1061,55 @@
                               <prod:CorePrice>\r
                                  <prod:NetRate>0.0</prod:NetRate>\r
                                  <prod:NetRateTax>0.0</prod:NetRateTax>\r
-                                 <prod:Commission>43.95</prod:Commission>\r
-                                 <prod:CommissionTax>5.27</prod:CommissionTax>\r
+                                 <prod:Commission>14.06</prod:Commission>\r
+                                 <prod:CommissionTax>1.69</prod:CommissionTax>\r
                                  <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                                  <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                                 <prod:TaxTotal>5.27</prod:TaxTotal>\r
-                                 <prod:Total>49.22</prod:Total>\r
+                                 <prod:TaxTotal>1.69</prod:TaxTotal>\r
+                                 <prod:Total>15.75</prod:Total>\r
                               </prod:CorePrice>\r
                               <prod:ArrangementFee>\r
-                                 <prod:Fee>24.96</prod:Fee>\r
-                                 <prod:FeeTax>0.0</prod:FeeTax>\r
+                                 <prod:Fee>3.34</prod:Fee>\r
+                                 <prod:FeeTax>0.4</prod:FeeTax>\r
                                  <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                                  <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                                 <prod:Total>24.96</prod:Total>\r
+                                 <prod:Total>3.74</prod:Total>\r
                               </prod:ArrangementFee>\r
-                              <prod:AccountingTotals>\r
-                                 <prod:CoreDiscountsTotal>0.0</prod:CoreDiscountsTotal>\r
-                                 <prod:CoreDiscountsTaxTotal>0.0</prod:CoreDiscountsTaxTotal>\r
-                                 <prod:CoreCommissionDiscountsTotal>0.0</prod:CoreCommissionDiscountsTotal>\r
-                                 <prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal>\r
-                                 <prod:ArrangementFeeGrandDiscountsTotal>0.0</prod:ArrangementFeeGrandDiscountsTotal>\r
-                                 <prod:ArrangementFeeTaxDiscountsTotal>0.0</prod:ArrangementFeeTaxDiscountsTotal>\r
-                                 <prod:ArrangementFeeDiscountsTotal>0.0</prod:ArrangementFeeDiscountsTotal>\r
-                              </prod:AccountingTotals>\r
-                           </prod:PriceBreakdown>\r
-                           <prod:TaxType>I</prod:TaxType>\r
-                           <prod:TaxDate>2020-02-01T00:00:00</prod:TaxDate>\r
-                           <prod:DateInceptedOnPolicy>2020-02-01T00:00:00</prod:DateInceptedOnPolicy>\r
-                           <prod:RelativityPriceFactor>1.0</prod:RelativityPriceFactor>\r
-                           <prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor>\r
-                           <prod:ArrangementFeeTotal>24.96</prod:ArrangementFeeTotal>\r
-                           <prod:TotalLessArrangementFeeTotal>49.22</prod:TotalLessArrangementFeeTotal>\r
-                           <prod:TotalLessDiscounts>74.18</prod:TotalLessDiscounts>\r
-                           <prod:Total>74.18</prod:Total>\r
-                        </prod:Price>\r
-                     </gen:TransactionPriceList>\r
-                  </gen:TransactionProduct>\r
-                  <gen:TransactionProduct>\r
-                     <prod:ProductCode>PRD_UK_0003</prod:ProductCode>\r
-                     <prod:ProductPriceName>HomeStart</prod:ProductPriceName>\r
-                     <gen:TransactionPriceList>\r
-                        <prod:Price>\r
-                           <prod:PriceElementType/>\r
-                           <prod:PriceBreakdown>\r
-                              <prod:CorePrice>\r
-                                 <prod:NetRate>0.0</prod:NetRate>\r
-                                 <prod:NetRateTax>0.0</prod:NetRateTax>\r
-                                 <prod:Commission>71.04</prod:Commission>\r
-                                 <prod:CommissionTax>8.52</prod:CommissionTax>\r
-                                 <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
-                                 <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                                 <prod:TaxTotal>8.52</prod:TaxTotal>\r
-                                 <prod:Total>79.56</prod:Total>\r
-                              </prod:CorePrice>\r
-                              <prod:ArrangementFee>\r
-                                 <prod:Fee>9.96</prod:Fee>\r
-                                 <prod:FeeTax>0.0</prod:FeeTax>\r
-                                 <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
-                                 <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                                 <prod:Total>9.96</prod:Total>\r
-                              </prod:ArrangementFee>\r
-                              <prod:AccountingTotals>\r
-                                 <prod:CoreDiscountsTotal>0.0</prod:CoreDiscountsTotal>\r
-                                 <prod:CoreDiscountsTaxTotal>0.0</prod:CoreDiscountsTaxTotal>\r
-                                 <prod:CoreCommissionDiscountsTotal>0.0</prod:CoreCommissionDiscountsTotal>\r
-                                 <prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal>\r
-                                 <prod:ArrangementFeeGrandDiscountsTotal>0.0</prod:ArrangementFeeGrandDiscountsTotal>\r
-                                 <prod:ArrangementFeeTaxDiscountsTotal>0.0</prod:ArrangementFeeTaxDiscountsTotal>\r
-                                 <prod:ArrangementFeeDiscountsTotal>0.0</prod:ArrangementFeeDiscountsTotal>\r
-                              </prod:AccountingTotals>\r
-                           </prod:PriceBreakdown>\r
-                           <prod:TaxType>I</prod:TaxType>\r
-                           <prod:TaxDate>2020-02-01T00:00:00</prod:TaxDate>\r
-                           <prod:DateInceptedOnPolicy>2020-02-01T00:00:00</prod:DateInceptedOnPolicy>\r
-                           <prod:RelativityPriceFactor>1.0</prod:RelativityPriceFactor>\r
-                           <prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor>\r
-                           <prod:ArrangementFeeTotal>9.96</prod:ArrangementFeeTotal>\r
-                           <prod:TotalLessArrangementFeeTotal>79.56</prod:TotalLessArrangementFeeTotal>\r
-                           <prod:TotalLessDiscounts>89.52</prod:TotalLessDiscounts>\r
-                           <prod:Total>89.52</prod:Total>\r
-                        </prod:Price>\r
-                     </gen:TransactionPriceList>\r
-                  </gen:TransactionProduct>\r
-                  <gen:TransactionProduct>\r
-                     <prod:ProductCode>PRD_UK_0005</prod:ProductCode>\r
-                     <prod:ProductPriceName>StayMobile</prod:ProductPriceName>\r
-                     <gen:TransactionPriceList>\r
-                        <prod:Price>\r
-                           <prod:PriceElementType/>\r
-                           <prod:PriceBreakdown>\r
-                              <prod:CorePrice>\r
-                                 <prod:NetRate>7.07</prod:NetRate>\r
-                                 <prod:NetRateTax>0.85</prod:NetRateTax>\r
-                                 <prod:Commission>31.59</prod:Commission>\r
-                                 <prod:CommissionTax>3.79</prod:CommissionTax>\r
-                                 <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
-                                 <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                                 <prod:TaxTotal>4.64</prod:TaxTotal>\r
-                                 <prod:Total>43.3</prod:Total>\r
-                              </prod:CorePrice>\r
-                              <prod:ArrangementFee>\r
-                                 <prod:Fee>9.96</prod:Fee>\r
-                                 <prod:FeeTax>0.0</prod:FeeTax>\r
-                                 <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
-                                 <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                                 <prod:Total>9.96</prod:Total>\r
-                              </prod:ArrangementFee>\r
-                              <prod:OfferCodeDiscountList>\r
-                                 <prod:OfferCodeDiscount>\r
-                                    <prod:Code>AAFRSM</prod:Code>\r
+                              <prod:SystemDiscountList>\r
+                                 <prod:SystemDiscount>\r
+                                    <prod:Code>AAFRJA</prod:Code>\r
+                                    <prod:SystemDiscountCategory>Adjustment</prod:SystemDiscountCategory>\r
                                     <prod:DiscountApplicationApproach>Product</prod:DiscountApplicationApproach>\r
                                     <prod:NetRate>0.0</prod:NetRate>\r
                                     <prod:NetRateTax>0.0</prod:NetRateTax>\r
-                                    <prod:Commission>-31.59</prod:Commission>\r
-                                    <prod:CommissionTax>-3.79</prod:CommissionTax>\r
-                                    <prod:ArrangementFee>-9.96</prod:ArrangementFee>\r
+                                    <prod:Commission>-10.32</prod:Commission>\r
+                                    <prod:CommissionTax>-1.24</prod:CommissionTax>\r
+                                    <prod:ArrangementFee>0.0</prod:ArrangementFee>\r
                                     <prod:ArrangementFeeTax>0.0</prod:ArrangementFeeTax>\r
-                                    <prod:InternallyFundedDiscount>-7.92</prod:InternallyFundedDiscount>\r
+                                    <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                                     <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                                    <prod:Total>-53.26</prod:Total>\r
-                                 </prod:OfferCodeDiscount>\r
-                              </prod:OfferCodeDiscountList>\r
+                                    <prod:Total>-11.56</prod:Total>\r
+                                 </prod:SystemDiscount>\r
+                              </prod:SystemDiscountList>\r
                               <prod:AccountingTotals>\r
-                                 <prod:CoreDiscountsTotal>-43.3</prod:CoreDiscountsTotal>\r
-                                 <prod:CoreDiscountsTaxTotal>-3.79</prod:CoreDiscountsTaxTotal>\r
-                                 <prod:CoreCommissionDiscountsTotal>-39.51</prod:CoreCommissionDiscountsTotal>\r
+                                 <prod:CoreDiscountsTotal>-11.56</prod:CoreDiscountsTotal>\r
+                                 <prod:CoreDiscountsTaxTotal>-1.24</prod:CoreDiscountsTaxTotal>\r
+                                 <prod:CoreCommissionDiscountsTotal>-10.32</prod:CoreCommissionDiscountsTotal>\r
                                  <prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal>\r
-                                 <prod:ArrangementFeeGrandDiscountsTotal>-9.96</prod:ArrangementFeeGrandDiscountsTotal>\r
+                                 <prod:ArrangementFeeGrandDiscountsTotal>0.0</prod:ArrangementFeeGrandDiscountsTotal>\r
                                  <prod:ArrangementFeeTaxDiscountsTotal>0.0</prod:ArrangementFeeTaxDiscountsTotal>\r
-                                 <prod:ArrangementFeeDiscountsTotal>-9.96</prod:ArrangementFeeDiscountsTotal>\r
+                                 <prod:ArrangementFeeDiscountsTotal>0.0</prod:ArrangementFeeDiscountsTotal>\r
                               </prod:AccountingTotals>\r
                            </prod:PriceBreakdown>\r
                            <prod:TaxType>I</prod:TaxType>\r
-                           <prod:TaxDate>2020-02-01T00:00:00</prod:TaxDate>\r
-                           <prod:DateInceptedOnPolicy>2020-02-01T00:00:00</prod:DateInceptedOnPolicy>\r
+                           <prod:TaxDate>2020-03-01T00:00:00</prod:TaxDate>\r
+                           <prod:DateInceptedOnPolicy>2020-03-01T00:00:00</prod:DateInceptedOnPolicy>\r
                            <prod:RelativityPriceFactor>1.0</prod:RelativityPriceFactor>\r
                            <prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor>\r
-                           <prod:ArrangementFeeTotal>0.0</prod:ArrangementFeeTotal>\r
-                           <prod:TotalLessArrangementFeeTotal>0.0</prod:TotalLessArrangementFeeTotal>\r
-                           <prod:TotalLessDiscounts>53.26</prod:TotalLessDiscounts>\r
-                           <prod:Total>0.0</prod:Total>\r
+                           <prod:ArrangementFeeTotal>3.74</prod:ArrangementFeeTotal>\r
+                           <prod:TotalLessArrangementFeeTotal>4.19</prod:TotalLessArrangementFeeTotal>\r
+                           <prod:TotalLessDiscounts>19.49</prod:TotalLessDiscounts>\r
+                           <prod:Total>7.93</prod:Total>\r
                         </prod:Price>\r
                      </gen:TransactionPriceList>\r
                   </gen:TransactionProduct>\r
@@ -1348,7 +1164,7 @@
       <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
     </con:settings>
     <con:encoding>UTF-8</con:encoding>
-    <con:endpoint>http://rh0124v:18027/SOAPServiceBinding/BSROS_GenerateQuote_MTA/</con:endpoint>
+    <con:endpoint>http://rh0123v:18027/SOAPServiceBinding/BSROS_GenerateQuote_MTA/</con:endpoint>
     <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gen="http://www.theaa.com/CommonServices/Message/BS/Road/GenerateQuote_MTA.3" xmlns:mes="http://www.theaa.com/CommonServices/Data/Message/MessageHeader.2" xmlns:com="http://www.theaa.com/CommonServices/Data/Common" xmlns:prod="http://www.theaa.com/CommonServices/Data/Product.2">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
@@ -1366,7 +1182,7 @@
             </mes:Source>\r
          </mes:RequestHeader>\r
          <gen:IndicativePriceFlag>true</gen:IndicativePriceFlag>\r
-         <prod:FlexFactorOnCurrentPolicy>0.93</prod:FlexFactorOnCurrentPolicy>\r
+         <prod:FlexFactorOnCurrentPolicy>1.11</prod:FlexFactorOnCurrentPolicy>\r
          <prod:CommunityOrRiskIndicator>Community</prod:CommunityOrRiskIndicator>\r
          <prod:Currency>GBP</prod:Currency>\r
          <gen:TradeUp>false</gen:TradeUp>\r
@@ -1374,11 +1190,11 @@
          <gen:MTAReason>Make a Change</gen:MTAReason>\r
          <gen:MTACode>ABC</gen:MTACode>\r
          <gen:FreeMonths>0</gen:FreeMonths>\r
-         <gen:PaymentType>CMM</gen:PaymentType>\r
+         <gen:PaymentType>RAP</gen:PaymentType>\r
          <gen:NewProductList>\r
-            <prod:EffectivePriceDateTime>2020-04-04T00:00:00</prod:EffectivePriceDateTime>\r
-            <prod:PolicyStartDateTime>2020-03-15T00:00:00</prod:PolicyStartDateTime>\r
-            <prod:PolicyEndDateTime>2021-03-16T00:00:00</prod:PolicyEndDateTime>\r
+            <prod:EffectivePriceDateTime>2020-03-20T00:00:00</prod:EffectivePriceDateTime>\r
+            <prod:PolicyStartDateTime>2020-03-01T00:00:00</prod:PolicyStartDateTime>\r
+            <prod:PolicyEndDateTime>2021-03-02T00:00:00</prod:PolicyEndDateTime>\r
             <prod:OfferCodeDetailList>\r
                <prod:OfferCodeDetail>\r
                   <prod:OfferCode/>\r
@@ -1390,6 +1206,11 @@
                   <prod:OfferCodeApplicationLevel>2</prod:OfferCodeApplicationLevel>\r
                   <prod:IsPersistent>false</prod:IsPersistent>\r
                </prod:OfferCodeDetail>\r
+               <prod:OfferCodeDetail>\r
+                  <prod:OfferCode>AAFRJA</prod:OfferCode>\r
+                  <prod:OfferCodeApplicationLevel>3</prod:OfferCodeApplicationLevel>\r
+                  <prod:IsPersistent>false</prod:IsPersistent>\r
+               </prod:OfferCodeDetail>\r
             </prod:OfferCodeDetailList>\r
             <prod:SourceCode>Natural Search</prod:SourceCode>\r
             <gen:Product>\r
@@ -1399,12 +1220,22 @@
                <prod:ProductCode>PRD_UK_0003</prod:ProductCode>\r
             </gen:Product>\r
             <gen:Product>\r
-               <prod:ProductCode>PRD_UK_0004</prod:ProductCode>\r
-            </gen:Product>\r
-            <gen:Product>\r
                <prod:ProductCode>PRD_UK_0005</prod:ProductCode>\r
             </gen:Product>\r
-            <gen:CoveredPersons>1</gen:CoveredPersons>\r
+            <gen:Product>\r
+               <prod:ProductCode>PRD_UK_0018</prod:ProductCode>\r
+            </gen:Product>\r
+            <prod:VehicleAgeList>\r
+               <prod:VehicleAge>10</prod:VehicleAge>\r
+            </prod:VehicleAgeList>\r
+            <gen:CoveredPersons>2</gen:CoveredPersons>\r
+            <prod:AssociatesList>\r
+               <prod:Associate>\r
+                  <prod:AssociateType>U17</prod:AssociateType>\r
+                  <prod:NumberOfFreeAssociates>1</prod:NumberOfFreeAssociates>\r
+                  <prod:RelatedOfferCode>AAFRJA</prod:RelatedOfferCode>\r
+               </prod:Associate>\r
+            </prod:AssociatesList>\r
             <!--<prod:MultiplyingFactor>1</prod:MultiplyingFactor>-->\r
          </gen:NewProductList>\r
          <gen:CustomerDetails>\r
@@ -1415,20 +1246,20 @@
             </gen:MembershipStatus>\r
          </gen:CustomerDetails>\r
          <gen:CurrentPolicyDetails>\r
-            <prod:PaymentType>CMM</prod:PaymentType>\r
-            <prod:PolicyStartDateTime>2020-03-15T00:00:00</prod:PolicyStartDateTime>\r
-            <prod:PolicyEndDateTime>2021-03-16T00:00:00</prod:PolicyEndDateTime>\r
-            <prod:CoveredPersons>3</prod:CoveredPersons>\r
+            <prod:PaymentType>RAP</prod:PaymentType>\r
+            <prod:PolicyStartDateTime>2020-03-01T00:00:00</prod:PolicyStartDateTime>\r
+            <prod:PolicyEndDateTime>2021-03-02T00:00:00</prod:PolicyEndDateTime>\r
+            <prod:CoveredPersons>4</prod:CoveredPersons>\r
             <prod:AssociatesList>\r
                <prod:Associate>\r
                   <prod:AssociateType>U17</prod:AssociateType>\r
-                  <prod:NumberOfFreeAssociates>2</prod:NumberOfFreeAssociates>\r
+                  <prod:NumberOfFreeAssociates>3</prod:NumberOfFreeAssociates>\r
                   <prod:RelatedOfferCode>AAFRJA</prod:RelatedOfferCode>\r
                </prod:Associate>\r
             </prod:AssociatesList>\r
             <prod:Currency>GBP</prod:Currency>\r
             <gen:Product>\r
-               <prod:ProductCode>PRD_UK_0001</prod:ProductCode>\r
+               <prod:ProductCode>PRD_UK_0011</prod:ProductCode>\r
                <prod:ProductPriceName>Roadside</prod:ProductPriceName>\r
                <gen:PriceList>\r
                   <prod:PolicyPrice>\r
@@ -1437,19 +1268,19 @@
                         <prod:CorePrice>\r
                            <prod:NetRate>0.0</prod:NetRate>\r
                            <prod:NetRateTax>0.0</prod:NetRateTax>\r
-                           <prod:Commission>13.52</prod:Commission>\r
-                           <prod:CommissionTax>1.62</prod:CommissionTax>\r
+                           <prod:Commission>155.35</prod:Commission>\r
+                           <prod:CommissionTax>18.64</prod:CommissionTax>\r
                            <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                            <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                           <prod:TaxTotal>1.62</prod:TaxTotal>\r
-                           <prod:Total>15.14</prod:Total>\r
+                           <prod:TaxTotal>18.64</prod:TaxTotal>\r
+                           <prod:Total>173.99</prod:Total>\r
                         </prod:CorePrice>\r
                         <prod:ArrangementFee>\r
-                           <prod:Fee>3.34</prod:Fee>\r
-                           <prod:FeeTax>0.4</prod:FeeTax>\r
+                           <prod:Fee>40.07</prod:Fee>\r
+                           <prod:FeeTax>4.81</prod:FeeTax>\r
                            <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                            <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                           <prod:Total>3.74</prod:Total>\r
+                           <prod:Total>44.88</prod:Total>\r
                         </prod:ArrangementFee>\r
                         <prod:SystemDiscountList>\r
                            <prod:SystemDiscount>\r
@@ -1458,19 +1289,19 @@
                               <prod:DiscountApplicationApproach>Product</prod:DiscountApplicationApproach>\r
                               <prod:NetRate>0.0</prod:NetRate>\r
                               <prod:NetRateTax>0.0</prod:NetRateTax>\r
-                              <prod:Commission>-10.0</prod:Commission>\r
-                              <prod:CommissionTax>-1.2</prod:CommissionTax>\r
+                              <prod:Commission>-114.63</prod:Commission>\r
+                              <prod:CommissionTax>-13.75</prod:CommissionTax>\r
                               <prod:ArrangementFee>0.0</prod:ArrangementFee>\r
                               <prod:ArrangementFeeTax>0.0</prod:ArrangementFeeTax>\r
                               <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                               <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                              <prod:Total>-11.2</prod:Total>\r
+                              <prod:Total>-128.38</prod:Total>\r
                            </prod:SystemDiscount>\r
                         </prod:SystemDiscountList>\r
                         <prod:AccountingTotals>\r
-                           <prod:CoreDiscountsTotal>-11.2</prod:CoreDiscountsTotal>\r
-                           <prod:CoreDiscountsTaxTotal>-1.2</prod:CoreDiscountsTaxTotal>\r
-                           <prod:CoreCommissionDiscountsTotal>-10.0</prod:CoreCommissionDiscountsTotal>\r
+                           <prod:CoreDiscountsTotal>-128.38</prod:CoreDiscountsTotal>\r
+                           <prod:CoreDiscountsTaxTotal>-13.75</prod:CoreDiscountsTaxTotal>\r
+                           <prod:CoreCommissionDiscountsTotal>-114.63</prod:CoreCommissionDiscountsTotal>\r
                            <prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal>\r
                            <prod:ArrangementFeeGrandDiscountsTotal>0.0</prod:ArrangementFeeGrandDiscountsTotal>\r
                            <prod:ArrangementFeeTaxDiscountsTotal>0.0</prod:ArrangementFeeTaxDiscountsTotal>\r
@@ -1478,18 +1309,18 @@
                         </prod:AccountingTotals>\r
                      </prod:PriceBreakdown>\r
                      <prod:TaxType>I</prod:TaxType>\r
-                     <prod:TaxDate>2020-03-15T00:00:00</prod:TaxDate>\r
-                     <prod:DateInceptedOnPolicy>2020-03-15T00:00:00</prod:DateInceptedOnPolicy>\r
+                     <prod:TaxDate>2020-03-01T00:00:00</prod:TaxDate>\r
+                     <prod:DateInceptedOnPolicy>2020-03-01T00:00:00</prod:DateInceptedOnPolicy>\r
                      <prod:RelativityPriceFactor>1.0</prod:RelativityPriceFactor>\r
                      <prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor>\r
-                     <prod:ArrangementFeeTotal>3.74</prod:ArrangementFeeTotal>\r
-                     <prod:TotalLessArrangementFeeTotal>3.94</prod:TotalLessArrangementFeeTotal>\r
-                     <prod:TotalLessDiscounts>18.88</prod:TotalLessDiscounts>\r
-                     <prod:Total>7.68</prod:Total>\r
+                     <prod:ArrangementFeeTotal>44.88</prod:ArrangementFeeTotal>\r
+                     <prod:TotalLessArrangementFeeTotal>45.61</prod:TotalLessArrangementFeeTotal>\r
+                     <prod:TotalLessDiscounts>218.87</prod:TotalLessDiscounts>\r
+                     <prod:Total>90.49</prod:Total>\r
                   </prod:PolicyPrice>\r
                </gen:PriceList>\r
                <prod:InsideCoolingOffFlag>true</prod:InsideCoolingOffFlag>\r
-               <prod:FullRefundFlag>false</prod:FullRefundFlag>\r
+               <prod:FullRefundFlag>true</prod:FullRefundFlag>\r
                <prod:PaidPeriods>1</prod:PaidPeriods>\r
             </gen:Product>\r
             <gen:Product>\r
@@ -1502,19 +1333,19 @@
                         <prod:CorePrice>\r
                            <prod:NetRate>0.0</prod:NetRate>\r
                            <prod:NetRateTax>0.0</prod:NetRateTax>\r
-                           <prod:Commission>6.72</prod:Commission>\r
-                           <prod:CommissionTax>0.81</prod:CommissionTax>\r
+                           <prod:Commission>102.29</prod:Commission>\r
+                           <prod:CommissionTax>12.27</prod:CommissionTax>\r
                            <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                            <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                           <prod:TaxTotal>0.81</prod:TaxTotal>\r
-                           <prod:Total>7.53</prod:Total>\r
+                           <prod:TaxTotal>12.27</prod:TaxTotal>\r
+                           <prod:Total>114.56</prod:Total>\r
                         </prod:CorePrice>\r
                         <prod:ArrangementFee>\r
-                           <prod:Fee>0.74</prod:Fee>\r
-                           <prod:FeeTax>0.09</prod:FeeTax>\r
+                           <prod:Fee>8.89</prod:Fee>\r
+                           <prod:FeeTax>1.07</prod:FeeTax>\r
                            <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                            <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                           <prod:Total>0.83</prod:Total>\r
+                           <prod:Total>9.96</prod:Total>\r
                         </prod:ArrangementFee>\r
                         <prod:SystemDiscountList>\r
                            <prod:SystemDiscount>\r
@@ -1523,19 +1354,19 @@
                               <prod:DiscountApplicationApproach>Product</prod:DiscountApplicationApproach>\r
                               <prod:NetRate>0.0</prod:NetRate>\r
                               <prod:NetRateTax>0.0</prod:NetRateTax>\r
-                              <prod:Commission>-1.06</prod:Commission>\r
-                              <prod:CommissionTax>-0.13</prod:CommissionTax>\r
+                              <prod:Commission>-13.69</prod:Commission>\r
+                              <prod:CommissionTax>-1.64</prod:CommissionTax>\r
                               <prod:ArrangementFee>0.0</prod:ArrangementFee>\r
                               <prod:ArrangementFeeTax>0.0</prod:ArrangementFeeTax>\r
                               <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                               <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                              <prod:Total>-1.19</prod:Total>\r
+                              <prod:Total>-15.33</prod:Total>\r
                            </prod:SystemDiscount>\r
                         </prod:SystemDiscountList>\r
                         <prod:AccountingTotals>\r
-                           <prod:CoreDiscountsTotal>-1.19</prod:CoreDiscountsTotal>\r
-                           <prod:CoreDiscountsTaxTotal>-0.13</prod:CoreDiscountsTaxTotal>\r
-                           <prod:CoreCommissionDiscountsTotal>-1.06</prod:CoreCommissionDiscountsTotal>\r
+                           <prod:CoreDiscountsTotal>-15.33</prod:CoreDiscountsTotal>\r
+                           <prod:CoreDiscountsTaxTotal>-1.64</prod:CoreDiscountsTaxTotal>\r
+                           <prod:CoreCommissionDiscountsTotal>-13.69</prod:CoreCommissionDiscountsTotal>\r
                            <prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal>\r
                            <prod:ArrangementFeeGrandDiscountsTotal>0.0</prod:ArrangementFeeGrandDiscountsTotal>\r
                            <prod:ArrangementFeeTaxDiscountsTotal>0.0</prod:ArrangementFeeTaxDiscountsTotal>\r
@@ -1543,79 +1374,14 @@
                         </prod:AccountingTotals>\r
                      </prod:PriceBreakdown>\r
                      <prod:TaxType>I</prod:TaxType>\r
-                     <prod:TaxDate>2020-03-15T00:00:00</prod:TaxDate>\r
-                     <prod:DateInceptedOnPolicy>2020-03-15T00:00:00</prod:DateInceptedOnPolicy>\r
-                     <prod:RelativityPriceFactor>0.7648</prod:RelativityPriceFactor>\r
-                     <prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor>\r
-                     <prod:ArrangementFeeTotal>0.83</prod:ArrangementFeeTotal>\r
-                     <prod:TotalLessArrangementFeeTotal>6.34</prod:TotalLessArrangementFeeTotal>\r
-                     <prod:TotalLessDiscounts>8.36</prod:TotalLessDiscounts>\r
-                     <prod:Total>7.17</prod:Total>\r
-                  </prod:PolicyPrice>\r
-               </gen:PriceList>\r
-               <prod:InsideCoolingOffFlag>true</prod:InsideCoolingOffFlag>\r
-               <prod:FullRefundFlag>false</prod:FullRefundFlag>\r
-               <prod:PaidPeriods>1</prod:PaidPeriods>\r
-            </gen:Product>\r
-            <gen:Product>\r
-               <prod:ProductCode>PRD_UK_0004</prod:ProductCode>\r
-               <prod:ProductPriceName>Relay</prod:ProductPriceName>\r
-               <gen:PriceList>\r
-                  <prod:PolicyPrice>\r
-                     <prod:PriceElementType/>\r
-                     <prod:PriceBreakdown>\r
-                        <prod:CorePrice>\r
-                           <prod:NetRate>0.0</prod:NetRate>\r
-                           <prod:NetRateTax>0.0</prod:NetRateTax>\r
-                           <prod:Commission>6.29</prod:Commission>\r
-                           <prod:CommissionTax>0.76</prod:CommissionTax>\r
-                           <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
-                           <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                           <prod:TaxTotal>0.76</prod:TaxTotal>\r
-                           <prod:Total>7.05</prod:Total>\r
-                        </prod:CorePrice>\r
-                        <prod:ArrangementFee>\r
-                           <prod:Fee>0.74</prod:Fee>\r
-                           <prod:FeeTax>0.09</prod:FeeTax>\r
-                           <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
-                           <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                           <prod:Total>0.83</prod:Total>\r
-                        </prod:ArrangementFee>\r
-                        <prod:SystemDiscountList>\r
-                           <prod:SystemDiscount>\r
-                              <prod:Code>AAFRJA</prod:Code>\r
-                              <prod:SystemDiscountCategory>Adjustment</prod:SystemDiscountCategory>\r
-                              <prod:DiscountApplicationApproach>Product</prod:DiscountApplicationApproach>\r
-                              <prod:NetRate>0.0</prod:NetRate>\r
-                              <prod:NetRateTax>0.0</prod:NetRateTax>\r
-                              <prod:Commission>-0.44</prod:Commission>\r
-                              <prod:CommissionTax>-0.05</prod:CommissionTax>\r
-                              <prod:ArrangementFee>0.0</prod:ArrangementFee>\r
-                              <prod:ArrangementFeeTax>0.0</prod:ArrangementFeeTax>\r
-                              <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
-                              <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                              <prod:Total>-0.49</prod:Total>\r
-                           </prod:SystemDiscount>\r
-                        </prod:SystemDiscountList>\r
-                        <prod:AccountingTotals>\r
-                           <prod:CoreDiscountsTotal>-0.49</prod:CoreDiscountsTotal>\r
-                           <prod:CoreDiscountsTaxTotal>-0.05</prod:CoreDiscountsTaxTotal>\r
-                           <prod:CoreCommissionDiscountsTotal>-0.44</prod:CoreCommissionDiscountsTotal>\r
-                           <prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal>\r
-                           <prod:ArrangementFeeGrandDiscountsTotal>0.0</prod:ArrangementFeeGrandDiscountsTotal>\r
-                           <prod:ArrangementFeeTaxDiscountsTotal>0.0</prod:ArrangementFeeTaxDiscountsTotal>\r
-                           <prod:ArrangementFeeDiscountsTotal>0.0</prod:ArrangementFeeDiscountsTotal>\r
-                        </prod:AccountingTotals>\r
-                     </prod:PriceBreakdown>\r
-                     <prod:TaxType>I</prod:TaxType>\r
-                     <prod:TaxDate>2020-03-15T00:00:00</prod:TaxDate>\r
-                     <prod:DateInceptedOnPolicy>2020-03-15T00:00:00</prod:DateInceptedOnPolicy>\r
+                     <prod:TaxDate>2020-03-01T00:00:00</prod:TaxDate>\r
+                     <prod:DateInceptedOnPolicy>2020-03-01T00:00:00</prod:DateInceptedOnPolicy>\r
                      <prod:RelativityPriceFactor>1.0</prod:RelativityPriceFactor>\r
                      <prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor>\r
-                     <prod:ArrangementFeeTotal>0.83</prod:ArrangementFeeTotal>\r
-                     <prod:TotalLessArrangementFeeTotal>6.56</prod:TotalLessArrangementFeeTotal>\r
-                     <prod:TotalLessDiscounts>7.88</prod:TotalLessDiscounts>\r
-                     <prod:Total>7.39</prod:Total>\r
+                     <prod:ArrangementFeeTotal>9.96</prod:ArrangementFeeTotal>\r
+                     <prod:TotalLessArrangementFeeTotal>99.23</prod:TotalLessArrangementFeeTotal>\r
+                     <prod:TotalLessDiscounts>124.52</prod:TotalLessDiscounts>\r
+                     <prod:Total>109.19</prod:Total>\r
                   </prod:PolicyPrice>\r
                </gen:PriceList>\r
                <prod:InsideCoolingOffFlag>true</prod:InsideCoolingOffFlag>\r
@@ -1630,21 +1396,21 @@
                      <prod:PriceElementType/>\r
                      <prod:PriceBreakdown>\r
                         <prod:CorePrice>\r
-                           <prod:NetRate>0.6</prod:NetRate>\r
-                           <prod:NetRateTax>0.07</prod:NetRateTax>\r
-                           <prod:Commission>3.94</prod:Commission>\r
-                           <prod:CommissionTax>0.47</prod:CommissionTax>\r
+                           <prod:NetRate>7.07</prod:NetRate>\r
+                           <prod:NetRateTax>0.85</prod:NetRateTax>\r
+                           <prod:Commission>44.13</prod:Commission>\r
+                           <prod:CommissionTax>5.3</prod:CommissionTax>\r
                            <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                            <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                           <prod:TaxTotal>0.54</prod:TaxTotal>\r
-                           <prod:Total>5.08</prod:Total>\r
+                           <prod:TaxTotal>6.15</prod:TaxTotal>\r
+                           <prod:Total>57.35</prod:Total>\r
                         </prod:CorePrice>\r
                         <prod:ArrangementFee>\r
-                           <prod:Fee>0.74</prod:Fee>\r
-                           <prod:FeeTax>0.09</prod:FeeTax>\r
+                           <prod:Fee>8.89</prod:Fee>\r
+                           <prod:FeeTax>1.07</prod:FeeTax>\r
                            <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                            <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                           <prod:Total>0.83</prod:Total>\r
+                           <prod:Total>9.96</prod:Total>\r
                         </prod:ArrangementFee>\r
                         <prod:SystemDiscountList>\r
                            <prod:SystemDiscount>\r
@@ -1653,19 +1419,19 @@
                               <prod:DiscountApplicationApproach>Product</prod:DiscountApplicationApproach>\r
                               <prod:NetRate>0.0</prod:NetRate>\r
                               <prod:NetRateTax>0.0</prod:NetRateTax>\r
-                              <prod:Commission>-0.27</prod:Commission>\r
-                              <prod:CommissionTax>-0.03</prod:CommissionTax>\r
+                              <prod:Commission>-2.09</prod:Commission>\r
+                              <prod:CommissionTax>-0.25</prod:CommissionTax>\r
                               <prod:ArrangementFee>0.0</prod:ArrangementFee>\r
                               <prod:ArrangementFeeTax>0.0</prod:ArrangementFeeTax>\r
                               <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                               <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                              <prod:Total>-0.3</prod:Total>\r
+                              <prod:Total>-2.34</prod:Total>\r
                            </prod:SystemDiscount>\r
                         </prod:SystemDiscountList>\r
                         <prod:AccountingTotals>\r
-                           <prod:CoreDiscountsTotal>-0.3</prod:CoreDiscountsTotal>\r
-                           <prod:CoreDiscountsTaxTotal>-0.03</prod:CoreDiscountsTaxTotal>\r
-                           <prod:CoreCommissionDiscountsTotal>-0.27</prod:CoreCommissionDiscountsTotal>\r
+                           <prod:CoreDiscountsTotal>-2.34</prod:CoreDiscountsTotal>\r
+                           <prod:CoreDiscountsTaxTotal>-0.25</prod:CoreDiscountsTaxTotal>\r
+                           <prod:CoreCommissionDiscountsTotal>-2.09</prod:CoreCommissionDiscountsTotal>\r
                            <prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal>\r
                            <prod:ArrangementFeeGrandDiscountsTotal>0.0</prod:ArrangementFeeGrandDiscountsTotal>\r
                            <prod:ArrangementFeeTaxDiscountsTotal>0.0</prod:ArrangementFeeTaxDiscountsTotal>\r
@@ -1673,32 +1439,84 @@
                         </prod:AccountingTotals>\r
                      </prod:PriceBreakdown>\r
                      <prod:TaxType>I</prod:TaxType>\r
-                     <prod:TaxDate>2020-03-15T00:00:00</prod:TaxDate>\r
-                     <prod:DateInceptedOnPolicy>2020-03-15T00:00:00</prod:DateInceptedOnPolicy>\r
+                     <prod:TaxDate>2020-03-01T00:00:00</prod:TaxDate>\r
+                     <prod:DateInceptedOnPolicy>2020-03-01T00:00:00</prod:DateInceptedOnPolicy>\r
                      <prod:RelativityPriceFactor>1.0</prod:RelativityPriceFactor>\r
                      <prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor>\r
-                     <prod:ArrangementFeeTotal>0.83</prod:ArrangementFeeTotal>\r
-                     <prod:TotalLessArrangementFeeTotal>4.78</prod:TotalLessArrangementFeeTotal>\r
-                     <prod:TotalLessDiscounts>5.91</prod:TotalLessDiscounts>\r
-                     <prod:Total>5.61</prod:Total>\r
+                     <prod:ArrangementFeeTotal>9.96</prod:ArrangementFeeTotal>\r
+                     <prod:TotalLessArrangementFeeTotal>55.01</prod:TotalLessArrangementFeeTotal>\r
+                     <prod:TotalLessDiscounts>67.31</prod:TotalLessDiscounts>\r
+                     <prod:Total>64.97</prod:Total>\r
                   </prod:PolicyPrice>\r
                </gen:PriceList>\r
                <prod:InsideCoolingOffFlag>true</prod:InsideCoolingOffFlag>\r
                <prod:FullRefundFlag>false</prod:FullRefundFlag>\r
                <prod:PaidPeriods>1</prod:PaidPeriods>\r
             </gen:Product>\r
+            <gen:Product>\r
+               <prod:ProductCode>PRD_UK_0018</prod:ProductCode>\r
+               <prod:ProductPriceName>BRC</prod:ProductPriceName>\r
+               <gen:PriceList>\r
+                  <prod:PolicyPrice>\r
+                     <prod:PriceElementType/>\r
+                     <prod:PriceBreakdown>\r
+                        <prod:CorePrice>\r
+                           <prod:NetRate>41.61</prod:NetRate>\r
+                           <prod:NetRateTax>4.99</prod:NetRateTax>\r
+                           <prod:Commission>55.74</prod:Commission>\r
+                           <prod:CommissionTax>6.69</prod:CommissionTax>\r
+                           <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
+                           <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
+                           <prod:TaxTotal>11.68</prod:TaxTotal>\r
+                           <prod:Total>109.03</prod:Total>\r
+                        </prod:CorePrice>\r
+                        <prod:ArrangementFee>\r
+                           <prod:Fee>8.89</prod:Fee>\r
+                           <prod:FeeTax>1.07</prod:FeeTax>\r
+                           <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
+                           <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
+                           <prod:Total>9.96</prod:Total>\r
+                        </prod:ArrangementFee>\r
+                        <prod:AccountingTotals>\r
+                           <prod:CoreDiscountsTotal>0.0</prod:CoreDiscountsTotal>\r
+                           <prod:CoreDiscountsTaxTotal>0.0</prod:CoreDiscountsTaxTotal>\r
+                           <prod:CoreCommissionDiscountsTotal>0.0</prod:CoreCommissionDiscountsTotal>\r
+                           <prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal>\r
+                           <prod:ArrangementFeeGrandDiscountsTotal>0.0</prod:ArrangementFeeGrandDiscountsTotal>\r
+                           <prod:ArrangementFeeTaxDiscountsTotal>0.0</prod:ArrangementFeeTaxDiscountsTotal>\r
+                           <prod:ArrangementFeeDiscountsTotal>0.0</prod:ArrangementFeeDiscountsTotal>\r
+                        </prod:AccountingTotals>\r
+                     </prod:PriceBreakdown>\r
+                     <prod:TaxType>I</prod:TaxType>\r
+                     <prod:TaxDate>2020-03-01T00:00:00</prod:TaxDate>\r
+                     <prod:DateInceptedOnPolicy>2020-03-01T00:00:00</prod:DateInceptedOnPolicy>\r
+                     <prod:RelativityPriceFactor>1.0</prod:RelativityPriceFactor>\r
+                     <prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor>\r
+                     <prod:ArrangementFeeTotal>9.96</prod:ArrangementFeeTotal>\r
+                     <prod:TotalLessArrangementFeeTotal>109.03</prod:TotalLessArrangementFeeTotal>\r
+                     <prod:TotalLessDiscounts>118.99</prod:TotalLessDiscounts>\r
+                     <prod:Total>118.99</prod:Total>\r
+                  </prod:PolicyPrice>\r
+               </gen:PriceList>\r
+               <prod:InsideCoolingOffFlag>true</prod:InsideCoolingOffFlag>\r
+               <prod:FullRefundFlag>false</prod:FullRefundFlag>\r
+               <prod:PaidPeriods>1</prod:PaidPeriods>\r
+            </gen:Product>\r
+            <prod:VehicleAgeList>\r
+               <prod:VehicleAge>10</prod:VehicleAge>\r
+            </prod:VehicleAgeList>\r
          </gen:CurrentPolicyDetails>\r
          <gen:TransactionRecordList>\r
             <gen:TransactionRecord>\r
                <gen:Transaction>Renewal</gen:Transaction>\r
-               <gen:TransactionRequestDateTime>2020-03-15T00:00:00</gen:TransactionRequestDateTime>\r
-               <gen:TransactionStartDateTime>2020-03-15T00:00:00</gen:TransactionStartDateTime>\r
+               <gen:TransactionRequestDateTime>2020-03-01T00:00:00</gen:TransactionRequestDateTime>\r
+               <gen:TransactionStartDateTime>2020-03-01T00:00:00</gen:TransactionStartDateTime>\r
                <gen:TransactionProductList>\r
-                  <prod:PaymentType>CMM</prod:PaymentType>\r
-                  <prod:CoveredPersons>3</prod:CoveredPersons>\r
+                  <prod:PaymentType>RAP</prod:PaymentType>\r
+                  <prod:CoveredPersons>4</prod:CoveredPersons>\r
                   <prod:Currency>GBP</prod:Currency>\r
                   <gen:TransactionProduct>\r
-                     <prod:ProductCode>PRD_UK_0001</prod:ProductCode>\r
+                     <prod:ProductCode>PRD_UK_0011</prod:ProductCode>\r
                      <prod:ProductPriceName>Roadside</prod:ProductPriceName>\r
                      <gen:TransactionPriceList>\r
                         <prod:Price>\r
@@ -1707,19 +1525,19 @@
                               <prod:CorePrice>\r
                                  <prod:NetRate>0.0</prod:NetRate>\r
                                  <prod:NetRateTax>0.0</prod:NetRateTax>\r
-                                 <prod:Commission>13.52</prod:Commission>\r
-                                 <prod:CommissionTax>1.62</prod:CommissionTax>\r
+                                 <prod:Commission>155.35</prod:Commission>\r
+                                 <prod:CommissionTax>18.64</prod:CommissionTax>\r
                                  <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                                  <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                                 <prod:TaxTotal>1.62</prod:TaxTotal>\r
-                                 <prod:Total>15.14</prod:Total>\r
+                                 <prod:TaxTotal>18.64</prod:TaxTotal>\r
+                                 <prod:Total>173.99</prod:Total>\r
                               </prod:CorePrice>\r
                               <prod:ArrangementFee>\r
-                                 <prod:Fee>3.34</prod:Fee>\r
-                                 <prod:FeeTax>0.4</prod:FeeTax>\r
+                                 <prod:Fee>40.07</prod:Fee>\r
+                                 <prod:FeeTax>4.81</prod:FeeTax>\r
                                  <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                                  <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                                 <prod:Total>3.74</prod:Total>\r
+                                 <prod:Total>44.88</prod:Total>\r
                               </prod:ArrangementFee>\r
                               <prod:SystemDiscountList>\r
                                  <prod:SystemDiscount>\r
@@ -1728,19 +1546,19 @@
                                     <prod:DiscountApplicationApproach>Product</prod:DiscountApplicationApproach>\r
                                     <prod:NetRate>0.0</prod:NetRate>\r
                                     <prod:NetRateTax>0.0</prod:NetRateTax>\r
-                                    <prod:Commission>-10.0</prod:Commission>\r
-                                    <prod:CommissionTax>-1.2</prod:CommissionTax>\r
+                                    <prod:Commission>-114.63</prod:Commission>\r
+                                    <prod:CommissionTax>-13.75</prod:CommissionTax>\r
                                     <prod:ArrangementFee>0.0</prod:ArrangementFee>\r
                                     <prod:ArrangementFeeTax>0.0</prod:ArrangementFeeTax>\r
                                     <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                                     <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                                    <prod:Total>-11.2</prod:Total>\r
+                                    <prod:Total>-128.38</prod:Total>\r
                                  </prod:SystemDiscount>\r
                               </prod:SystemDiscountList>\r
                               <prod:AccountingTotals>\r
-                                 <prod:CoreDiscountsTotal>-11.2</prod:CoreDiscountsTotal>\r
-                                 <prod:CoreDiscountsTaxTotal>-1.2</prod:CoreDiscountsTaxTotal>\r
-                                 <prod:CoreCommissionDiscountsTotal>-10.0</prod:CoreCommissionDiscountsTotal>\r
+                                 <prod:CoreDiscountsTotal>-128.38</prod:CoreDiscountsTotal>\r
+                                 <prod:CoreDiscountsTaxTotal>-13.75</prod:CoreDiscountsTaxTotal>\r
+                                 <prod:CoreCommissionDiscountsTotal>-114.63</prod:CoreCommissionDiscountsTotal>\r
                                  <prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal>\r
                                  <prod:ArrangementFeeGrandDiscountsTotal>0.0</prod:ArrangementFeeGrandDiscountsTotal>\r
                                  <prod:ArrangementFeeTaxDiscountsTotal>0.0</prod:ArrangementFeeTaxDiscountsTotal>\r
@@ -1748,14 +1566,14 @@
                               </prod:AccountingTotals>\r
                            </prod:PriceBreakdown>\r
                            <prod:TaxType>I</prod:TaxType>\r
-                           <prod:TaxDate>2020-03-15T00:00:00</prod:TaxDate>\r
-                           <prod:DateInceptedOnPolicy>2020-03-15T00:00:00</prod:DateInceptedOnPolicy>\r
+                           <prod:TaxDate>2020-03-01T00:00:00</prod:TaxDate>\r
+                           <prod:DateInceptedOnPolicy>2020-03-01T00:00:00</prod:DateInceptedOnPolicy>\r
                            <prod:RelativityPriceFactor>1.0</prod:RelativityPriceFactor>\r
                            <prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor>\r
-                           <prod:ArrangementFeeTotal>3.74</prod:ArrangementFeeTotal>\r
-                           <prod:TotalLessArrangementFeeTotal>3.94</prod:TotalLessArrangementFeeTotal>\r
-                           <prod:TotalLessDiscounts>18.88</prod:TotalLessDiscounts>\r
-                           <prod:Total>7.68</prod:Total>\r
+                           <prod:ArrangementFeeTotal>44.88</prod:ArrangementFeeTotal>\r
+                           <prod:TotalLessArrangementFeeTotal>45.61</prod:TotalLessArrangementFeeTotal>\r
+                           <prod:TotalLessDiscounts>218.87</prod:TotalLessDiscounts>\r
+                           <prod:Total>90.49</prod:Total>\r
                         </prod:Price>\r
                      </gen:TransactionPriceList>\r
                   </gen:TransactionProduct>\r
@@ -1769,19 +1587,19 @@
                               <prod:CorePrice>\r
                                  <prod:NetRate>0.0</prod:NetRate>\r
                                  <prod:NetRateTax>0.0</prod:NetRateTax>\r
-                                 <prod:Commission>6.72</prod:Commission>\r
-                                 <prod:CommissionTax>0.81</prod:CommissionTax>\r
+                                 <prod:Commission>102.29</prod:Commission>\r
+                                 <prod:CommissionTax>12.27</prod:CommissionTax>\r
                                  <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                                  <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                                 <prod:TaxTotal>0.81</prod:TaxTotal>\r
-                                 <prod:Total>7.53</prod:Total>\r
+                                 <prod:TaxTotal>12.27</prod:TaxTotal>\r
+                                 <prod:Total>114.56</prod:Total>\r
                               </prod:CorePrice>\r
                               <prod:ArrangementFee>\r
-                                 <prod:Fee>0.74</prod:Fee>\r
-                                 <prod:FeeTax>0.09</prod:FeeTax>\r
+                                 <prod:Fee>8.89</prod:Fee>\r
+                                 <prod:FeeTax>1.07</prod:FeeTax>\r
                                  <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                                  <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                                 <prod:Total>0.83</prod:Total>\r
+                                 <prod:Total>9.96</prod:Total>\r
                               </prod:ArrangementFee>\r
                               <prod:SystemDiscountList>\r
                                  <prod:SystemDiscount>\r
@@ -1790,19 +1608,19 @@
                                     <prod:DiscountApplicationApproach>Product</prod:DiscountApplicationApproach>\r
                                     <prod:NetRate>0.0</prod:NetRate>\r
                                     <prod:NetRateTax>0.0</prod:NetRateTax>\r
-                                    <prod:Commission>-1.06</prod:Commission>\r
-                                    <prod:CommissionTax>-0.13</prod:CommissionTax>\r
+                                    <prod:Commission>-13.69</prod:Commission>\r
+                                    <prod:CommissionTax>-1.64</prod:CommissionTax>\r
                                     <prod:ArrangementFee>0.0</prod:ArrangementFee>\r
                                     <prod:ArrangementFeeTax>0.0</prod:ArrangementFeeTax>\r
                                     <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                                     <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                                    <prod:Total>-1.19</prod:Total>\r
+                                    <prod:Total>-15.33</prod:Total>\r
                                  </prod:SystemDiscount>\r
                               </prod:SystemDiscountList>\r
                               <prod:AccountingTotals>\r
-                                 <prod:CoreDiscountsTotal>-1.19</prod:CoreDiscountsTotal>\r
-                                 <prod:CoreDiscountsTaxTotal>-0.13</prod:CoreDiscountsTaxTotal>\r
-                                 <prod:CoreCommissionDiscountsTotal>-1.06</prod:CoreCommissionDiscountsTotal>\r
+                                 <prod:CoreDiscountsTotal>-15.33</prod:CoreDiscountsTotal>\r
+                                 <prod:CoreDiscountsTaxTotal>-1.64</prod:CoreDiscountsTaxTotal>\r
+                                 <prod:CoreCommissionDiscountsTotal>-13.69</prod:CoreCommissionDiscountsTotal>\r
                                  <prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal>\r
                                  <prod:ArrangementFeeGrandDiscountsTotal>0.0</prod:ArrangementFeeGrandDiscountsTotal>\r
                                  <prod:ArrangementFeeTaxDiscountsTotal>0.0</prod:ArrangementFeeTaxDiscountsTotal>\r
@@ -1810,76 +1628,14 @@
                               </prod:AccountingTotals>\r
                            </prod:PriceBreakdown>\r
                            <prod:TaxType>I</prod:TaxType>\r
-                           <prod:TaxDate>2020-03-15T00:00:00</prod:TaxDate>\r
-                           <prod:DateInceptedOnPolicy>2020-03-15T00:00:00</prod:DateInceptedOnPolicy>\r
-                           <prod:RelativityPriceFactor>0.7648</prod:RelativityPriceFactor>\r
-                           <prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor>\r
-                           <prod:ArrangementFeeTotal>0.83</prod:ArrangementFeeTotal>\r
-                           <prod:TotalLessArrangementFeeTotal>6.34</prod:TotalLessArrangementFeeTotal>\r
-                           <prod:TotalLessDiscounts>8.36</prod:TotalLessDiscounts>\r
-                           <prod:Total>7.17</prod:Total>\r
-                        </prod:Price>\r
-                     </gen:TransactionPriceList>\r
-                  </gen:TransactionProduct>\r
-                  <gen:TransactionProduct>\r
-                     <prod:ProductCode>PRD_UK_0004</prod:ProductCode>\r
-                     <prod:ProductPriceName>Relay</prod:ProductPriceName>\r
-                     <gen:TransactionPriceList>\r
-                        <prod:Price>\r
-                           <prod:PriceElementType/>\r
-                           <prod:PriceBreakdown>\r
-                              <prod:CorePrice>\r
-                                 <prod:NetRate>0.0</prod:NetRate>\r
-                                 <prod:NetRateTax>0.0</prod:NetRateTax>\r
-                                 <prod:Commission>6.29</prod:Commission>\r
-                                 <prod:CommissionTax>0.76</prod:CommissionTax>\r
-                                 <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
-                                 <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                                 <prod:TaxTotal>0.76</prod:TaxTotal>\r
-                                 <prod:Total>7.05</prod:Total>\r
-                              </prod:CorePrice>\r
-                              <prod:ArrangementFee>\r
-                                 <prod:Fee>0.74</prod:Fee>\r
-                                 <prod:FeeTax>0.09</prod:FeeTax>\r
-                                 <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
-                                 <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                                 <prod:Total>0.83</prod:Total>\r
-                              </prod:ArrangementFee>\r
-                              <prod:SystemDiscountList>\r
-                                 <prod:SystemDiscount>\r
-                                    <prod:Code>AAFRJA</prod:Code>\r
-                                    <prod:SystemDiscountCategory>Adjustment</prod:SystemDiscountCategory>\r
-                                    <prod:DiscountApplicationApproach>Product</prod:DiscountApplicationApproach>\r
-                                    <prod:NetRate>0.0</prod:NetRate>\r
-                                    <prod:NetRateTax>0.0</prod:NetRateTax>\r
-                                    <prod:Commission>-0.44</prod:Commission>\r
-                                    <prod:CommissionTax>-0.05</prod:CommissionTax>\r
-                                    <prod:ArrangementFee>0.0</prod:ArrangementFee>\r
-                                    <prod:ArrangementFeeTax>0.0</prod:ArrangementFeeTax>\r
-                                    <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
-                                    <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                                    <prod:Total>-0.49</prod:Total>\r
-                                 </prod:SystemDiscount>\r
-                              </prod:SystemDiscountList>\r
-                              <prod:AccountingTotals>\r
-                                 <prod:CoreDiscountsTotal>-0.49</prod:CoreDiscountsTotal>\r
-                                 <prod:CoreDiscountsTaxTotal>-0.05</prod:CoreDiscountsTaxTotal>\r
-                                 <prod:CoreCommissionDiscountsTotal>-0.44</prod:CoreCommissionDiscountsTotal>\r
-                                 <prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal>\r
-                                 <prod:ArrangementFeeGrandDiscountsTotal>0.0</prod:ArrangementFeeGrandDiscountsTotal>\r
-                                 <prod:ArrangementFeeTaxDiscountsTotal>0.0</prod:ArrangementFeeTaxDiscountsTotal>\r
-                                 <prod:ArrangementFeeDiscountsTotal>0.0</prod:ArrangementFeeDiscountsTotal>\r
-                              </prod:AccountingTotals>\r
-                           </prod:PriceBreakdown>\r
-                           <prod:TaxType>I</prod:TaxType>\r
-                           <prod:TaxDate>2020-03-15T00:00:00</prod:TaxDate>\r
-                           <prod:DateInceptedOnPolicy>2020-03-15T00:00:00</prod:DateInceptedOnPolicy>\r
+                           <prod:TaxDate>2020-03-01T00:00:00</prod:TaxDate>\r
+                           <prod:DateInceptedOnPolicy>2020-03-01T00:00:00</prod:DateInceptedOnPolicy>\r
                            <prod:RelativityPriceFactor>1.0</prod:RelativityPriceFactor>\r
                            <prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor>\r
-                           <prod:ArrangementFeeTotal>0.83</prod:ArrangementFeeTotal>\r
-                           <prod:TotalLessArrangementFeeTotal>6.56</prod:TotalLessArrangementFeeTotal>\r
-                           <prod:TotalLessDiscounts>7.88</prod:TotalLessDiscounts>\r
-                           <prod:Total>7.39</prod:Total>\r
+                           <prod:ArrangementFeeTotal>9.96</prod:ArrangementFeeTotal>\r
+                           <prod:TotalLessArrangementFeeTotal>99.23</prod:TotalLessArrangementFeeTotal>\r
+                           <prod:TotalLessDiscounts>124.52</prod:TotalLessDiscounts>\r
+                           <prod:Total>109.19</prod:Total>\r
                         </prod:Price>\r
                      </gen:TransactionPriceList>\r
                   </gen:TransactionProduct>\r
@@ -1891,21 +1647,21 @@
                            <prod:PriceElementType/>\r
                            <prod:PriceBreakdown>\r
                               <prod:CorePrice>\r
-                                 <prod:NetRate>0.6</prod:NetRate>\r
-                                 <prod:NetRateTax>0.07</prod:NetRateTax>\r
-                                 <prod:Commission>3.94</prod:Commission>\r
-                                 <prod:CommissionTax>0.47</prod:CommissionTax>\r
+                                 <prod:NetRate>7.07</prod:NetRate>\r
+                                 <prod:NetRateTax>0.85</prod:NetRateTax>\r
+                                 <prod:Commission>44.13</prod:Commission>\r
+                                 <prod:CommissionTax>5.3</prod:CommissionTax>\r
                                  <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                                  <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                                 <prod:TaxTotal>0.54</prod:TaxTotal>\r
-                                 <prod:Total>5.08</prod:Total>\r
+                                 <prod:TaxTotal>6.15</prod:TaxTotal>\r
+                                 <prod:Total>57.35</prod:Total>\r
                               </prod:CorePrice>\r
                               <prod:ArrangementFee>\r
-                                 <prod:Fee>0.74</prod:Fee>\r
-                                 <prod:FeeTax>0.09</prod:FeeTax>\r
+                                 <prod:Fee>8.89</prod:Fee>\r
+                                 <prod:FeeTax>1.07</prod:FeeTax>\r
                                  <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                                  <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                                 <prod:Total>0.83</prod:Total>\r
+                                 <prod:Total>9.96</prod:Total>\r
                               </prod:ArrangementFee>\r
                               <prod:SystemDiscountList>\r
                                  <prod:SystemDiscount>\r
@@ -1914,19 +1670,19 @@
                                     <prod:DiscountApplicationApproach>Product</prod:DiscountApplicationApproach>\r
                                     <prod:NetRate>0.0</prod:NetRate>\r
                                     <prod:NetRateTax>0.0</prod:NetRateTax>\r
-                                    <prod:Commission>-0.27</prod:Commission>\r
-                                    <prod:CommissionTax>-0.03</prod:CommissionTax>\r
+                                    <prod:Commission>-2.09</prod:Commission>\r
+                                    <prod:CommissionTax>-0.25</prod:CommissionTax>\r
                                     <prod:ArrangementFee>0.0</prod:ArrangementFee>\r
                                     <prod:ArrangementFeeTax>0.0</prod:ArrangementFeeTax>\r
                                     <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
                                     <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
-                                    <prod:Total>-0.3</prod:Total>\r
+                                    <prod:Total>-2.34</prod:Total>\r
                                  </prod:SystemDiscount>\r
                               </prod:SystemDiscountList>\r
                               <prod:AccountingTotals>\r
-                                 <prod:CoreDiscountsTotal>-0.3</prod:CoreDiscountsTotal>\r
-                                 <prod:CoreDiscountsTaxTotal>-0.03</prod:CoreDiscountsTaxTotal>\r
-                                 <prod:CoreCommissionDiscountsTotal>-0.27</prod:CoreCommissionDiscountsTotal>\r
+                                 <prod:CoreDiscountsTotal>-2.34</prod:CoreDiscountsTotal>\r
+                                 <prod:CoreDiscountsTaxTotal>-0.25</prod:CoreDiscountsTaxTotal>\r
+                                 <prod:CoreCommissionDiscountsTotal>-2.09</prod:CoreCommissionDiscountsTotal>\r
                                  <prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal>\r
                                  <prod:ArrangementFeeGrandDiscountsTotal>0.0</prod:ArrangementFeeGrandDiscountsTotal>\r
                                  <prod:ArrangementFeeTaxDiscountsTotal>0.0</prod:ArrangementFeeTaxDiscountsTotal>\r
@@ -1934,16 +1690,65 @@
                               </prod:AccountingTotals>\r
                            </prod:PriceBreakdown>\r
                            <prod:TaxType>I</prod:TaxType>\r
-                           <prod:TaxDate>2020-03-15T00:00:00</prod:TaxDate>\r
-                           <prod:DateInceptedOnPolicy>2020-03-15T00:00:00</prod:DateInceptedOnPolicy>\r
+                           <prod:TaxDate>2020-03-01T00:00:00</prod:TaxDate>\r
+                           <prod:DateInceptedOnPolicy>2020-03-01T00:00:00</prod:DateInceptedOnPolicy>\r
                            <prod:RelativityPriceFactor>1.0</prod:RelativityPriceFactor>\r
                            <prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor>\r
-                           <prod:ArrangementFeeTotal>0.83</prod:ArrangementFeeTotal>\r
-                           <prod:TotalLessArrangementFeeTotal>4.78</prod:TotalLessArrangementFeeTotal>\r
-                           <prod:TotalLessDiscounts>5.91</prod:TotalLessDiscounts>\r
-                           <prod:Total>5.61</prod:Total>\r
+                           <prod:ArrangementFeeTotal>9.96</prod:ArrangementFeeTotal>\r
+                           <prod:TotalLessArrangementFeeTotal>55.01</prod:TotalLessArrangementFeeTotal>\r
+                           <prod:TotalLessDiscounts>67.31</prod:TotalLessDiscounts>\r
+                           <prod:Total>64.97</prod:Total>\r
                         </prod:Price>\r
                      </gen:TransactionPriceList>\r
+                  </gen:TransactionProduct>\r
+                  <gen:TransactionProduct>\r
+                     <prod:ProductCode>PRD_UK_0018</prod:ProductCode>\r
+                     <prod:ProductPriceName>BRC</prod:ProductPriceName>\r
+                     <gen:TransactionPriceList>\r
+                        <prod:Price>\r
+                           <prod:PriceElementType/>\r
+                           <prod:PriceBreakdown>\r
+                              <prod:CorePrice>\r
+                                 <prod:NetRate>41.61</prod:NetRate>\r
+                                 <prod:NetRateTax>4.99</prod:NetRateTax>\r
+                                 <prod:Commission>55.74</prod:Commission>\r
+                                 <prod:CommissionTax>6.69</prod:CommissionTax>\r
+                                 <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
+                                 <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
+                                 <prod:TaxTotal>11.68</prod:TaxTotal>\r
+                                 <prod:Total>109.03</prod:Total>\r
+                              </prod:CorePrice>\r
+                              <prod:ArrangementFee>\r
+                                 <prod:Fee>8.89</prod:Fee>\r
+                                 <prod:FeeTax>1.07</prod:FeeTax>\r
+                                 <prod:InternallyFundedDiscount>0.0</prod:InternallyFundedDiscount>\r
+                                 <prod:TaxPercentage>0.12</prod:TaxPercentage>\r
+                                 <prod:Total>9.96</prod:Total>\r
+                              </prod:ArrangementFee>\r
+                              <prod:AccountingTotals>\r
+                                 <prod:CoreDiscountsTotal>0.0</prod:CoreDiscountsTotal>\r
+                                 <prod:CoreDiscountsTaxTotal>0.0</prod:CoreDiscountsTaxTotal>\r
+                                 <prod:CoreCommissionDiscountsTotal>0.0</prod:CoreCommissionDiscountsTotal>\r
+                                 <prod:CoreNetRateDiscountsTotal>0.0</prod:CoreNetRateDiscountsTotal>\r
+                                 <prod:ArrangementFeeGrandDiscountsTotal>0.0</prod:ArrangementFeeGrandDiscountsTotal>\r
+                                 <prod:ArrangementFeeTaxDiscountsTotal>0.0</prod:ArrangementFeeTaxDiscountsTotal>\r
+                                 <prod:ArrangementFeeDiscountsTotal>0.0</prod:ArrangementFeeDiscountsTotal>\r
+                              </prod:AccountingTotals>\r
+                           </prod:PriceBreakdown>\r
+                           <prod:TaxType>I</prod:TaxType>\r
+                           <prod:TaxDate>2020-03-01T00:00:00</prod:TaxDate>\r
+                           <prod:DateInceptedOnPolicy>2020-03-01T00:00:00</prod:DateInceptedOnPolicy>\r
+                           <prod:RelativityPriceFactor>1.0</prod:RelativityPriceFactor>\r
+                           <prod:ExtrapolationFactor>1.0</prod:ExtrapolationFactor>\r
+                           <prod:ArrangementFeeTotal>9.96</prod:ArrangementFeeTotal>\r
+                           <prod:TotalLessArrangementFeeTotal>109.03</prod:TotalLessArrangementFeeTotal>\r
+                           <prod:TotalLessDiscounts>118.99</prod:TotalLessDiscounts>\r
+                           <prod:Total>118.99</prod:Total>\r
+                        </prod:Price>\r
+                     </gen:TransactionPriceList>\r
+                     <prod:VehicleAgeList>\r
+                        <prod:VehicleAge>10</prod:VehicleAge>\r
+                     </prod:VehicleAgeList>\r
                   </gen:TransactionProduct>\r
                   <prod:SurchargeFeeList>\r
                      <prod:SurchargeFee>\r
