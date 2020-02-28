@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="d68d8151-fb18-4823-b73a-bcfd27298935" name="RCR684" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>RCR-684 U17</con:description>
+  <con:settings>
+    <con:setting id="d68d8151-fb18-4823-b73a-bcfd27298935fileName">RCR684</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>
