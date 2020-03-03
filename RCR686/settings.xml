@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="1fbe8072-59b2-4e0b-9e22-f3586725b3c5" name="RCR686" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="5c1b7d7a-daeb-4d82-8dca-be415533466afileName">RCR658</con:setting>
+    <con:setting id="1fbe8072-59b2-4e0b-9e22-f3586725b3c5fileName">RCR686</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>
