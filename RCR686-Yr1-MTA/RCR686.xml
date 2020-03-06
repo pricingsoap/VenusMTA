@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="3a953308-9ab9-4acc-a4fe-63cf069fce42" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="RCR686" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="6dc196f0-2382-43a2-9b6e-2d26024308e4" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="RCR686" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="5a5fc65e-710a-4353-b774-e19e85d48635fileName">NBR</con:setting>
     <con:setting id="0156e8cb-c1d0-4491-a148-78ee3552afc7fileName">RCR658</con:setting>
     <con:setting id="5805a475-c188-412b-a626-6ab6b6ef2182fileName">RCR686</con:setting>
     <con:setting id="3a953308-9ab9-4acc-a4fe-63cf069fce42fileName">RCR686</con:setting>
+    <con:setting id="6dc196f0-2382-43a2-9b6e-2d26024308e4fileName">RCR686</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="groovy" name="Initialise_Properties" id="3e1d9a5c-9a8a-4b43-bd15-3cbd500f41a8">
+  <con:testStep type="groovy" name="Initialise_Properties" id="c7e62173-fa0a-427a-868d-0e9d59df064b">
     <con:settings/>
     <con:config>
       <script>// initialise values
@@ -29,7 +30,7 @@ out2.write();
 out2.close();</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasource" name="686All" id="51c4e7e4-4b46-4acf-8e86-240b14f86185">
+  <con:testStep type="datasource" name="686All" id="7b0eb838-7773-43f2-aa3e-c5eaf126f966">
     <con:settings>
       <con:setting id="com.eviware.soapui.impl.wsdl.teststeps.datasource.DataSourceContainer@prepared-properties">&lt;xml-fragment/></con:setting>
     </con:settings>
@@ -104,7 +105,7 @@ out2.close();</script>
       <con:expandProperties>false</con:expandProperties>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="TestRun" id="2fade118-a379-4479-a4d8-47c6524d792d" disabled="true">
+  <con:testStep type="groovy" name="TestRun" id="0d4656c8-4dbd-44f8-93e1-3eeaf4b33b0e" disabled="true">
     <con:settings/>
     <con:config>
       <script>def project = testRunner.testCase.testSuite.project;
@@ -128,7 +129,7 @@ testRunner.runTestStep( project.testSuites['RCR686-Yr1 MTA'].testCases['RCR686']
 testRunner.runTestStep( project.testSuites['RCR686-Yr1 MTA'].testCases['RCR686'].testSteps['RenewalE2E YR2'] );</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Setup_686_ProductList_XML" id="c74fbe11-b761-4991-9706-c63c879e09d2">
+  <con:testStep type="groovy" name="Setup_686_ProductList_XML" id="fed7d301-ed08-4947-aa2f-e8ca1fffd8db">
     <con:settings/>
     <con:config>
       <script><![CDATA[def ExproductType = context.expand( '${686All#ExProduct}' )
@@ -229,7 +230,7 @@ log.info(strBld)
 log.info(RenewalStr)]]></script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Setup_686_Cover_Value" id="f218c428-4aa0-4073-a249-4210e30fda8f">
+  <con:testStep type="groovy" name="Setup_686_Cover_Value" id="6d5b5bd2-aca6-4f8d-ac3e-165a3144966d">
     <con:settings/>
     <con:config>
       <script>def cover = context.expand( '${686All#ExCover_type}' )
@@ -261,7 +262,7 @@ testRunner.testCase.setPropertyValue( "Cover",  coverToUse)
 log.info(coverToUse)</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Setup_686_Reprice" id="dfee7c92-450b-441c-a9ee-f388e3ba4753">
+  <con:testStep type="groovy" name="Setup_686_Reprice" id="b479b3e9-ac7a-455a-82b9-6e1f90846ba7">
     <con:settings/>
     <con:config>
       <script><![CDATA[def offercode = context.expand( '${686All#Renewal Offer}' )
@@ -290,7 +291,7 @@ log.info repricestring
 testRunner.testCase.setPropertyValue( "Reprice",  repricestring.toString())]]></script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Setup_686_AgentDiscount_XML" id="79ea1a3c-087e-4dcb-b610-265218b1a5de">
+  <con:testStep type="groovy" name="Setup_686_AgentDiscount_XML" id="979215f1-df7d-4ed4-921e-2d5bcc52d1ef">
     <con:settings/>
     <con:config>
       <script><![CDATA[def payment = context.expand( '${686All#Payment type}' )
@@ -347,7 +348,7 @@ else
 }]]></script>
     </con:config>
   </con:testStep>
-  <con:testStep type="request" id="68666031-16b5-4a89-a589-bb062e7331b0" name="RenewalE2E">
+  <con:testStep type="request" id="9e73a0fa-f22b-4ea0-9965-5fe97ea0358e" name="RenewalE2E">
     <con:settings/>
     <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:interface>SOAPServiceBindingRNL</con:interface>
@@ -496,7 +497,7 @@ else
       </con:request>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Xml extractor" id="aff6a893-de9c-4d46-b42d-f767a851f50b" disabled="true">
+  <con:testStep type="groovy" name="Xml extractor" id="12fb13c7-d53b-44f7-a439-76470d1994eb" disabled="true">
     <con:settings/>
     <con:config>
       <script>now=new java.text.SimpleDateFormat("yyyyMMdd'T'HHmmss").format(new Date())
@@ -511,7 +512,7 @@ requestFile.append( context.expand('${RenewalE2E#Request}') )
 //responseFile.append( context.expand('${686Request#Response}') )</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Setup_686_New_ProductList_XML" id="e7fc8425-aa9b-4278-9384-b2e5367a9e1d">
+  <con:testStep type="groovy" name="Setup_686_New_ProductList_XML" id="62daabc6-64ed-4479-8185-082b9fa015d9">
     <con:settings/>
     <con:config>
       <script><![CDATA[def newProduct = context.expand( '${686All#NewProduct}' )
@@ -587,7 +588,7 @@ testRunner.testCase.setPropertyValue( "TaxType",  taxtype.toString())
 log.info(strBld)]]></script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Setup_686_NewCover_Value" id="900ab0a0-1209-4418-8ef6-40c3a66200b0">
+  <con:testStep type="groovy" name="Setup_686_NewCover_Value" id="592bd8ba-9703-4e03-a495-f1cc8e4024ba">
     <con:settings/>
     <con:config>
       <script>def cover = context.expand( '${686All#NewCover_type}' )
@@ -623,7 +624,7 @@ log.info(coverToUse)
 log.info(getindicator)</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Setup_686_NewAgentDiscount_XML" id="7de5c7c7-67c9-4cb9-8323-583b71318be1">
+  <con:testStep type="groovy" name="Setup_686_NewAgentDiscount_XML" id="becb2cd1-aaf4-4b9f-805c-52f912d2098b">
     <con:settings/>
     <con:config>
       <script><![CDATA[StringBuilder strBld = new StringBuilder();
@@ -677,7 +678,7 @@ testRunner.testCase.setPropertyValue( "MTAAgentDiscount_XML", strBld.toString())
 //testRunner.testCase.setPropertyValue( "AgentDiscountsApplied", strBld2.toString())]]></script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Setup_686_CurrentPolicyPrice" id="eba8c828-cc5c-4210-80ed-fb11d53ffd75">
+  <con:testStep type="groovy" name="Setup_686_CurrentPolicyPrice" id="74933889-13fe-4eef-b7bc-19eaee79f109">
     <con:settings/>
     <con:config>
       <script><![CDATA[def productType = context.expand( '${686All#ExProduct}' )
@@ -980,7 +981,7 @@ def func_AddProduct(Productcode,product,Code)
 }]]></script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Setup_686_TransPolicyPrice" id="47b861f9-f86b-4580-9643-40e8a0dc66ad">
+  <con:testStep type="groovy" name="Setup_686_TransPolicyPrice" id="b537672c-b6c2-43f5-94b5-9176d0dd16aa">
     <con:settings/>
     <con:config>
       <script><![CDATA[def productType = context.expand( '${686All#ExProduct}' )
@@ -1252,7 +1253,7 @@ def func_AddProduct(Productcode,product)
 }]]></script>
     </con:config>
   </con:testStep>
-  <con:testStep type="request" id="a87c2f85-5ede-44c3-a827-6f7cc2f77e8f" name="686Request">
+  <con:testStep type="request" id="e2e2de96-f0bd-43dc-9f6b-555ea9a9e853" name="686Request">
     <con:settings/>
     <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:interface>SOAPServiceBindingMTA</con:interface>
@@ -1386,7 +1387,7 @@ def func_AddProduct(Productcode,product)
       </con:request>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Save xml" id="d0338c14-7a31-464a-9882-4a12c983b18a" disabled="true">
+  <con:testStep type="groovy" name="Save xml" id="5cc85ff7-4fd3-4dbf-80ed-de877ba119f4" disabled="true">
     <con:settings/>
     <con:config>
       <script>now=new java.text.SimpleDateFormat("yyyyMMdd'T'HHmmss").format(new Date())
@@ -1400,7 +1401,7 @@ requestFile.append( context.expand('${686Request#Request}') )
 //responseFile.append( context.expand('${686Request#Response}') )</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="MTAResults" id="ac785919-5592-4765-b237-fd29a082ddcf">
+  <con:testStep type="groovy" name="MTAResults" id="c56d036f-386d-48b2-9e00-f43f5deaeffb">
     <con:settings/>
     <con:config>
       <script>import java.text.DecimalFormat;
@@ -2199,7 +2200,7 @@ def func_write (payment,element,name,RadarValue)
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Setup_686_Yr2_ProductList_XML" id="d85e76f1-7346-43b2-8b4a-caa76aa069d6">
+  <con:testStep type="groovy" name="Setup_686_Yr2_ProductList_XML" id="f27b740a-65a2-4bd2-850e-71b34c9309d0">
     <con:settings/>
     <con:config>
       <script><![CDATA[def newProduct = context.expand( '${686All#NewProduct}' )
@@ -2275,7 +2276,7 @@ testRunner.testCase.setPropertyValue( "TaxType",  taxtype.toString())
 log.info(strBld)]]></script>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Setup_686_RenewalYr2CurrentPolicyPrice" id="fe406277-a189-4dfb-a62d-df4a02719e2c">
+  <con:testStep type="groovy" name="Setup_686_RenewalYr2CurrentPolicyPrice" id="8a8c690a-465a-47ed-8e8b-3bfdc4fa3443">
     <con:settings/>
     <con:config>
       <script><![CDATA[def productType = context.expand( '${686All#NewProduct}' )
@@ -2551,7 +2552,7 @@ def func_AddProduct(Productcode,product,Code)
 }]]></script>
     </con:config>
   </con:testStep>
-  <con:testStep type="request" id="40ef6725-4635-4163-8742-e7889d7f5163" name="RenewalE2E YR2">
+  <con:testStep type="request" id="b2cc4885-c655-4549-ac74-e13a9510e78d" name="RenewalE2E YR2">
     <con:settings/>
     <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:interface>SOAPServiceBindingRNL</con:interface>
@@ -2649,7 +2650,7 @@ def func_AddProduct(Productcode,product,Code)
       </con:request>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="RenewalTestResults" id="fcab01b6-14a2-4deb-9e8f-8d4020385156">
+  <con:testStep type="groovy" name="RenewalTestResults" id="2c790409-5b43-4222-a769-b94d07b0d04c">
     <con:settings/>
     <con:config>
       <script>def productType = context.expand( '${686All#NewProduct}' )
@@ -3021,7 +3022,7 @@ def func_write (payment,element,name,RadarValue)
 }</script>
     </con:config>
   </con:testStep>
-  <con:testStep type="datasourceloop" name="DataSource Loop" id="bc76b100-6867-495b-96a9-29fc87f947d5">
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="631eed58-dc65-404d-b1d2-dc6f05914f3d">
     <con:settings/>
     <con:config>
       <dataSourceStep>686All</dataSourceStep>
@@ -3029,7 +3030,7 @@ def func_write (payment,element,name,RadarValue)
       <discardResults>false</discardResults>
     </con:config>
   </con:testStep>
-  <con:testStep type="groovy" name="Log Results" id="7218d354-ed37-487d-8894-b9f5d9d38204">
+  <con:testStep type="groovy" name="Log Results" id="a930d458-8c4f-4990-8ef1-85b25d27318c">
     <con:settings/>
     <con:config>
       <script>log.info("    ********************************")
